@@ -1,0 +1,12 @@
+.main-text {
+    color: var(--black);
+    text-align: justify;
+
+    border-top: 1px solid var(--black);
+
+    padding: 20px 5px 0 5px;
+    font-size: 17px;
+}
+.main-text span {
+    font-weight: bold;
+}

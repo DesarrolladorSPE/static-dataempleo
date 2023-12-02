@@ -6,8 +6,8 @@ const Title = ({children, color, borderColor}) => {
     return (
         <div className="title-container">
             <h1 className="title" style={{
-                // color: color,
-                // borderColor: borderColor
+                color: color,
+                borderColor: borderColor
             }}>
                 {children}
             </h1>

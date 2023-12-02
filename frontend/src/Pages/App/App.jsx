@@ -11,6 +11,7 @@ import { AppProvider } from "../../Context";
 
 
 //Screens
+import { MainContainer } from "../components/MainContainer";
 import { Home } from "../Screens/Home";
 
 import { Navbar } from "../components/nabvar";
@@ -42,12 +43,13 @@ const App = () => {
         <AppProvider>
             <BrowserRouter>
                 <Wrapper>
-                    {/* <div className="high-contrast"> */}
-                        <Navbar/>
-                        <NavBarResponsive/>
+
+                    <Navbar/>
+                    <NavBarResponsive/>
+                    <MainContainer>
                         <AppRoutes/>
-                        <Footer/>
-                    {/* </div> */}
+                    </MainContainer>
+                    <Footer/>
                 </Wrapper>
             </BrowserRouter>
         </AppProvider>

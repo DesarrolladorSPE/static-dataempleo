@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 
+
 export const AppContext = React.createContext();
 
 const AppProvider = ({children}) => {
@@ -63,7 +64,7 @@ const AppProvider = ({children}) => {
             const filterParams = new URLSearchParams(filters);
 
             const endpoints = [
-
+                "/vacantes/resultados"
                 /* otros endpoints */
             ];
 
@@ -74,6 +75,7 @@ const AppProvider = ({children}) => {
                 return { ...acc, ...result };
             }, {});
             setResponseData(combinedResults);
+            console.log(responseData);
         } 
         catch (err) {
             alert(err.message);
@@ -101,7 +103,6 @@ const AppProvider = ({children}) => {
 
 
     const [toggleNavBarResponsive, setToggleNavBarResponsive] = React.useState(false);
-
 
 
 

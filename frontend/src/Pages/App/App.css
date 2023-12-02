@@ -1,6 +1,6 @@
 :root{
     /* --navbar-color: #4172FF; */
-    --navbar-color: #00589c;
+    --navbar-color: #3366cc;
     /* --navbar-color: #6ABFE1; */
     --navbar-responsive-color: rgba(65, 114, 255, 0.75);
     /* --navbar-responsive-color: rgba(106, 191, 225, 0.85); */
@@ -10,9 +10,9 @@
     --navbar-height: 100px;
 
     --main-body-color: #EEFAFF;
-    --main-title-color: rgb(0, 105, 142);
-    --all-info-container-color: #DCF6FF;
-    --input-and-info-container-color: #6ABFE1;
+    --main-title-color: rgb(255, 255, 255);
+    --all-info-container-color: rgba(255,255,255,0.25);
+    --input-and-info-container-color: rgba(255,255,255,0.65);
     --municipios-and-result-border-clicked: #5D59DC;
 
     --filters-input-color: #FFF;
@@ -22,6 +22,8 @@
     --white-05: rgba(255,255,255,.5);
     --white-075: rgba(255,255,255,.75);
     --white-095: rgba(255,255,255,0.95);
+
+    --black: rgba(0,0,0,1);
 
     --tool-tip-map-text-color: #7B7B7B;
 

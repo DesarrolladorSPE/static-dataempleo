@@ -6,14 +6,14 @@ const Home = () => {
     return (
         <div className="home-container">
             <Title
-                color={"#00698E"}
-                borderColor={"#00698E"}
+                color={"#FFF"}
+                borderColor={"#FFF"}
             >
-                Bolsa Única de Empleo del SPE.
+                DATAEMPLEO
             </Title>
             <AllInfoContainer/>
         </div>
     );
 }
 
-export {Home};
+export { Home };
