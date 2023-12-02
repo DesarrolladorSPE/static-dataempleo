@@ -1,0 +1,103 @@
+.loading-card-big-container {
+    width: 100%;
+    height: 160px;
+    min-height: 160px;
+    box-sizing: border-box;
+
+    padding: 10px 30px;
+
+    display: grid;
+    grid-template-columns: 1fr 2.5fr ;
+    align-items: center;
+    gap: 10px;
+
+    background-color: var(--white);
+    border-radius: 10px;
+
+    transition: all .25s ease;
+}
+.loading-card-big-container div {
+    width: 100%;
+    height: 100%;   
+
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.loading-card-big-container p {
+    background-color: #EBEBEB;
+    height: 25px;
+    border-radius: 5px;
+}
+.primary-container p:nth-child(1) {
+    width: 100%;
+}
+.primary-container p:nth-child(2) {
+    width: 80%;
+}
+.primary-container p:nth-child(3) {
+    width: 45%;
+}
+
+.secondary-container p:nth-child(1) {
+    width: 50%;
+}
+.secondary-container p:nth-child(2) {
+    width: 100%;
+    height: 75px;
+}
+
+.animation{
+    background: linear-gradient(90deg, var(--white-075), var(--white-095));
+    background-size: 400% 400%;
+    animation: loadingAnimation 2s ease-in-out infinite;
+}
+.animation2{
+    background: linear-gradient(0deg, var(--white-075), var(--white-095));
+    background-size: 400% 400%;
+    animation: loadingAnimation 2s ease-in-out infinite;
+}
+
+@keyframes loadingAnimation{
+    0%{
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
+}
+
+.loading-card-small-container {
+    box-sizing: border-box;
+    width: 100%;
+    height: 26px;
+    min-height: 26px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    
+    padding: 0px 10px;
+    border-radius: 5px;
+}
+.loading-card-small-container p {
+    min-height: 16px;
+    border-radius: 2.5px;
+}
+.loading-card-small-container p:nth-child(1) {
+    width: 30%;
+}
+.loading-card-small-container p:nth-child(2) {
+    width: 18%;
+}

@@ -1,0 +1,17 @@
+.count-container {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 15px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    border-radius: 10px;
+    background-color: #FFF;
+}
+.count-container p {
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+}

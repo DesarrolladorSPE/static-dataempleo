@@ -1,0 +1,11 @@
+.filters-wrapper {
+    background-color: var(--input-and-info-container-color);
+    border-radius: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+
+    transition: all 0.2s ease;
+}
