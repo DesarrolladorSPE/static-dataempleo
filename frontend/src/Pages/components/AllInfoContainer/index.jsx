@@ -9,6 +9,11 @@ import React from "react";
 import { Title } from "../Title";
 import { Table } from "../Table";
 
+import { MdNavigateNext } from "react-icons/md";
+import { IoIosArrowBack } from "react-icons/io";
+
+
+
 const AllInfoContainer = () => {
     const context = React.useContext(AppContext);
 
@@ -28,7 +33,11 @@ const AllInfoContainer = () => {
                     <Graph data={chartData} labels={chartLabels} datasetLabel={chartDatasetLabel}/>
                 </FiltersWrapper>
             </div>
-            <div>
+            <div className="table-and-ágination-container">
+                <div className="pagination-buttons-container">
+                    <IoIosArrowBack/>
+                    <MdNavigateNext/>
+                </div>
                 <FiltersWrapper flexDirection="column" gap={5} padding={25}>
                     <Title color={"#000"} borderColor={"#000"}>
                         {`Tabla`}

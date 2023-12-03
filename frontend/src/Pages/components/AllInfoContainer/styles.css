@@ -22,9 +22,25 @@
     grid-template-columns: 0.75fr 1.25fr;
     gap: 20px;
 }
-.lol {
-    border-left: 1px solid var(--white);
-    padding-left: 20px;
+.table-and-ágination-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.pagination-buttons-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.pagination-buttons-container svg{
+    background-color: var(--white-05);
+    padding: 10px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    fill: var(--white);
+
+    width: 20px;
+    height: 20px;
 }
 
 @media(max-width: 1150px) {
