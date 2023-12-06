@@ -1,0 +1,48 @@
+.my-table {
+    width: 100%;
+    border-collapse: collapse;
+
+    box-sizing: border-box;
+
+    transition: all 0.2s ease;
+} 
+.my-table th{
+    color: var(--white); 
+    background-color: var(--lines-color2);
+}
+.my-table th, .my-table td {
+    border-bottom: 1px solid var(--lines-color2);
+    padding: 12px 20px;
+    text-align: left;
+
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+
+    transition: all 0.2s ease;
+
+    text-align: center;
+}
+
+.my-table tr:hover a, .my-table tr:hover{
+    color: var(--lines-color2);
+}
+.my-table tr:hover td{
+    cursor: pointer;
+    border-left: 1px solid var(--lines-color2);
+    border-right: 1px solid var(--lines-color2);
+}
+
+.my-table a {
+    width: 100%;
+
+    text-decoration: none;
+    color: var(--black);
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+} 
+.my-table a:hover {
+    text-decoration: underline;
+    color: var(--lines-color2);
+}

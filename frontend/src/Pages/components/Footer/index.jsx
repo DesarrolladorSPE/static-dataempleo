@@ -3,7 +3,7 @@ import React from "react";
 import { BsFillTelephoneFill } from "react-icons/bs";
 
 import { NavIcons } from "../NavIcons";
-import { SubTitle } from "../SubTitle";
+import { SecondarySubTitle } from "../SecondarySubTitle";
 import "./styles.css";
 
 import { AppContext } from "../../../Context";
@@ -25,13 +25,13 @@ const Footer = () => {
                 </a>
             </div>
             <div className="footer-info-container">
-                <SubTitle
+                <SecondarySubTitle
                     color="#FFF"
 
                     textAlign={context.windowWidth < 870 ? "center" : "start"}
                 >
                     Unidad Administrativa Especial del Servicio Público de Empleo
-                </SubTitle>
+                </SecondarySubTitle>
                 <p>
                     Dirección: Carrera 7, No. 31-10, Pisos 13 y 14, Bogotá D.C.
                     <br /> <br /> <br />
@@ -42,11 +42,11 @@ const Footer = () => {
             <div className="footer-contact-container">
                 <div className="sub-title-container">
                     <BsFillTelephoneFill color="#FFF" />
-                    <SubTitle
+                    <SecondarySubTitle
                         textAlign={context.windowWidth < 870 ? "center" : "start"}
                     >
                         Contacto
-                    </SubTitle>
+                    </SecondarySubTitle>
                 </div>
 
                 <p>

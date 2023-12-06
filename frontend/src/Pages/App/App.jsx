@@ -17,6 +17,7 @@ import { Home } from "../Screens/Home";
 import { Navbar } from "../components/nabvar";
 import { NavBarResponsive } from "../components/NavBarResponsive";
 import { Footer } from "../components/Footer";
+import { AccesibilityButtonsContainer } from "../components/AccesibilityButtonsContainer";
 
 
 const Wrapper = ({children}) => {
@@ -46,10 +47,12 @@ const App = () => {
 
                     <Navbar/>
                     <NavBarResponsive/>
+                    <AccesibilityButtonsContainer/>
                     <MainContainer>
                         <AppRoutes/>
                     </MainContainer>
                     <Footer/>
+                    
                 </Wrapper>
             </BrowserRouter>
         </AppProvider>

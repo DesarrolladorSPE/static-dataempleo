@@ -20,7 +20,7 @@
 }
 .banner-image img {
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 
@@ -44,7 +44,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border-bottom: 2px solid var(--lines-colo2);
+    border-bottom: 2px solid var(--lines-color2);
 }
 .datos-image-container img{
     width: 100%;

@@ -1,10 +1,10 @@
 import "./styles.css";
 
-const SecondarySubTitle = ({children, fontSize = 18, color = "#FFF"}) => {
+const SecondarySubTitle = ({children, color = "#FFF", textAlign = "center"}) => {
     return(
-        <p className="sub-title" style={{
-            fontSize: fontSize,
-            color: color
+        <p className="secondary-sub-title" style={{
+            color: color,
+            textAlign: textAlign
         }}>
             {children}
         </p>

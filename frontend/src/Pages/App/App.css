@@ -7,12 +7,17 @@
 
 
     --icon-colors: #DCDCDC;
-    --footer-color: #4172FF;
+    --footer-color:  rgba(104, 29, 53, 1);
 
     --navbar-height: 150px;
 
-    --lines-color: rgba(65, 114, 255, 1);
-    --lines-colo2: rgba(255, 63, 100, 1);
+    /* --lines-color: rgba(65, 114, 255, 1); */
+    /* --lines-color2: rgba(255, 63, 100, 1); */
+    --lines-color: rgba(104, 29, 53, 1);
+    --lines-color2: rgba(104, 29, 53, 1);
+
+    --text-color: #7F7F7F;
+
 
     --main-body-color: #EEFAFF;
     --main-title-color: rgb(255, 255, 255);

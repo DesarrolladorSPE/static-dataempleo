@@ -35,12 +35,17 @@
 .pagination-buttons-container svg{
     background-color: var(--input-and-info-container-color);
     padding: 10px 25px;
-    border-radius: 5px;
     cursor: pointer;
     fill: var(--black);
 
     width: 20px;
     height: 20px;
+
+    transition: all 0.2s ease;
+}
+.pagination-buttons-container svg:hover {
+    background-color: var(--lines-color2);
+    fill: var(--white);
 }
 
 @media(max-width: 1150px) {

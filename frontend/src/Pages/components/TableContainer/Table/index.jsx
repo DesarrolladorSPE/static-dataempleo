@@ -1,5 +1,7 @@
 import "./styles.css";
 
+import { IoIosArrowForward } from "react-icons/io";
+
 const Table = () => {
 
     const tableData = [
@@ -29,8 +31,10 @@ const Table = () => {
                             <td key={cellIndex}>
                                 {cellIndex === 0 ? (
                                     <a href={`#link-${index + 1}`} id={`link-${index + 1}`}>
+                                        <IoIosArrowForward/>
                                         {cell}
                                     </a>
+
                                 ) : (
                                     cell
                                 )}

@@ -7,10 +7,7 @@ const Home = () => {
     return (
         <div className="home-container">
             <DateCard/>
-            <Title
-                color={"#000"}
-                borderColor={"#000"}
-            >
+            <Title>
                 DATAEMPLEO
             </Title>
             <AllInfoContainer/>

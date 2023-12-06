@@ -1,13 +1,13 @@
 
 import "./styles.css";
 
-const Title = ({children, color, borderColor}) => {
+const Title = ({children, color = "rgba(104, 29, 53, 1)"}) => {
 
     return (
         <div className="title-container">
             <h1 className="title" style={{
                 color: color,
-                borderColor: borderColor
+                borderColor: color
             }}>
                 {children}
             </h1>

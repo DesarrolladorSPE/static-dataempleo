@@ -1,8 +1,6 @@
 .sub-title {
     width: 100%;
     position: relative;
-
-
 }
 .sub-title h2 {
     font-size: 24px;
@@ -22,5 +20,5 @@
 
     width: 30%; 
     height: 5px; 
-    background-color: var(--lines-colo2); 
+    background-color: var(--lines-color2); 
 }
