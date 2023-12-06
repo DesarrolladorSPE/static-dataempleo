@@ -1,6 +1,6 @@
-import { FiltersWrapper } from "../FiltersWrapper";
+import { WrapperContainer1 } from "../WrapperContainers";
 import { MainTextContainer } from "../MainTextContainer";
-import { Graph } from "../Graph";
+import { Graph } from "../GraphContainer/Graph";
 
 
 import "./styles.css";
@@ -11,39 +11,29 @@ import { Table } from "../Table";
 
 import { MdNavigateNext } from "react-icons/md";
 import { IoIosArrowBack } from "react-icons/io";
+import { GraphContainer } from "../GraphContainer";
 
 
 
 const AllInfoContainer = () => {
-    const context = React.useContext(AppContext);
-
-    const chartData = [context.responseData.total, 200000, 150000];
-    const chartLabels = ['Ofertas de Empleo Activas', 'Buscadores de Empleo Activos', 'Colocaciones'];
-    const chartDatasetLabel = '2023';
-
     return(
         <div className="all-info-container">
             <div className="main-text-and-graph-container">
                 <MainTextContainer/>
                 
-                <FiltersWrapper flexDirection="column" gap={5}>
-                    <Title color={"#000"} borderColor={"#000"}>
-                        {`Principales Resultados Noviembre 2023`}
-                    </Title>
-                    <Graph data={chartData} labels={chartLabels} datasetLabel={chartDatasetLabel}/>
-                </FiltersWrapper>
+                <GraphContainer/>
             </div>
             <div className="table-and-ágination-container">
                 <div className="pagination-buttons-container">
                     <IoIosArrowBack/>
                     <MdNavigateNext/>
                 </div>
-                <FiltersWrapper flexDirection="column" gap={5} padding={25}>
+                <WrapperContainer1 flexDirection="column" gap={5} padding={25}>
                     <Title color={"#000"} borderColor={"#000"}>
                         {`Tabla`}
                     </Title>
                     <Table/>
-                </FiltersWrapper>
+                </WrapperContainer1>
             </div>
         </div>
     );

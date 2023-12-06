@@ -29,7 +29,6 @@
 .nav-icons-container svg {
     width: 25px;
     height: 25px;
-    fill: var(--icon-colors);
 }
 
 .nav-icons-container .nav-button {

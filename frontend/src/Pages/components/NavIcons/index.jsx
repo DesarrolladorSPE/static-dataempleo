@@ -11,7 +11,7 @@ import "./styles.css";
 import React from "react";
 import { AppContext } from "../../../Context";
 
-const NavIcons = ({flexDirection, showButtons = false}) => {
+const NavIcons = ({flexDirection, showButtons = false, color="#FFF"}) => {
     const context = React.useContext(AppContext);
 
     const location = useLocation();
@@ -21,19 +21,19 @@ const NavIcons = ({flexDirection, showButtons = false}) => {
             flexDirection: flexDirection,
         }}>
             <a href="https://www.youtube.com/user/ServiciodEmpleo" title="YouTube - Servicio Publico de Empleo" target="__blank" rel="noopener noreferrer">
-                <ImYoutube />
+                <ImYoutube fill={color}/>
             </a>
             <a href="https://www.instagram.com/servicioempleocol/" title="Instagram - Servicio Publico de Empleo" target="__blank" rel="noopener noreferrer">
-                <AiOutlineInstagram />
+                <AiOutlineInstagram fill={color}/>
             </a>
             <a href="https://twitter.com/ServiciodEmpleo" title="X - Servicio Publico de Empleo" target="__blank" rel="noopener noreferrer">
-                <FaXTwitter />
+                <FaXTwitter fill={color}/>
             </a>
             <a href="https://www.facebook.com/SPEColombia" title="Facebook - Servicio Publico de Empleo" target="__blank" rel="noopener noreferrer">
-                <BsFacebook />
+                <BsFacebook fill={color}/>
             </a>
             <a href="https://www.youtube.com/playlist?list=PLR3vDr9Xh9bHEXggcO-0Bz1_UiaCCwqdh" title="Vídeos para la inclusión laboral de personas con discapacidad" target="__blank" rel="noopener noreferrer">
-                <FaHandsAslInterpreting/>
+                <FaHandsAslInterpreting fill={color}/>
             </a>
         </div>
     );

@@ -2,7 +2,7 @@ import Chart from 'chart.js/auto';
 import React from 'react';
 
 const Graph = (props) => {
-    const colors = ["rgba(28,123,251,.5)", "rgba(251,28,96,.5)", "rgba(234,28,251,.5)"];
+    const colors = ["rgba(255, 63, 100, .5)", "rgba(234,28,251,.5)", "rgba(28,123,251,.5)"];
 
     React.useEffect(() => {
         // Configuración de los datos
@@ -10,11 +10,20 @@ const Graph = (props) => {
             labels: props.labels,
             datasets: [
                 {
-                    label: props.datasetLabel,
-                    data: props.data,
+                    label: props.datasetLabel[0],
+                    data: props.data[0],
 
                     backgroundColor: colors[0], // Color de fondo
-                    borderColor: 'rgba(255,255,255,1)', // Color del borde
+                    borderColor: colors[0], // Color del borde
+                    borderWidth: 1,
+                    color: "#000"
+                },
+                {
+                    label: props.datasetLabel[1],
+                    data: props.data[1],
+
+                    backgroundColor: colors[1], // Color de fondo
+                    borderColor: colors[1], // Color del borde
                     borderWidth: 1,
                     color: "#000"
                 },
@@ -57,10 +66,14 @@ const Graph = (props) => {
         return () => {
             myChart.destroy();
         };
-    }, [props.data, props.labels, props.datasetLabel]);
+    }, [
+        props.data, 
+        props.labels, 
+        props.datasetLabel
+    ]);
 
     return (
-        <canvas id="myChart"  height={175}></canvas>
+        <canvas id="myChart" height={150}></canvas>
     )
 };
 

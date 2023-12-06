@@ -1,0 +1,23 @@
+.filters-wrapper1 {
+    background-color: transparent;
+    box-sizing: border-box;
+
+    border: 1px solid var(--lines-color);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+
+    transition: all 0.2s ease;
+}
+
+.filters-wrapper2 {
+    background-color: transparent;
+    box-sizing: border-box;
+
+    display: flex;
+    box-sizing: border-box;
+
+    transition: all 0.2s ease;
+}

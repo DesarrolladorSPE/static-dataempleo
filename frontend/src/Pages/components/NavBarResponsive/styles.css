@@ -2,9 +2,9 @@
     width: 100%;
     z-index: 5;
     position: fixed;
-    top: var(--navbar-height);
+    top: 0;
 
-    height: calc(100vh - var(--navbar-height));
+    height: 100vh;
     display: flex;
     flex-direction: row;
 
@@ -15,6 +15,12 @@
     gap: 10px;
 
     transition: all 0.2s ease;
+}
+
+.button-nav-responsive {
+    position: absolute;
+    top: 50px;
+    right: 60px;
 }
 
 .navbar-responsive-text-container {

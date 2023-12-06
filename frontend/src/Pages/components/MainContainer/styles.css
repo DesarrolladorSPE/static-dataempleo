@@ -1,28 +1,17 @@
 .main-container {
 	width: 100%;
-	margin-top: var(--navbar-height);
-
 	display: flex;
-	justify-content: center;
-	align-items: center;
-
-	background-image: url("https://files.alerta.rcnradio.com/alerta_tolima_prod/public/styles/article_desktop/public/migration/servicioempleo-1.jpg?itok=W9gyL0Bd");
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-
 	box-sizing: border-box;
 }
 
 .color-container {
 	width: 100%;
 	height: 100%;
-	background: rgba(0, 0, 0, 0.6);
 	padding: 0px 0;
 
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
 	align-items: center;
+	justify-content: center;
 	gap: 20px;
 }

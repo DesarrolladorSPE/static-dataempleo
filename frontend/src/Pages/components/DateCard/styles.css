@@ -1,0 +1,10 @@
+.date {
+    position: absolute;
+    top: 50px;
+    right: 60px;
+
+    font-size: 14px;
+    text-align: center;
+
+    color: var(--black-05);
+}

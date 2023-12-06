@@ -1,10 +1,6 @@
 .main-text {
     color: var(--black);
-    text-align: justify;
-
-    border-top: 1px solid var(--black);
-
-    padding: 20px 5px 0 5px;
+    text-align: start;
     font-size: 17px;
 }
 .main-text span {

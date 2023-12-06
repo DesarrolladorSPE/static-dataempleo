@@ -4,14 +4,21 @@ import { NavIcons } from "../NavIcons";
 import { AppContext } from "../../../Context";
 
 import "./styles.css";
+import { AiOutlineBars, AiOutlineClose } from "react-icons/ai";
 
 const NavBarResponsive = () => {
     const context = React.useContext(AppContext);
 
     const renderNabvarResponsive = () => {
-        if (context.toggleNavBarResponsive && context.windowWidth <= 800) {
+        if (context.toggleNavBarResponsive && context.windowWidth <= 1100) {
             return(
                 <div className="navbar-responsive-container">
+                    <button className="close-open-button button-nav-responsive" onClick={() => { 
+                            context.setToggleNavBarResponsive(!context.toggleNavBarResponsive);
+                        }}>
+                        {context.toggleNavBarResponsive ? <AiOutlineClose /> : <AiOutlineBars/> }
+                    </button>   
+
                     <NavIcons
                         flexDirection={"column"}
                     />

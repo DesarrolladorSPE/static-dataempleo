@@ -33,11 +33,11 @@
     justify-content: space-between;
 }
 .pagination-buttons-container svg{
-    background-color: var(--white-05);
+    background-color: var(--input-and-info-container-color);
     padding: 10px 25px;
     border-radius: 5px;
     cursor: pointer;
-    fill: var(--white);
+    fill: var(--black);
 
     width: 20px;
     height: 20px;
