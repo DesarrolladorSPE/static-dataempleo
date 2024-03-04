@@ -7,6 +7,8 @@ import { AiOutlineBars } from "react-icons/ai";
 import "./styles.css"
 import { AppContext } from "../../../Context";
 
+import { banner, banner2, datosLista } from "../../../assets";
+
 
 
 const Navbar = () => {
@@ -14,10 +16,10 @@ const Navbar = () => {
 
     return (
         <>
-            <div className="navbar-container">
+            {/* <div className="navbar-container">
                 <a className="banner-image" href="https://www.serviciodeempleo.gov.co/portada" title="Ir a Servicio Publico de Empleo" rel="noopener noreferrer">
-                    <img src="/banner.png" alt="Ir a Servicio Publico de Empleo" />
-                    <img src="/banner2.png" alt="Ir a Servicio Publico de Empleo" />
+                    <img src={banner} alt="Ir a Servicio Publico de Empleo" />
+                    <img src={banner2} alt="Ir a Servicio Publico de Empleo" />
                 </a>    
 
                 {context.windowWidth <=1100 ?
@@ -34,9 +36,9 @@ const Navbar = () => {
                     />
                 }
 
-            </div>
+            </div> */}
             <div className="datos-image-container">
-                <img src="/datos-lista.png" alt="datos-lista-image" />
+                <img src={datosLista} alt="datos-lista-image" />
             </div>
         </>
 

@@ -45,6 +45,7 @@
     justify-content: center;
     align-items: center;
     border-bottom: 2px solid var(--lines-color2);
+    padding-top: 20px;
 }
 .datos-image-container img{
     width: 100%;

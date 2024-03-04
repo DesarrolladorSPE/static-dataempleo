@@ -1,5 +1,5 @@
 .footer-container {
-    background-color: var(--footer-color);
+    background-color: var(--navbar-color);
     width: 100%;
     padding: 30px 100px;
 
@@ -9,6 +9,10 @@
     gap: 25px;
 
     box-sizing: border-box;
+}
+
+.footer-container p, .footer-container a{
+    font-family: "WorkSans-Regular" !important;
 }
 
 .footer-image-container {

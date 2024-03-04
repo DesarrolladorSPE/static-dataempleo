@@ -1,9 +1,17 @@
 :root{
-    /* --navbar-color: #4172FF; */
-    --navbar-color: #FFF;
-    /* --navbar-color: #6ABFE1; */
-    --navbar-responsive-color: rgba(65, 114, 255, 0.75);
-    /* --navbar-responsive-color: rgba(106, 191, 225, 0.85); */
+    --navbar-color: #3366cc;
+    --navbar-responsive-color: rgba(51, 102, 204, 0.75);
+    --main-body-color: #EEFAFF;
+    --main-title-color: #681d35;
+    --all-info-container-color: rgba(255,255,255,0.25);
+    --input-and-info-container-color: rgba(236,236,236,0.65);
+    --municipios-and-result-border-clicked: #3366CC;
+    --tool-tip-map-text-color: #737373;
+    --confirm-color: #069169;
+    --cancel-color: #D31F3F;
+    --time-color: #3366cc;
+    --result-subtitle-card: #3366CC;
+    --gov-accesibility-card: #681d35;
 
 
     --icon-colors: #DCDCDC;
@@ -11,19 +19,10 @@
 
     --navbar-height: 150px;
 
-    /* --lines-color: rgba(65, 114, 255, 1); */
-    /* --lines-color2: rgba(255, 63, 100, 1); */
     --lines-color: rgba(104, 29, 53, 1);
     --lines-color2: rgba(104, 29, 53, 1);
 
     --text-color: #7F7F7F;
-
-
-    --main-body-color: #EEFAFF;
-    --main-title-color: rgb(255, 255, 255);
-    --all-info-container-color: rgba(255,255,255,0.25);
-    --input-and-info-container-color: rgba(236,236,236,0.65);
-    --municipios-and-result-border-clicked: #5D59DC;
 
     --filters-input-color: #FFF;
 
@@ -50,4 +49,28 @@
 .high-contrast {
     filter: invert(200%);
     margin: 0;
+}
+
+@font-face {
+    font-family: 'Montserrat-SemiBold';
+    src: url('../../assets/fonts/Montserrat/Montserrat-SemiBold.ttf');
+}
+@font-face {
+	font-family: 'Montserrat-Regular';
+	src: url('../../assets/fonts/Montserrat/Montserrat-Regular.ttf');
+}
+@font-face {
+    font-family: "WorkSans-Regular";
+    src: url("../../assets/fonts/Work_Sans/static/WorkSans-Regular.ttf");
+}
+
+
+
+h1 {
+    font-family: "Montserrat-SemiBold" !important;
+}
+
+p, span, div {
+    font-family: "Montserrat-Regular" !important; 
+
 }
