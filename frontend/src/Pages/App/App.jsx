@@ -19,6 +19,8 @@ import { NavBarResponsive } from "../components/NavBarResponsive";
 import { Footer } from "../components/Footer";
 import { AccesibilityCard } from "../components/AccesibilityCard";
 import { GovNavbar } from "../components/GovNavbars";
+import { LoginScreen } from "../Screens/LoginScreen";
+import { RegisterScreen } from "../Screens/RegisterScreen";
 
 
 const Wrapper = ({children}) => {
@@ -32,8 +34,10 @@ const Wrapper = ({children}) => {
 
 const AppRoutes = () => {
     let routes = useRoutes([
+        {path: "/register", element: <RegisterScreen/>},
+        {path: "/login", element: <LoginScreen/>},
         {path: "/", element: <Home/>},
-        {path: "/*", element: <Navigate to={"/"}/>},
+        {path: "/*", element: <Navigate to={"/login"}/>},
     ]);
     
     return routes;

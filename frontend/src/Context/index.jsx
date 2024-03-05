@@ -39,7 +39,6 @@ const AppProvider = ({children}) => {
 
     const handleFilterChange = (filterName, value) => {
         setFilters((prevFilters) => ({ ...prevFilters, [filterName]: value }));
-        setCurrentPage(1);
     };
 
     const fetchData = async (endpoint) => {
@@ -64,7 +63,7 @@ const AppProvider = ({children}) => {
             const filterParams = new URLSearchParams(filters);
 
             const endpoints = [
-                "/vacantes/resultados"
+                // "/vacantes/resultados"
                 /* otros endpoints */
             ];
 
