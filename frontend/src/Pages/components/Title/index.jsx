@@ -1,14 +1,11 @@
 
 import "./styles.css";
 
-const Title = ({children, color = "rgba(104, 29, 53, 1)"}) => {
+const Title = ({children}) => {
 
     return (
         <div className="title-container">
-            <h1 className="title" style={{
-                color: color,
-                borderColor: color
-            }}>
+            <h1 className="title">
                 {children}
             </h1>
         </div>

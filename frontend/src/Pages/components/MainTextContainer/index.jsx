@@ -1,5 +1,4 @@
 import { WrapperContainer2 } from "../WrapperContainers";
-import { Title } from "../Title";
 
 import "./styles.css";
 import { SubTitle } from "../SubTitle";

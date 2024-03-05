@@ -10,6 +10,8 @@
     position: relative;
 
     padding: 10px 0 13px;
+
+    color: var(--text-color);
 }
 .sub-title h2::before {
     content: '';

@@ -1,9 +1,8 @@
 .main-text {
-    color: var(--black);
+    color: var(--text-color);
     text-align: start;
     font-size: 17px;
 }
 .main-text span {
     font-weight: bold;
-    color: var(--text-color);
 }

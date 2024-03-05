@@ -7,7 +7,7 @@
     transition: all 0.2s ease;
 } 
 .my-table th{
-    color: var(--white); 
+    color: var(--white-to-black-color) !important; 
     background-color: var(--lines-color2);
 }
 .my-table th, .my-table td {
@@ -21,6 +21,8 @@
     transition: all 0.2s ease;
 
     text-align: center;
+
+    color: var(--text-color);
 }
 
 .my-table tr:hover a, .my-table tr:hover{
@@ -36,7 +38,7 @@
     width: 100%;
 
     text-decoration: none;
-    color: var(--black);
+    color: var(--text-color);
 
     display: flex;
     align-items: center;

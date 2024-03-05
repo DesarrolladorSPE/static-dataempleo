@@ -2,7 +2,7 @@
     box-sizing: border-box;
     width: 95%;
 
-    background-color: var(--all-info-container-color);
+    background-color: transparent;
     padding: 25px;
 
     border-radius: 20px;
@@ -33,10 +33,10 @@
     justify-content: space-between;
 }
 .pagination-buttons-container svg{
-    background-color: var(--input-and-info-container-color);
+    background-color: var(--light-gray-color);
     padding: 10px 25px;
     cursor: pointer;
-    fill: var(--black);
+    fill: var(--black-to-white-color);
 
     width: 20px;
     height: 20px;
@@ -45,7 +45,7 @@
 }
 .pagination-buttons-container svg:hover {
     background-color: var(--lines-color2);
-    fill: var(--white);
+    fill: var(--black-to-white-color);
 }
 
 @media(max-width: 1150px) {
