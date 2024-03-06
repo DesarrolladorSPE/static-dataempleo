@@ -23,12 +23,15 @@ const LoginScreen = () => {
             axios.post(`${context.apiUri}/user/login`, values)
                 .then(response => {
                     const {data} = response;
+                    console.log("DATA: ", data.Status);
 
                     if(data.Status === "Success") {
                         navigate("/");
+                    } else {
+                        alert(response.data.Error);
                     }
                 })
-                .catch(err => {throw Error(err)})
+                .then(err => {alert(err)})
         } 
         catch (err) {
             alert(err);

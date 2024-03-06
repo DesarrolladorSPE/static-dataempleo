@@ -20,9 +20,9 @@ router.post("/register", (request, response) => {
 			]
 
 			connection.query(query, [values], (err, result) => {
-				if(err) { throw(err)}
+				if(err) { return response.json({Error: "Error creando el usuario"})}
 
-				return response.status(200).json({Status: "Success"});
+				return response.json({Status: "Success"});
 			});
 
 		});
@@ -31,34 +31,30 @@ router.post("/register", (request, response) => {
 		response.status(500).json({Error: err})
 	}
 });
-router.post("/login", (request, response) => {
-	const query = "SELECT * FROM login WHERE email = ?";
 
-	try {
-		connection.query(query, [request.body.email.toString()], (err, result) => {
-			if (err) {
-				throw new Error(err);
-			}
+router.post("/login", (request, res) => {
+    const query = "SELECT * FROM login WHERE email = ?";
+    connection.query(query, [request.body.email], (err, result) => {
+        if (err) {
+            return res.status(500).json({ Error: err.message })
+        }
 
-			if (result.length > 0) {
-				bcrypt.compare(request.body.password.toString(), result[0].password, (err, bcryptResult) => {
-					if (err) {
-						throw new Error(err);
-					}
+        if (result.length > 0) {
+            bcrypt.compare(request.body.password.toString(), result[0].password, (bcryptErr, bcryptResponse) => {
+                if (bcryptErr) {
+                    return res.json({ Error: "Error al comparar contraseñas" });
+                }
 
-					if (bcryptResult) {
-						return response.status(200).json({ Status: "Success" });
-					} else {
-						throw new Error("La contraseña no coincide");
-					}
-				});
-			} else {
-				throw new Error("El usuario no está registrado.");
-			}
-		});
-	} catch (err) {
-		response.status(500).json({ Error: err.message }); // Accede al mensaje de error usando err.message
-	}
+                if (bcryptResponse) {
+                    return res.json({ Status: "Success" });
+                } else {
+                    return res.json({ Error: "La contraseña es incorrecta" });
+                }
+            });
+        } else {
+            return res.json({ Error: "El usuario no está registrado." });
+        }
+    });
 });
 
 
