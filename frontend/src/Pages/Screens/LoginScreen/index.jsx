@@ -16,6 +16,8 @@ const LoginScreen = () => {
     })
 
     const navigate = useNavigate();
+    axios.defaults.withCredentials = true;
+    
     const handleSubmit = (event) => {
         event.preventDefault();
 
@@ -23,7 +25,6 @@ const LoginScreen = () => {
             axios.post(`${context.apiUri}/user/login`, values)
                 .then(response => {
                     const {data} = response;
-                    console.log("DATA: ", data.Status);
 
                     if(data.Status === "Success") {
                         navigate("/");
@@ -34,6 +35,7 @@ const LoginScreen = () => {
                 .then(err => {alert(err)})
         } 
         catch (err) {
+            console.log(err);
             alert(err);
         }
     }

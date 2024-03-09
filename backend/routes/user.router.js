@@ -1,10 +1,18 @@
 const express = require("express");
 const { connection } = require("../database");
+
+const PropertiesReader = require("properties-reader");
+
 const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
+const cookieParser = require("cookie-parser");
+
+
+const properties = PropertiesReader("./app.properties.ini")
 
 const router = express.Router();
 
-const salt = 10;
+const salt = 5;
 
 router.post("/register", (request, response) => {
 	const query = "INSERT INTO login (`name`,`email`,`password`) VALUES (?)";
@@ -32,20 +40,29 @@ router.post("/register", (request, response) => {
 	}
 });
 
-router.post("/login", (request, res) => {
+router.post("/login", (req, res) => {
     const query = "SELECT * FROM login WHERE email = ?";
-    connection.query(query, [request.body.email], (err, result) => {
+
+    connection.query(query, [req.body.email], (err, data) => {
         if (err) {
             return res.status(500).json({ Error: err.message })
         }
 
-        if (result.length > 0) {
-            bcrypt.compare(request.body.password.toString(), result[0].password, (bcryptErr, bcryptResponse) => {
-                if (bcryptErr) {
+        if (data.length > 0) {
+
+            bcrypt.compare(req.body.password.toString(), data[0].password, (err, response) => {
+                if (err) {
                     return res.json({ Error: "Error al comparar contraseñas" });
                 }
 
-                if (bcryptResponse) {
+				console.log(response);
+
+                if (response) {
+					const name = data[0].name;
+					console.log(name);
+					const token = jwt.sign({name}, `${properties.get("app.login.token")}`, {expiresIn: "1d"});
+					res.cookie("token", token);
+
                     return res.json({ Status: "Success" });
                 } else {
                     return res.json({ Error: "La contraseña es incorrecta" });

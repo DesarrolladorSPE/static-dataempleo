@@ -23,14 +23,17 @@ const options = {
         } else {
             callback(new Error("No permitido"));
         }
-    }
+    },
+	methods: ["POST", "GET"],
+	credentials: true,
 }
 app.use(cors(options));
+app.use(cookieParser());
 
 
 
 app.get("/", (request, response) => {
-    response.send("Hola mi server backend para Buscador de Empleo");
+    response.send("Hola mi server backend para Data Empleo");
 });
 
 routerApi(app);

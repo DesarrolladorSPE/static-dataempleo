@@ -1,11 +1,16 @@
 const sql = require("mssql");
 var mysql = require('mysql');
 
+
+const PropertiesReader = require('properties-reader');
+const properties = PropertiesReader('./app.properties.ini');
+
+// BUE
 // const sqlConfig = {
-// 	user: "Userdesarrollo",
-// 	password: "D3s4rR0l1o",
-// 	database: "PRUEBAS",
-// 	server: "10.140.0.22",
+// 	user: `${properties.get('app.database.user')}`,
+// 	password: `${properties.get('app.database.password')}`,
+// 	database: `${properties.get('app.database.database')}`,
+// 	server: `${properties.get('app.database.server')}`,
 // 	pool: {
 // 		max: 10,
 // 		min: 0,
@@ -28,21 +33,12 @@ var mysql = require('mysql');
 
 
 // Data Empleo
-// DEV
 var connection = mysql.createConnection({
-    host     : "localhost",
-    user     : "root",
-    password : "",
-    database: "data_empleo"
+    host     : `${properties.get('app.database.server')}`,
+    user     : `${properties.get('app.database.user')}`,
+    password : `${properties.get('app.database.password')}`,
+    database: `${properties.get('app.database.database')}`
 });
-
-// PROD
-// var connection = mysql.createConnection({
-//     host     : "10.140.0.16",
-//     user     : "uaespe.sysdba",
-//     password : "zGAo_R9k.SK",
-//     database: "bodega",
-// });
 
 
 
