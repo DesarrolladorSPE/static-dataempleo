@@ -41,37 +41,40 @@ router.post("/register", (request, response) => {
 });
 
 router.post("/login", (req, res) => {
-    const query = "SELECT * FROM login WHERE email = ?";
+	try {
+		const query = "SELECT * FROM login WHERE email = ?";
 
-    connection.query(query, [req.body.email], (err, data) => {
-        if (err) {
-            return res.status(500).json({ Error: err.message })
-        }
-
-        if (data.length > 0) {
-
-            bcrypt.compare(req.body.password.toString(), data[0].password, (err, response) => {
-                if (err) {
-                    return res.json({ Error: "Error al comparar contraseñas" });
-                }
-
-				console.log(response);
-
-                if (response) {
-					const name = data[0].name;
-					console.log(name);
-					const token = jwt.sign({name}, `${properties.get("app.login.token")}`, {expiresIn: "1d"});
-					res.cookie("token", token);
-
-                    return res.json({ Status: "Success" });
-                } else {
-                    return res.json({ Error: "La contraseña es incorrecta" });
-                }
-            });
-        } else {
-            return res.json({ Error: "El usuario no está registrado." });
-        }
-    });
+		connection.query(query, [req.body.email], (err, data) => {
+			if (err) {
+				return res.status(500).json({ Error: err.message })
+			}
+	
+			if (data.length > 0) {
+				bcrypt.compare(req.body.password.toString(), data[0].password, (err, response) => {
+					if (err) {
+						throw err.message;
+						return res.json({ Error: "Error al comparar contraseñas" });
+					}
+	
+					if (response) {
+						const name = data[0].name;
+						const token = jwt.sign({name}, `${properties.get("app.login.token")}`, {expiresIn: "1d"});
+						res.cookie("token", token);
+	
+						return res.json({ Status: "Success" });
+					} else {
+						throw Error("La contraseña es incorrecta.")
+						return res.json({ Error: "La contraseña es incorrecta" });
+					}
+				});
+			} else {
+				throw Error("El usuario no está registrado.")
+				return res.json({ Error: "El usuario no está registrado." });
+			}
+		});	
+	} catch (err) {
+		return res.status(500).json({Error: err.message})
+	}
 });
 
 

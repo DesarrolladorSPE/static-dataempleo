@@ -41,7 +41,7 @@ const RegisterScreen = () => {
 			<SubTitle
                     textAlign="center"
 			>
-				Bienvenido a  la Bodega de Archivos del SPE
+				Bienvenido a DataEmpleo
 			</SubTitle>
 			<div className="login-container">
 				<SubTitle
@@ -78,7 +78,7 @@ const RegisterScreen = () => {
                             onChange={(event) => {setValues({...values, password: event.target.value})}}
                         />
 					</div>
-					<button type="submit">Iniciar sesion</button>
+					<button type="submit">Registrarse</button>
 				</form>
 			</div>
 		</>

@@ -7,7 +7,7 @@ import { AiOutlineBars } from "react-icons/ai";
 import "./styles.css"
 import { AppContext } from "../../../Context";
 
-import { banner, banner2, datosLista } from "../../../assets";
+import { datosLista } from "../../../assets";
 
 
 
