@@ -4,7 +4,7 @@
   "description": "Backend for data-empleo web app",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon index.js",
+    "dev": "nodemon -e .ini index.js",
     "prod": "node index.js"
   },
   "dependencies": {
