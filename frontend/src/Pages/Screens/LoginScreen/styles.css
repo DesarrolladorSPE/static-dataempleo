@@ -4,7 +4,8 @@
 
     padding: 30px 10px;
 
-    background-color: rgba(255, 255, 255, 0.15);
+    background-color: transparent;
+    border: 1px solid var(--lines-color);
 
     display: flex;
     flex-direction: column;
@@ -31,19 +32,20 @@
 .form-input-container label{
     font-size: 16px;
     font-weight: bold;
-    color: var(--label-color);
+    color: var(--text-color);
     padding-left: 5px;
 }
 .form-input-container input{
 	background-color: rgba(255, 255, 255, 0.40);
-    color: white;
+    color: var(--black);
     padding: 15px;
-    border-radius: 20px;
+    border-radius: 15px;
+
+    border: 1px solid var(--lines-color);
     outline: none;
-	border: none;
 }
 .form-input-container input::placeholder{
-	color: white;
+	color: var(--lines-color);
 
 }
 .form-input-container input:focus{
@@ -53,14 +55,14 @@
 .login-form-container button {
 	margin-top: 30px;
     width: 100%;
-    background-color: var(--buttons-color);
+    background-color: transparent;
 
     padding: 20px;
     border-radius: 20px;
-    border: none;
+    border: 1px solid var(--lines-color);
     cursor: pointer;
 
-    color: white;
+    color: var(--text-color);
     font-weight: bold;
     font-size: 16px;
 	opacity: 0.9;
@@ -68,11 +70,12 @@
 }
 
 .login-form-container button:hover {
-    background-color: var(--buttons-color-hover);
+    background-color: var(--lines-color);
+    color: var(--white-to-black-color);
 }
 
 
-@media (max-width: 800px ) {
+@media (max-width: 1000px ) {
 	.login-container {
 		width: 90%;
 	}

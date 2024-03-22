@@ -7,7 +7,7 @@ import './App.css'
 import "./App.css"
 
 //Context
-import { AppProvider } from "../../Context";
+import { AppContext, AppProvider } from "../../Context";
 
 
 //Screens
@@ -33,11 +33,15 @@ const Wrapper = ({children}) => {
 }
 
 const AppRoutes = () => {
+    const context = React.useContext(AppContext);
+    const { auth } = context;
+
     let routes = useRoutes([
         {path: "/home", element: <Home/>},
-        {path: "/register", element: <RegisterScreen/>},
-        {path: "/login", element: <LoginScreen/>},
-        {path: "/*", element: <Navigate to={"/login"}/>},
+        
+        {path: "/register", element: auth ? <RegisterScreen/> : <Navigate replace to={"/login"} />},
+        {path: "/login", element: !auth ? <LoginScreen/> : <Navigate replace to={"/home"}/>},
+        {path: "/*", element: auth ? <Navigate replace to={"/home"}/> : <Navigate replace to={"/login"}/>},
     ]);
     
     return routes;

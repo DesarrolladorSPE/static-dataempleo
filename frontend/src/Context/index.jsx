@@ -1,5 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -21,6 +23,20 @@ const AppProvider = ({children}) => {
 
     //LOADING, ERROR
     const [loading, setLoading] = React.useState(null);
+
+    //Login Auth
+    const [auth, setAuth] = React.useState(false);
+    const [message, setMessage] = React.useState("");
+    const [name, setName] = React.useState("");
+
+    //Logout
+    const handleLogout = () => {
+        axios.get(`${apiUri}/user/logout`)
+            .then(res => {
+                location.reload(true);
+            })
+            .catch(err => {console.log(err)})
+    }
 
 
     // RESPONSE:
@@ -160,6 +176,16 @@ const AppProvider = ({children}) => {
                 apiUri,
                 loading,
                 setLoading,
+                
+                auth,
+                setAuth,
+                handleLogout,
+                
+                name,
+                setName,
+
+                message,
+                setMessage,
 
                 //NavBar Responsive
                 toggleNavBarResponsive,

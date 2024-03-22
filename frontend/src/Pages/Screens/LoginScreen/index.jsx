@@ -3,9 +3,12 @@ import axios from "axios";
 
 import { AppContext } from "../../../Context";
 
-import "./styles.css";
 import { SubTitle } from "../../components/SubTitle";
 import { useNavigate } from "react-router-dom";
+import { Title } from "../../components/Title";
+
+import "./styles.css";
+
 
 const LoginScreen = () => {
     const context = React.useContext(AppContext);
@@ -21,32 +24,24 @@ const LoginScreen = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        try {
-            axios.post(`${context.apiUri}/user/login`, values)
-                .then(response => {
-                    const {data} = response;
+        axios.post(`${context.apiUri}/user/login`, values)
+            .then(response => {
+                const {data} = response;
 
-                    if(data.Status === "Success") {
-                        navigate("/");
-                    } else {
-                        alert(response.data.Error);
-                    }
-                })
-                .then(err => {alert(err)})
-        } 
-        catch (err) {
-            console.log(err);
-            alert(err);
-        }
+                if(data.Status === "Success") {
+                    navigate("/home");
+                } else {
+                    console.log(data.Error);
+                }
+            })
+            .catch(err => {alert(err)})
     }
 
     return(
 		<>
-			<SubTitle
-                    textAlign="center"
-			>
-				Bienvenido a  la Bodega de Archivos del SPE
-			</SubTitle>
+			<Title>
+				Bienvenido a DATAEMPLEO
+			</Title>
 			<div className="login-container">
 				<SubTitle
                     textAlign="center"

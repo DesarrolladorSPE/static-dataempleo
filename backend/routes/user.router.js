@@ -12,14 +12,36 @@ const properties = PropertiesReader("./app.properties.ini")
 
 const router = express.Router();
 
-const salt = 5;
+const verifyUser = (request, response, next) => {
+	const token = request.cookies.token;
+
+	if(!token) {
+		return response.json({Error: "No estas Autenticado"})
+	} else {
+		jwt.verify(token, `${properties.get("app.login.token")}`, (err, decoded) => {
+			if (err) {
+				return response.json({Error: "Error con el Token de autenticación"})
+			} else {
+				request.name = decoded.name;
+				next();
+			}
+		})
+	}
+}
+
+router.get("/", verifyUser, (request, response) => {
+	return response.json({Status: "Success", name: request.name})
+})
+
+
+const salt = 10;
 
 router.post("/register", (request, response) => {
 	const query = "INSERT INTO login (`name`,`email`,`password`) VALUES (?)";
 
 	try {
 		bcrypt.hash(request.body.password.toString(), salt, (err, hash) => {
-			if (err) { throw(err); }
+			if (err) { return response.json({Error: "Error hashing password"}); }
 
 			const values = [
 				request.body.name,
@@ -28,7 +50,7 @@ router.post("/register", (request, response) => {
 			]
 
 			connection.query(query, [values], (err, result) => {
-				if(err) { return response.json({Error: "Error creando el usuario"})}
+				if(err) { return response.json({Error: "Error creando el usuario"}) }
 
 				return response.json({Status: "Success"});
 			});
@@ -73,6 +95,12 @@ router.post("/login", (req, res) => {
 		return res.status(500).json({Error: err.message})
 	}
 });
+
+
+router.get("/logout", (request, response) => {
+	response.clearCookie("token")
+	return response.json({Status: "Success"})
+})
 
 
 module.exports = router;

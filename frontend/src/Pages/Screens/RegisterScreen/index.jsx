@@ -3,9 +3,9 @@ import axios from "axios";
 
 import { AppContext } from "../../../Context";
 
-import "./styles.css";
 import { SubTitle } from "../../components/SubTitle";
 import { useNavigate } from "react-router-dom";
+import { Title } from "../../components/Title";
 
 const RegisterScreen = () => {
     const context = React.useContext(AppContext);
@@ -17,9 +17,9 @@ const RegisterScreen = () => {
     })
 
     const navigate = useNavigate();
+
     const handleSubmit = (event) => {
         event.preventDefault();
-
         try {
             axios.post(`${context.apiUri}/user/register`, values)
                 .then(response => {
@@ -38,11 +38,9 @@ const RegisterScreen = () => {
 
     return(
 		<>
-			<SubTitle
-                    textAlign="center"
-			>
+			<Title>
 				Bienvenido a DataEmpleo
-			</SubTitle>
+			</Title>
 			<div className="login-container">
 				<SubTitle
                     textAlign="center"

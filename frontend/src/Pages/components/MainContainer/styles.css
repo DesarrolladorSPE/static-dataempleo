@@ -4,14 +4,14 @@
 	box-sizing: border-box;
 }
 
-.color-container {
-	width: 100%;
-	height: 100%;
-	padding: 0px 0;
+.home-container {
+    padding: 50px;
 
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	gap: 20px;
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    position: relative;
 }
