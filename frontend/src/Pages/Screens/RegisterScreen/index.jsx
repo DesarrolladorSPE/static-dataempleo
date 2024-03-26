@@ -10,13 +10,32 @@ import { Title } from "../../components/Title";
 const RegisterScreen = () => {
     const context = React.useContext(AppContext);
 
+    const navigate = useNavigate();
+    axios.defaults.withCredentials = true;
+
+    React.useEffect(() => {
+        axios.get(`${context.apiUri}/user/`)
+            .then(response => {
+                const {data} = response;
+
+                if(data.Status === "Success") {
+                    context.setAuth(true);
+                    context.setName(data.name);
+                } else {
+                    context.setAuth(false);
+                    context.setMessage(data.Error);
+                    navigate("/home");
+                }
+            })
+            .catch(err => {console.log(err)})
+    }, []) 
+
+
     const [values, setValues] = React.useState({
         name: "",
         email: "",
         password: "",
     })
-
-    const navigate = useNavigate();
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -39,13 +58,13 @@ const RegisterScreen = () => {
     return(
 		<>
 			<Title>
-				Bienvenido a DataEmpleo
+				Registrar Nuevo Usuario Administrador
 			</Title>
 			<div className="login-container">
 				<SubTitle
                     textAlign="center"
 				>
-					Registrarse
+					Registro
 				</SubTitle>
 
 				<form className="login-form-container" onSubmit={handleSubmit}>

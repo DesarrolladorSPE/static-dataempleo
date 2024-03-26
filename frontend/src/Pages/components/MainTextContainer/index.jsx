@@ -1,7 +1,7 @@
 import { WrapperContainer2 } from "../WrapperContainers";
+import { SubTitle } from "../SubTitle";
 
 import "./styles.css";
-import { SubTitle } from "../SubTitle";
 
 const MainTextContainer = () => {
     return(

@@ -21,31 +21,12 @@
     grid-template-columns: 0.75fr 1.25fr;
     gap: 20px;
 }
-.table-and-ágination-container {
+.table-and-pagination-container {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
-.pagination-buttons-container {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-}
-.pagination-buttons-container svg{
-    background-color: var(--light-gray-color);
-    padding: 10px 25px;
-    cursor: pointer;
-    fill: var(--black-to-white-color);
 
-    width: 20px;
-    height: 20px;
-
-    transition: all 0.2s ease;
-}
-.pagination-buttons-container svg:hover {
-    background-color: var(--lines-color2);
-    fill: var(--black-to-white-color);
-}
 
 @media(max-width: 1150px) {
     .main-text-and-graph-container {

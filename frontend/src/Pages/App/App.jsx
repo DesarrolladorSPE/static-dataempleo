@@ -21,6 +21,7 @@ import { AccesibilityCard } from "../components/AccesibilityCard";
 import { GovNavbar } from "../components/GovNavbars";
 import { LoginScreen } from "../Screens/LoginScreen";
 import { RegisterScreen } from "../Screens/RegisterScreen";
+import { DashboardScreen } from "../Screens/DashboardScreen";
 
 
 const Wrapper = ({children}) => {
@@ -38,10 +39,12 @@ const AppRoutes = () => {
 
     let routes = useRoutes([
         {path: "/home", element: <Home/>},
+        {path: "/*", element: <Navigate replace to={"/home"}/>},
+        {path: "/dashboard", element: <DashboardScreen/>},
+
         
         {path: "/register", element: auth ? <RegisterScreen/> : <Navigate replace to={"/login"} />},
         {path: "/login", element: !auth ? <LoginScreen/> : <Navigate replace to={"/home"}/>},
-        {path: "/*", element: auth ? <Navigate replace to={"/home"}/> : <Navigate replace to={"/login"}/>},
     ]);
     
     return routes;

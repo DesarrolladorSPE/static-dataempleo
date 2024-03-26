@@ -8,48 +8,45 @@
 	justify-content: space-between;
 }
 
-.barra-superior-govco a {
+.barra-superior-govco > a {
 	content: url(https://cdn.www.gov.co/assets/images/logo.svg);
 	height: 1.875rem;
 	width: 8.5rem;
 }
 
-.barra-superior-govco a:focus-visible {
-	outline: max(0.125rem, 0.15em) solid #FFFFFF;
+.barra-superior-govco > a:focus-visible {
+	outline: max(0.125rem, 0.15em) solid var(--white);
 	border-radius: 0.313rem;
 }
 
 .barra-superior-govco .idioma-icon-barra-superior-govco {
 	height: 1.5rem;
-	width: 1.5rem;
-	border-radius: 0.313rem;
-	background-color: #FFFFFF;
+	background-color: var(--white);
+	color: var(--navbar-color);
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	padding: 0 10px;
+
 	cursor: pointer;
-	padding: 0;
-	border: 0.125rem solid #FFFFFF;
-	font-size: 10px;
-	position: absolute;
-	right: 5.375rem;
+	
+	border-radius: 0.313rem;
+	border: 0.125rem solid var(--white);
+
+	font-family: "govco-font";
+	font-size: 11px;
 }
 
 .barra-superior-govco .idioma-icon-barra-superior-govco:hover {
   	background-color: var(--navbar-color);
+	color: var(--white);
 }
 
 .barra-superior-govco .idioma-icon-barra-superior-govco:focus {
-	outline: max(0.125rem, 0.15em) solid #FFFFFF;
+	outline: max(0.125rem, 0.15em) solid var(--white);
 	outline-offset: max(0.188rem, 0.15em);
-}
-
-.barra-superior-govco .idioma-icon-barra-superior-govco::before {
-	font-family: "govco-font";
-	content: "EN";
-	color: var(--navbar-color);
-	font-size: 11px;
-}
-
-.barra-superior-govco .idioma-icon-barra-superior-govco:hover::before {
-    color: #FFFFFF;
 }
   
 
@@ -61,7 +58,7 @@
   
 .logo-aut-header-govco .link-login-header-govco {
 	color: var(--navbar-color);
-	font-family: WorkSans-Regular;
+	font-family: "WorkSans-Regular";
 	font-size: 14px;
 	display: block;
 	right: 5.375rem;

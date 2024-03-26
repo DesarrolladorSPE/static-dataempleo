@@ -1,9 +1,7 @@
 import { MainTextContainer } from "../MainTextContainer";
-
-import { MdNavigateNext } from "react-icons/md";
-import { IoIosArrowBack } from "react-icons/io";
 import { GraphContainer } from "../GraphContainer";
 import { TableContainer } from "../TableContainer";
+import { PaginationButtons } from "../PaginationButtons";
 
 import "./styles.css";
 
@@ -15,11 +13,8 @@ const AllInfoContainer = () => {
                 
                 <GraphContainer/>
             </div>
-            <div className="table-and-ágination-container">
-                <div className="pagination-buttons-container">
-                    <IoIosArrowBack/>
-                    <MdNavigateNext/>
-                </div>
+            <div className="table-and-pagination-container">
+                <PaginationButtons/>
 
                 <TableContainer/>
             </div>

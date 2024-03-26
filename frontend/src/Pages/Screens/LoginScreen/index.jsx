@@ -29,7 +29,7 @@ const LoginScreen = () => {
                 const {data} = response;
 
                 if(data.Status === "Success") {
-                    navigate("/home");
+                    navigate("/dashboard");
                 } else {
                     console.log(data.Error);
                 }
@@ -39,9 +39,6 @@ const LoginScreen = () => {
 
     return(
 		<>
-			<Title>
-				Bienvenido a DATAEMPLEO
-			</Title>
 			<div className="login-container">
 				<SubTitle
                     textAlign="center"

@@ -1,16 +1,19 @@
 import React from "react";
-import { AppContext } from "../../../Context";
+import axios from "axios";
+
 
 import { Title } from "../../components/Title";
 import { AllInfoContainer } from "../../components/AllInfoContainer";
 import { DateCard } from "../../components/DateCard";
 
+
+import { AppContext } from "../../../Context";
+import { useNavigate } from "react-router-dom";
+
 import "./styles.css"
 
-import { useNavigate } from "react-router-dom";
-import axios from "axios";
 
-const Home = () => {
+const DashboardScreen = () => {
     const context = React.useContext(AppContext);
 
     const navigate = useNavigate();
@@ -38,11 +41,11 @@ const Home = () => {
             <DateCard/>
 
             <Title>
-                DATAEMPLEO
+                Dashboard de DATAEMPLEO
             </Title>
             <AllInfoContainer/>
         </>
     );
 }
 
-export { Home };
+export { DashboardScreen };
