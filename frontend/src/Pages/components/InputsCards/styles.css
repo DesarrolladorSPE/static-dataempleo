@@ -1,0 +1,42 @@
+.input-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.input-container label{
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--text-color);
+    padding-left: 5px;
+}
+
+/* Inputs de Texto */
+.input-container input{
+    background-color: transparent;
+    color: var(--black);
+    padding: 15px;
+
+    border: 1px solid var(--lines-color);
+    outline: none;
+}
+.input-container input::placeholder{
+	color: var(--lines-color);
+
+}
+.input-container input:focus{
+    outline: none;
+}
+
+/* Select */
+.input-container select {
+    background-color: transparent;
+    padding: 15px;
+    border: 1px solid var(--lines-color);
+	color: var(--lines-color);
+}
+.input-container select:focus {
+    border: 2px solid var(--lines-color);
+    outline: none;
+}

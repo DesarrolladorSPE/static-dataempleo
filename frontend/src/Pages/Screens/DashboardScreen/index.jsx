@@ -1,14 +1,12 @@
 import React from "react";
 import axios from "axios";
 
-
-import { Title } from "../../components/Title";
-import { AllInfoContainer } from "../../components/AllInfoContainer";
-import { DateCard } from "../../components/DateCard";
-
-
 import { AppContext } from "../../../Context";
 import { useNavigate } from "react-router-dom";
+
+import { Title } from "../../components/Title";
+import { DateCard } from "../../components/DateCard";
+import { DashboardInfoContainer } from "../../components/DashboardInfoContainer";
 
 import "./styles.css"
 
@@ -43,7 +41,7 @@ const DashboardScreen = () => {
             <Title>
                 Dashboard de DATAEMPLEO
             </Title>
-            <AllInfoContainer/>
+            <DashboardInfoContainer/>
         </>
     );
 }

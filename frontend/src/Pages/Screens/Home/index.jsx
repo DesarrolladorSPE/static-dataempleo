@@ -2,13 +2,13 @@ import React from "react";
 import { AppContext } from "../../../Context";
 
 import { Title } from "../../components/Title";
-import { AllInfoContainer } from "../../components/AllInfoContainer";
 import { DateCard } from "../../components/DateCard";
 
 import "./styles.css"
 
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { HomeInfoContainer } from "../../components/HomeInfoContainer";
 
 const Home = () => {
     const context = React.useContext(AppContext);
@@ -40,7 +40,7 @@ const Home = () => {
             <Title>
                 DATAEMPLEO
             </Title>
-            <AllInfoContainer/>
+            <HomeInfoContainer/>
         </>
     );
 }

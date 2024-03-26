@@ -1,24 +1,19 @@
-import { MainTextContainer } from "../MainTextContainer";
-import { GraphContainer } from "../GraphContainer";
-import { TableContainer } from "../TableContainer";
-import { PaginationButtons } from "../PaginationButtons";
-
 import "./styles.css";
 
-const AllInfoContainer = () => {
+const AllInfoContainer = ({children}) => {
     return(
         <div className="all-info-container">
-            <div className="main-text-and-graph-container">
-                <MainTextContainer/>
-                
-                <GraphContainer/>
-            </div>
-            <div className="table-and-pagination-container">
-                <PaginationButtons/>
-
-                <TableContainer/>
-            </div>
+            {children}
         </div>
     );
 }
-export { AllInfoContainer };
+
+const AllInfoGridContainer = ({children}) => {
+    return(
+        <div className="all-info-grid-container">
+            {children}
+        </div>
+    );
+}
+
+export { AllInfoContainer, AllInfoGridContainer };
