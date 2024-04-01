@@ -9,8 +9,8 @@ const GraphContainer = () => {
     const context = React.useContext(AppContext);
 
     const chartData = [
-        [context.responseData.total, 200000, 150000],
-        [400000, 100000, 320000],
+        [250000, 200000, 150000,],
+        [400000, 100000, 320000,],
     ];
     const chartLabels = ['Ofertas de Empleo Activas', 'Buscadores de Empleo Activos', 'Colocaciones'];
     const chartDatasetLabel = [2023, 2022];
@@ -18,7 +18,7 @@ const GraphContainer = () => {
     return(
         <WrapperContainer1 flexDirection="column" gap={15}>
             <SubTitle textAlign="center">
-                Grafica de  los Resultados Principales - Noviembre 2023
+                {context.graphValues.title == "" ? "Placeholder" : context.graphValues.title}
             </SubTitle>
             
             <Graph data={chartData} labels={chartLabels} datasetLabel={chartDatasetLabel}/>

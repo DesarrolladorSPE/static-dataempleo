@@ -106,6 +106,13 @@ const AppProvider = ({children}) => {
         fetchAllData();
     }, [filters]);
 
+    // Valores de la Grafica
+    const [graphValues, setGraphValues] = React.useState({
+        title: "Placeholder",
+        graphType: "bar",
+        grapLabelsType: "ofertasRegistradas",
+    })
+
     //CAMBIO DE COLORES
     const [activeButton, setActiveButton] = React.useState(1);
     const [activeHighContrast, setActiveHighContrast] = React.useState(false);
@@ -208,6 +215,10 @@ const AppProvider = ({children}) => {
                 setActiveButton,
                 activeHighContrast,
                 setActiveHighContrast,
+
+                // Valores de la Grafica
+                graphValues,
+                setGraphValues,
 
             }}
         >
