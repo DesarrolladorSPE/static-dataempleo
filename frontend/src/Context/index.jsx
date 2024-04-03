@@ -112,6 +112,7 @@ const AppProvider = ({children}) => {
         graphType: "bar",
         grapLabelsType: "ofertasRegistradas",
     })
+    
 
     //CAMBIO DE COLORES
     const [activeButton, setActiveButton] = React.useState(1);

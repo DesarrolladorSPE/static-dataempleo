@@ -8,9 +8,9 @@ const AllInfoContainer = ({children}) => {
     );
 }
 
-const AllInfoGridContainer = ({children}) => {
+const AllInfoGridContainer = ({children, className="grid-075-125"}) => {
     return(
-        <div className="all-info-grid-container">
+        <div className={`all-info-grid-container ${className}`}>
             {children}
         </div>
     );

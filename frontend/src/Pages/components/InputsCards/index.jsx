@@ -1,15 +1,16 @@
 import "./styles.css";
 
-const InputCard = ({type="text", id, label, placeholder="placeholder", onChange}) => {
+const InputCard = ({type="text", id, label, placeholder="placeholder", onChange, required=true}) => {
     return(
         <div className="input-container">
-            <label htmlFor={id}>{label}</label>
+            <label htmlFor={id}>{label} {required && "*"}</label>
             <input
                 type={type}
                 placeholder={placeholder}
                 name={id}
                 id={id}
                 onChange={(event) => {onChange(event.target.value)}}
+                required
             />
         </div>
     );
@@ -18,7 +19,7 @@ const InputCard = ({type="text", id, label, placeholder="placeholder", onChange}
 const OptionInputCard = ({id, label, array=[], onChange}) => {
     return(
         <div className="input-container">
-            <label htmlFor={id}>{label}</label>
+            <label htmlFor={id}>{label} </label>
             <select 
                 name={id} 
                 id={id}
@@ -37,5 +38,20 @@ const OptionInputCard = ({id, label, array=[], onChange}) => {
     );
 }
 
+const TextAreaCard = ({id, label, placeholder="placeholder", onChange, required=true}) => {
+    return(
+        <div className="input-container">
+            <label htmlFor={id}>{label} {required && "*"}</label>
+            <textarea
+                placeholder={placeholder}
+                name={id}
+                id={id}
+                onChange={(event) => {onChange(event.target.value)}}
+                required
+            />
+        </div>
+    );
+}
 
-export { InputCard, OptionInputCard };
+
+export { InputCard, OptionInputCard, TextAreaCard };

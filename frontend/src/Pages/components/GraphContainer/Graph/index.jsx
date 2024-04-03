@@ -37,6 +37,7 @@ const Graph = (props) => {
 
         // Configuración del gráfico
         const options = {
+            indexAxis: 'y',
             scales: {
                 y: {
                     beginAtZero: true,
