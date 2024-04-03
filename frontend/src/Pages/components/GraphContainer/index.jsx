@@ -4,24 +4,33 @@ import { WrapperContainer1 } from "../WrapperContainers";
 import { Graph } from "./Graph";
 import { SubTitle } from "../SubTitle";
 
+import { graphLabels } from "../../../utils/chartTypes";
+import { months } from "../../../utils/dateFunctions";
+
 
 const GraphContainer = () => {
     const context = React.useContext(AppContext);
 
-    const chartData = [
-        [250000, 200000, 150000,],
-        [400000, 100000, 320000,],
-    ];
-    const chartLabels = ['Ofertas de Empleo Activas', 'Buscadores de Empleo Activos', 'Colocaciones'];
-    const chartDatasetLabel = [2023, 2022];
+    const values = {
+        data: [
+            [250000, 200000, 150000, 250000, 200000, 150000, 75000],
+            [400000, 100000, 320000, 250000, 200000, 150000, 75000],
+        ],
+        labels: graphLabels[context.graphValues?.grapLabelsType].array,
+        datasetLabel: [context.graphValues?.year, context.graphValues?.year - 1],
+        options: {
+            indexAxis: graphLabels[context.graphValues?.grapLabelsType].indexAxis,
+            type: context.graphValues?.graphType,
+        }
+    }
 
     return(
         <WrapperContainer1 flexDirection="column" gap={15}>
             <SubTitle textAlign="center">
-                {context.graphValues.title == "" ? "Placeholder" : context.graphValues.title}
+                {context.graphValues?.title == "" ? "Título" : context.graphValues?.title} - {months[context.graphValues?.month]} del {context.graphValues?.year}
             </SubTitle>
             
-            <Graph data={chartData} labels={chartLabels} datasetLabel={chartDatasetLabel}/>
+            <Graph values={values}/>
         </WrapperContainer1>
     );
 }

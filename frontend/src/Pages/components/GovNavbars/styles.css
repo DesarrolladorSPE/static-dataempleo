@@ -98,6 +98,10 @@
 .container-logo-header-govco .container-search-header-govco {
 	max-width: 21.875rem;
 }
+
+.container-logo-header-govco p {
+	color: var(--text-color);
+}
   
 @media (max-width: 991px) {
 	.logo-aut-header-govco {

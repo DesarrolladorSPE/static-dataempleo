@@ -1,7 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { actualMonth, actualYear } from "../utils/dateFunctions";
+import { graphLabels } from "../utils/chartTypes";
 
 
 
@@ -41,23 +42,6 @@ const AppProvider = ({children}) => {
 
     // RESPONSE:
     const [responseData, setResponseData] = React.useState({});
-
-    const [filters, setFilters] = React.useState({
-        RANGO_SALARIAL: "",
-        NOMBRE_PRESTADOR: "",
-        TELETRABAJO: "",
-        TIPO_CONTRATO: "",
-        NIVEL_ESTUDIOS: "",
-        DEPARTAMENTO: "",
-        HIDROCARBUROS: "",
-        PLAZA_PRACTICA: "",
-        BUSQUEDA: "",
-        DESCRIPCION_VACANTE: "",
-    });
-
-    const handleFilterChange = (filterName, value) => {
-        setFilters((prevFilters) => ({ ...prevFilters, [filterName]: value }));
-    };
 
     const fetchData = async (endpoint) => {
         try {
@@ -102,25 +86,39 @@ const AppProvider = ({children}) => {
         }
     };
 
-    React.useEffect(() => {
-        fetchAllData();
-    }, [filters]);
+    // React.useEffect(() => {
+    //     fetchAllData();
+    // }, [filters]);
 
     // Valores de la Grafica
     const [graphValues, setGraphValues] = React.useState({
-        title: "Placeholder",
-        graphType: "bar",
+        title: "Título",
+        year: actualYear,
+        month: actualMonth,
         grapLabelsType: "ofertasRegistradas",
+        graphType: "bar",
+        description: "",
     })
+    
+    const handleGraphValuesChange = (key, value) => {
+        setGraphValues((prevValues) => ({ 
+            ...prevValues, 
+            [key]: value
+         }));
+    };
+
+    React.useEffect(() => {
+        handleGraphValuesChange("graphType", graphLabels[graphValues.grapLabelsType].type)
+    }, [graphValues.grapLabelsType]);
+
     
 
     //CAMBIO DE COLORES
-    const [activeButton, setActiveButton] = React.useState(1);
     const [activeHighContrast, setActiveHighContrast] = React.useState(false);
 
     React.useEffect(() => {
         handleColorsByFilters();
-    }, [activeButton, activeHighContrast]);
+    }, [activeHighContrast]);
 
     const handleColorsByFilters = () => {
         const root = document.documentElement;
@@ -203,8 +201,6 @@ const AppProvider = ({children}) => {
                 windowWidth,
                 setWindowWidth,
 
-                //Filtros y paginacion
-                setFilters,
 
                 //Informacion desde el serveidor
                 responseData,
@@ -212,14 +208,13 @@ const AppProvider = ({children}) => {
 
                 //COLORES POR FILTRO
                 handleColorsByFilters,
-                activeButton,
-                setActiveButton,
                 activeHighContrast,
                 setActiveHighContrast,
 
                 // Valores de la Grafica
                 graphValues,
                 setGraphValues,
+                handleGraphValuesChange,
 
             }}
         >

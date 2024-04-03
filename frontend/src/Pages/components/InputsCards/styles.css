@@ -39,8 +39,8 @@ textarea {
     padding: 15px;
     border: 1px solid var(--lines-color);
 	color: var(--lines-color);
+    cursor: pointer;
 }
 .input-container select:focus {
-    border: 2px solid var(--lines-color);
     outline: none;
 }

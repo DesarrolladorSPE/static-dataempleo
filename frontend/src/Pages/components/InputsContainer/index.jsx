@@ -8,15 +8,16 @@ import { WrapperContainer2 } from "../WrapperContainers";
 import { chartTypes, graphLabels } from "../../../utils/chartTypes";
 import { ButtonCard } from "../ButtonCard";
 import { AllInfoGridContainer } from "../AllInfoContainer";
-import { monthArray, yearArray } from "../../../utils/dateFunctions";
+
+import { actualMonth, actualYear, getMonthsUntilCurrent, yearArray } from "../../../utils/dateFunctions";
 
 
 const InputsContainer = () => {
     const context = React.useContext(AppContext);
 
     const grapLabels = Object.keys(graphLabels);
-    const {graphValues, setGraphValues} = context;
-
+    const monthsArray = Object.keys(getMonthsUntilCurrent(context.graphValues.year));
+    
     return(
         <WrapperContainer2
             flexDirection="column"
@@ -31,8 +32,9 @@ const InputsContainer = () => {
                 type="text" 
                 id={"graph-title"} 
                 label={"Titulo del Grafico"} 
-                placeholder="Titulo"
-                onChange={(value) => setGraphValues({...graphValues, title: value})}
+                placeholder="Título"
+                onChange={context.handleGraphValuesChange}
+                stateKey={"title"}
             />
 
             <AllInfoGridContainer className="grid-1-1">
@@ -40,34 +42,44 @@ const InputsContainer = () => {
                     id={"year"} 
                     label={"Año"} 
                     array={yearArray}
-                    onChange={(value) => setGraphValues({...graphValues, graphType: value})}
+                    onChange={context.handleGraphValuesChange}
+                    stateKey={"year"}
+                    defaultValue={actualYear}
                 />
                 <OptionInputCard 
                     id={"month"} 
                     label={"Mes"} 
-                    array={monthArray}
-                    onChange={(value) => setGraphValues({...graphValues, graphType: value})}
+                    array={monthsArray}
+                    onChange={context.handleGraphValuesChange}
+                    stateKey={"month"}
+                    defaultValue={actualMonth}
                 />
             </AllInfoGridContainer>
 
 
             <OptionInputCard 
-                id={"chart-type"} 
-                label={"Tipo de Gráfico"} 
-                array={chartTypes}
-                onChange={(value) => setGraphValues({...graphValues, graphType: value})}
-            />
-            <OptionInputCard 
                 id={"values-type"} 
                 label={"Tipo de Datos"} 
                 array={grapLabels}
-                onChange={(value) => setGraphValues({...graphValues, grapLabelsType: value})}
+                onChange={context.handleGraphValuesChange}
+                stateKey={"grapLabelsType"}
+                defaultValue={context.graphValues?.grapLabelsType}
             />
+            <OptionInputCard 
+                id={"chart-type"} 
+                label={"Tipo de Gráfico"} 
+                array={chartTypes}
+                onChange={context.handleGraphValuesChange}
+                stateKey={"graphType"}
+                defaultValue={context.graphValues?.graphType}
+            />
+
             <TextAreaCard 
                 id={"graph-description"} 
                 label={"Descripción"} 
                 placeholder="Descripción"
-                onChange={(value) => setGraphValues({...graphValues, title: value})}
+                onChange={context.handleGraphValuesChange}
+                stateKey={"description"}
             />
 
             <ButtonCard

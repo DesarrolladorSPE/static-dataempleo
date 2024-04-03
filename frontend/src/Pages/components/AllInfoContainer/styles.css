@@ -26,6 +26,9 @@
 .grid-1-1 {
     grid-template-columns: 1fr 1fr;
 }
+.grid-1 {
+    grid-template-columns: 1fr;
+}
 
 
 @media(max-width: 1150px) {

@@ -2,7 +2,7 @@ import Chart from 'chart.js/auto';
 import React from 'react';
 import { AppContext } from '../../../../Context';
 
-const Graph = (props) => {
+const Graph = ({values}) => {
     const context = React.useContext(AppContext);
 
     const colors = ["rgba(255, 63, 100, .5)", "rgba(234,28,251,.5)", "rgba(28,123,251,.5)"];
@@ -12,11 +12,11 @@ const Graph = (props) => {
     React.useEffect(() => {
         // Configuración de los datos
         const data = {
-            labels: props.labels,
+            labels: values.labels,
             datasets: [
                 {
-                    label: props.datasetLabel[0],
-                    data: props.data[0],
+                    label: values.datasetLabel[0],
+                    data: values.data[0],
 
                     backgroundColor: colors[0], // Color de fondo
                     borderColor: colors[0], // Color del borde
@@ -24,8 +24,8 @@ const Graph = (props) => {
                     color: highContrastStyle
                 },
                 {
-                    label: props.datasetLabel[1],
-                    data: props.data[1],
+                    label: values.datasetLabel[1],
+                    data: values.data[1],
 
                     backgroundColor: colors[1], // Color de fondo
                     borderColor: colors[1], // Color del borde
@@ -37,7 +37,7 @@ const Graph = (props) => {
 
         // Configuración del gráfico
         const options = {
-            indexAxis: 'y',
+            indexAxis: values.options.indexAxis,
             scales: {
                 y: {
                     beginAtZero: true,
@@ -58,7 +58,7 @@ const Graph = (props) => {
         // Crear la instancia del gráfico
         const ctx = document.getElementById('myChart').getContext('2d');
         const myChart = new Chart(ctx, {
-            type: context.graphValues.graphType,
+            type: values.options.type,
             data: data,
             options: options,
         });
@@ -66,7 +66,7 @@ const Graph = (props) => {
         return () => {
             myChart.destroy();
         };
-    }, [props.data, props.labels, props.datasetLabel]);
+    }, [values]);
 
     return (
         <canvas id="myChart" height={150}></canvas>

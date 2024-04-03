@@ -6,7 +6,7 @@ import { PaginationButtons } from "../PaginationButtons";
 const DashboardInfoContainer = () => {
     return(
         <AllInfoContainer>
-            <AllInfoGridContainer>
+            <AllInfoGridContainer className="grid-075-125">
                 <InputsContainer/>
                 
                 <GraphContainer/>

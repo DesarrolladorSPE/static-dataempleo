@@ -1,6 +1,6 @@
 import "./styles.css";
 
-const InputCard = ({type="text", id, label, placeholder="placeholder", onChange, required=true}) => {
+const InputCard = ({type="text", id, label, placeholder="placeholder", onChange, required=true, stateKey}) => {
     return(
         <div className="input-container">
             <label htmlFor={id}>{label} {required && "*"}</label>
@@ -9,21 +9,22 @@ const InputCard = ({type="text", id, label, placeholder="placeholder", onChange,
                 placeholder={placeholder}
                 name={id}
                 id={id}
-                onChange={(event) => {onChange(event.target.value)}}
+                onChange={(event) => {onChange(stateKey, event.target.value)}}
                 required
             />
         </div>
     );
 }
 
-const OptionInputCard = ({id, label, array=[], onChange}) => {
+const OptionInputCard = ({id, label, array=[], onChange, stateKey, defaultValue=0}) => {
     return(
         <div className="input-container">
             <label htmlFor={id}>{label} </label>
             <select 
                 name={id} 
                 id={id}
-                onChange={(event) => {onChange(event.target.value)}}
+                onChange={(event) => {onChange(stateKey, event.target.value)}}
+                defaultValue={defaultValue}
             >
                 {array?.map((item, index) => (
                     <option 
@@ -38,7 +39,7 @@ const OptionInputCard = ({id, label, array=[], onChange}) => {
     );
 }
 
-const TextAreaCard = ({id, label, placeholder="placeholder", onChange, required=true}) => {
+const TextAreaCard = ({id, label, placeholder="placeholder", onChange, required=true, stateKey}) => {
     return(
         <div className="input-container">
             <label htmlFor={id}>{label} {required && "*"}</label>
@@ -46,7 +47,7 @@ const TextAreaCard = ({id, label, placeholder="placeholder", onChange, required=
                 placeholder={placeholder}
                 name={id}
                 id={id}
-                onChange={(event) => {onChange(event.target.value)}}
+                onChange={(event) => {onChange(stateKey, event.target.value)}}
                 required
             />
         </div>
