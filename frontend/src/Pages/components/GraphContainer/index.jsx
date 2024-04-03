@@ -25,13 +25,19 @@ const GraphContainer = () => {
     }
 
     return(
-        <WrapperContainer1 flexDirection="column" gap={15}>
-            <SubTitle textAlign="center">
-                {context.graphValues?.title == "" ? "Título" : context.graphValues?.title} - {months[context.graphValues?.month]} del {context.graphValues?.year}
-            </SubTitle>
-            
-            <Graph values={values}/>
-        </WrapperContainer1>
+        <div style={{
+            width: "100%",
+            height: "100%"
+        }}>
+            <WrapperContainer1 flexDirection="column" gap={15}>
+                <SubTitle textAlign="center">
+                    {context.graphValues?.title == "" ? "Título" : context.graphValues?.title} - {months[context.graphValues?.month]} del {context.graphValues?.year}
+                </SubTitle>
+                
+                <Graph values={values}/>
+            </WrapperContainer1>
+        </div>
+        
     );
 }
 
