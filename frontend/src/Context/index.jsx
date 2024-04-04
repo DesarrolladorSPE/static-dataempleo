@@ -98,6 +98,7 @@ const AppProvider = ({children}) => {
         grapLabelsType: "ofertasRegistradas",
         graphType: "bar",
         description: "",
+        values: [20000, 10000, 4, 7, 8, 1],
     })
     
     const handleGraphValuesChange = (key, value) => {

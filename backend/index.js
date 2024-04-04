@@ -1,7 +1,6 @@
 const express = require("express");
 const cors = require("cors");
 
-const jwt = require("jsonwebtoken");
 const cookieParser = require("cookie-parser");
 
 const routerApi = require("./routes");

@@ -9,6 +9,7 @@ const PropertiesReader = require("properties-reader");
 const properties = PropertiesReader("./app.properties.ini")
 
 const { verifyUser } = require("../middlewares/verifyUser");
+const { postQuery } = require("../database/query");
 
 const router = express.Router();
 
@@ -20,30 +21,23 @@ router.get("/", verifyUser, (request, response) => {
 
 const salt = 10;
 
-router.post("/register", (request, response) => {
-	const query = "INSERT INTO login (`name`,`email`,`password`) VALUES (?)";
+router.post("/new", (request, response) => {
+	const query = "INSERT INTO graphs (`name`,`email`,`password`) VALUES (?)";
 
-	try {
-		bcrypt.hash(request.body.password.toString(), salt, (err, hash) => {
-			if (err) { return response.json({Error: "Error hashing password"}); }
+	const graphValues = {
+        title: request.title,
+        year: request.year,
+        month: request.month,
+        grapLabelsType: request.grapLabelsType,
+        graphType: request.graphType,
+        description: request.description,
+        values: request.values,
+    }
 
-			const values = [
-				request.body.name,
-				request.body.email,
-				hash,
-			]
+	console.log(graphValues);
 
-			connection.query(query, [values], (err, result) => {
-				if(err) { return response.json({Error: "Error creando el usuario"}) }
+	postQuery()
 
-				return response.json({Status: "Success"});
-			});
-
-		});
-	}
-	catch (err) {
-		response.status(500).json({Error: err})
-	}
 });
 
 router.post("/login", (req, res) => {
