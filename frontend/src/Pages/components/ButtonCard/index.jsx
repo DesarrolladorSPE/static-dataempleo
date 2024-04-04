@@ -1,6 +1,6 @@
 import "./styles.css";
 
-const ButtonCard = ({children, className="button-card-container", title="", onClick, type="button"}) => {
+const ButtonCard = ({children, className="button-card-container", title="", onClick=null, type="button"}) => {
     return(
         <button
             className={className}

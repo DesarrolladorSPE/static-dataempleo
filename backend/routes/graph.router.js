@@ -8,21 +8,16 @@ const jwt = require("jsonwebtoken");
 const PropertiesReader = require("properties-reader");
 const properties = PropertiesReader("./app.properties.ini")
 
-const { verifyUser } = require("../middlewares/verifyUser");
-const { postQuery } = require("../database/query");
+const { obtenerFechaHoraHoy } = require("../DateFunctions/index");
 
 const router = express.Router();
 
 
-router.get("/", verifyUser, (request, response) => {
-	return response.json({Status: "Success", name: request.name})
-})
-
-
-const salt = 10;
 
 router.post("/new", (request, response) => {
-	const query = "INSERT INTO graphs (`name`,`email`,`password`) VALUES (?)";
+	const query = "INSERT INTO graficas (`TITULO_GRAFICA`,`AÑO`,`MES`, `TIPO_DATOS`, `TIPO_GRAFICA`, `DESCRIPCION`, `FECHA_CREACION`, `DATOS`) VALUES (?,?,?,?,?,?,?,?)";
+
+	const fechaActual = obtenerFechaHoraHoy();
 
 	const graphValues = {
         title: request.body.title,
@@ -31,13 +26,19 @@ router.post("/new", (request, response) => {
         grapLabelsType: request.body.grapLabelsType,
         graphType: request.body.graphType,
         description: request.body.description,
-        values: request.body.values,
+		date: fechaActual,
+        values: null,
     }
 
-	console.log(graphValues);
+	const values = Object.values(graphValues);
 
-	// postQuery()
+	connection.query(query, values, (err, results) => {
+		if(err) {
+			return response.status(500).json({ Error: err.message })
+		}
 
+		return response.json({ Status: "Success" });
+	});
 });
 
 router.post("/login", (req, res) => {

@@ -20,7 +20,6 @@ const InputsContainer = () => {
     const monthsArray = Object.keys(getMonthsUntilCurrent(context.graphValues.year));
 
     const values = {...context.graphValues}
-    console.log(values);
 
     const handleSubmit = (event) => {
         event.preventDefault();
