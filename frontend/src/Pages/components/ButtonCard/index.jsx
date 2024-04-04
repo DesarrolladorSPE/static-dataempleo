@@ -5,7 +5,7 @@ const ButtonCard = ({children, className="button-card-container", title="", onCl
         <button
             className={className}
             title={title}
-            onClick={() => onClick()}
+            onClick={(event) => onClick(event)}
             type={type}
         >
             {children}

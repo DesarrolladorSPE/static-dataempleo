@@ -9,7 +9,7 @@ import { chartTypes, graphLabels } from "../../../utils/chartTypes";
 import { ButtonCard } from "../ButtonCard";
 import { AllInfoGridContainer } from "../AllInfoContainer";
 
-import { actualMonth, actualYear, getMonthsUntilCurrent, yearArray } from "../../../utils/dateFunctions";
+import { actualMonth, actualYear, getMonthsUntilCurrent, months, yearArray } from "../../../utils/dateFunctions";
 import axios from "axios";
 
 
@@ -19,10 +19,13 @@ const InputsContainer = () => {
     const grapLabels = Object.keys(graphLabels);
     const monthsArray = Object.keys(getMonthsUntilCurrent(context.graphValues.year));
 
+    const values = {...context.graphValues}
+    console.log(values);
+
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        axios.post(`${context.apiUri}/user/graph/new`, context.graphValues)
+        axios.post(`${context.apiUri}/graph/new`, values)
             .then(response => {
                 const {data} = response;
 
@@ -36,7 +39,7 @@ const InputsContainer = () => {
     }
     
     return(
-        <form action="">
+        <form onSubmit={handleSubmit}>
             <WrapperContainer2
                 flexDirection="column"
                 padding={10}
@@ -53,6 +56,7 @@ const InputsContainer = () => {
                     placeholder="Título"
                     onChange={context.handleGraphValuesChange}
                     stateKey={"title"}
+                    defaultValue={context.graphValues.title}
                 />
 
                 <AllInfoGridContainer className="grid-1-1">
@@ -102,7 +106,6 @@ const InputsContainer = () => {
 
                 <ButtonCard
                     title="Guardar Información"
-                    onClick={(event) => handleSubmit(event)}
                     type="submit"
                 >
                     Guardar

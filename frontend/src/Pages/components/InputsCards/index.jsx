@@ -1,6 +1,6 @@
 import "./styles.css";
 
-const InputCard = ({type="text", id, label, placeholder="placeholder", onChange, required=true, stateKey}) => {
+const InputCard = ({type="text", id, label, placeholder="placeholder", onChange, required=true, stateKey, defaultValue=""}) => {
     return(
         <div className="input-container">
             <label htmlFor={id}>{label} {required && "*"}</label>
@@ -11,6 +11,7 @@ const InputCard = ({type="text", id, label, placeholder="placeholder", onChange,
                 id={id}
                 onChange={(event) => {onChange(stateKey, event.target.value)}}
                 required
+                defaultValue={defaultValue}
             />
         </div>
     );

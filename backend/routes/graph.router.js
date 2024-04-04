@@ -25,18 +25,18 @@ router.post("/new", (request, response) => {
 	const query = "INSERT INTO graphs (`name`,`email`,`password`) VALUES (?)";
 
 	const graphValues = {
-        title: request.title,
-        year: request.year,
-        month: request.month,
-        grapLabelsType: request.grapLabelsType,
-        graphType: request.graphType,
-        description: request.description,
-        values: request.values,
+        title: request.body.title,
+        year: request.body.year,
+        month: request.body.month,
+        grapLabelsType: request.body.grapLabelsType,
+        graphType: request.body.graphType,
+        description: request.body.description,
+        values: request.body.values,
     }
 
 	console.log(graphValues);
 
-	postQuery()
+	// postQuery()
 
 });
 
