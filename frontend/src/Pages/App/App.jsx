@@ -22,6 +22,7 @@ import { GovNavbar } from "../components/GovNavbars";
 import { LoginScreen } from "../Screens/LoginScreen";
 import { RegisterScreen } from "../Screens/RegisterScreen";
 import { DashboardScreen } from "../Screens/DashboardScreen";
+import { ConfirmationModal } from "../components/ConfirmationModal";
 
 
 const Wrapper = ({children}) => {
@@ -59,6 +60,7 @@ const App = () => {
                     <GovNavbar/>
                     <Navbar/>
                     <NavBarResponsive/>
+                    <ConfirmationModal/>
                     <AccesibilityCard/>
                     <MainContainer>
                         <AppRoutes/>

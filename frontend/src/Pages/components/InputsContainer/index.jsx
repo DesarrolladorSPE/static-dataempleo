@@ -32,6 +32,8 @@ const InputsContainer = () => {
 
                 if(data.Status === "Success") {
                     console.log("Guardado Correctamente")
+                    context.setOpenConfirmationModal(false)
+                    location.reload(true);
                 } else {
                     console.log(data.Error);
                 }
@@ -109,19 +111,18 @@ const InputsContainer = () => {
 
                     <ButtonCard
                         title="Guardar Información"
-                        onClick={() => context.setOpenConfirmationModal(true)}
+                        onClick={() => context.setOpenConfirmationModal({
+                            status: true,
+                            title: "¿Desea Guardar la Gráfica con esta infromación?",
+                            onConfirm: handleSubmit,
+                            onCancel: () => context.setOpenConfirmationModal({status: false}),
+                        })}
                     >
                         Guardar
                     </ButtonCard>
                     
                 </WrapperContainer2>
             </form>
-            <ConfirmationModal
-                onConfirm={handleSubmit}
-                onCancel={() => context.setOpenConfirmationModal(false)}
-                title={"Desea Guardar la Gráfica con esta infromación?"}
-            />
-
         </>
 
         

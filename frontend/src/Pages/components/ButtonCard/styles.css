@@ -2,7 +2,6 @@
     width: 100%;
     background-color: transparent;
 
-    padding: 20px;
     border: 1px solid var(--lines-color);
     cursor: pointer;
 
@@ -15,4 +14,8 @@
 .button-card-container:hover {
     background-color: var(--lines-color);
     color: var(--white-to-black-color);
+}
+.button-card-container svg {
+    width: 20px;
+    height: 20px;
 }

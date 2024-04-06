@@ -6,17 +6,19 @@ import { ButtonCard } from "../ButtonCard";
 
 import "./styles.css";
 
-const ConfirmationModal = ({onConfirm, onCancel, title}) => {
+const ConfirmationModal = () => {
     const context = React.useContext(AppContext)
 
-    if(context.openConfirmationModal) {
+    const {status, title, onConfirm, onCancel} = context.openConfirmationModal;
+
+    if(status) {
         return(
             <div className="modal-container">
                 <div className="modal-buttons-container">
                     <SubTitle textAlign="center">{title}</SubTitle>
 
                     <div className="info-container">
-                        <p>Esta acción no podrá ser cancelada</p>
+                        <p>Esta acción no podrá revertirse</p>
                     </div>
 
                     <div className="flex-row">

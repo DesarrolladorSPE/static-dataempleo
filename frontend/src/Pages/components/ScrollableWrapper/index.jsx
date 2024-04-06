@@ -1,6 +1,6 @@
 import "./styles.css";
 
-const ScrollableWrapper = ({children,  maxHeight = 250, gap = 5}) => {
+const ScrollableWrapper = ({children,  maxHeight = 250, gap = 0}) => {
     return(
         <div className="scrollable-wrapper-container" style={{
             maxHeight: maxHeight,

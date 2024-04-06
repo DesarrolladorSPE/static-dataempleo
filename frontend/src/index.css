@@ -3,6 +3,8 @@ body {
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
     background: var(--main-body-color);
+
+    transition: all 0.2s ease;
 }
 * {
     padding: 0;

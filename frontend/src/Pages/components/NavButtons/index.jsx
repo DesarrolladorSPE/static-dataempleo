@@ -19,15 +19,16 @@ const NavButtons = ({className="idioma-icon-barra-superior-govco"}) => {
         } else {
             return(
                 <>
-                    <Link to={"/register"} className={`${className}`}>
-                        Registro
-                    </Link>
+
                     <Link to={"/home"} className={`${className}`}>
                         Home
                     </Link>
                     <Link to={"/dashboard"} className={`${className}`}>
                         Dashboard
-                    </Link>  
+                    </Link>
+                    <Link to={"/register"} className={`${className}`}>
+                        Registro
+                    </Link>
                       <button  
                         className={`${className}`} 
                         onClick={context.handleLogout}

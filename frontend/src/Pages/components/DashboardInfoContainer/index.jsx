@@ -1,7 +1,7 @@
 import { AllInfoContainer, AllInfoGridContainer } from "../AllInfoContainer";
 import { GraphContainer } from "../GraphContainer";
 import { InputsContainer } from "../InputsContainer";
-import { PaginationButtons } from "../PaginationButtons";
+import { GraphsGrid } from "../GraphsGrid";
 
 const DashboardInfoContainer = () => {
     return(
@@ -12,7 +12,7 @@ const DashboardInfoContainer = () => {
                 <GraphContainer/>
             </AllInfoGridContainer>
 
-            <PaginationButtons/>
+            <GraphsGrid/>
             
         </AllInfoContainer>
     );
