@@ -40,7 +40,7 @@ const AppRoutes = () => {
     let routes = useRoutes([
         {path: "/home", element: <Home/>},
         {path: "/*", element: <Navigate replace to={"/home"}/>},
-        {path: "/dashboard", element: auth ? <DashboardScreen/> : <Navigate replace to="/home"/>},
+        {path: "/dashboard", element: <DashboardScreen/>},
 
         
         {path: "/register", element: auth ? <RegisterScreen/> : <Navigate replace to={"/login"} />},
