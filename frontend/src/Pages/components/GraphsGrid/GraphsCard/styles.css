@@ -55,3 +55,11 @@
     height: 25px;
     color: var(--lines-color);
 }
+
+
+@media (max-width: 800px) {
+    .grid-1-1, .grid-1-auto {
+        grid-template-columns: 1fr;
+    }
+    
+}
