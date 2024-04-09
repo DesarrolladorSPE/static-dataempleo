@@ -11,7 +11,7 @@ import { chartTypes, graphLabels } from "../../../utils/chartTypes";
 import { ButtonCard } from "../ButtonCard";
 import { AllInfoGridContainer } from "../AllInfoContainer";
 
-import { actualMonth, actualYear, getMonthsUntilCurrent, yearArray } from "../../../utils/dateFunctions";
+import { getMonthsUntilCurrent, yearArray } from "../../../utils/dateFunctions";
 
 
 const InputsContainer = () => {
@@ -75,7 +75,7 @@ const InputsContainer = () => {
                         id={"graph-title"} 
                         label={"Titulo del Grafico"} 
                         placeholder="Título"
-                        onChange={context.handlegraphValuesChange}
+                        onChange={context.handleGraphValuesChange}
                         stateKey={"title"}
                         defaultValue={context.graphValues?.title}
                     />
@@ -85,7 +85,7 @@ const InputsContainer = () => {
                             id={"year"} 
                             label={"Año"} 
                             array={yearArray}
-                            onChange={context.handlegraphValuesChange}
+                            onChange={context.handleGraphValuesChange}
                             stateKey={"year"}
                             defaultValue={context.graphValues?.year}
                         />
@@ -93,7 +93,7 @@ const InputsContainer = () => {
                             id={"month"} 
                             label={"Mes"} 
                             array={monthsArray}
-                            onChange={context.handlegraphValuesChange}
+                            onChange={context.handleGraphValuesChange}
                             stateKey={"month"}
                             defaultValue={context.graphValues?.month}
                         />
@@ -104,7 +104,7 @@ const InputsContainer = () => {
                         id={"values-type"} 
                         label={"Tipo de Datos"} 
                         array={grapLabels}
-                        onChange={context.handlegraphValuesChange}
+                        onChange={context.handleGraphValuesChange}
                         stateKey={"grapLabelsType"}
                         defaultValue={context.graphValues?.grapLabelsType}
                     />
@@ -112,7 +112,7 @@ const InputsContainer = () => {
                         id={"chart-type"} 
                         label={"Tipo de Gráfico"} 
                         array={chartTypes}
-                        onChange={context.handlegraphValuesChange}
+                        onChange={context.handleGraphValuesChange}
                         stateKey={"graphType"}
                         defaultValue={context.graphValues?.graphType}
                     />
@@ -121,7 +121,7 @@ const InputsContainer = () => {
                         id={"graph-description"} 
                         label={"Descripción"} 
                         placeholder="Descripción"
-                        onChange={context.handlegraphValuesChange}
+                        onChange={context.handleGraphValuesChange}
                         stateKey={"description"}
                         defaultValue={context.graphValues?.description}
                     />
@@ -130,7 +130,7 @@ const InputsContainer = () => {
                         title="Guardar Información"
                         onClick={() => context.setOpenConfirmationModal({
                             status: true,
-                            title: "¿Desea Guardar la Gráfica con esta infromación?",
+                            title: "¿Desea Guardar la Gráfica con esta información?",
                             onConfirm: handleSubmit,
                             onCancel: () => context.setOpenConfirmationModal({status: false}),
                         })}

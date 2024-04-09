@@ -29,3 +29,28 @@
 .scrollable-wrapper-container::-webkit-scrollbar-thumb:hover {
     background: #DDDDDD;
 }
+
+
+
+
+
+textarea::-webkit-scrollbar {
+  width: 10px;
+  margin-left: 10px;
+}
+
+/* Track */
+textarea::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+textarea::-webkit-scrollbar-thumb {
+  background: #EDEDED;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+textarea::-webkit-scrollbar-thumb:hover {
+  background: #DDDDDD;
+}

@@ -39,6 +39,8 @@ const GraphsGrid = () => {
             description: item.DESCRIPCION,
             values: item.DATOS,
         })
+
+        document.documentElement.scrollTo(0, 335)
     }
 
     return(

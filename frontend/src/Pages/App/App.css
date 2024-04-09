@@ -45,11 +45,6 @@
     --delete-selection-button-color: #DA4F6A;
 }
 
-.high-contrast {
-    filter: invert(200%);
-    margin: 0;
-}
-
 @font-face {
     font-family: 'Montserrat-SemiBold';
     src: url('../../assets/fonts/Montserrat/Montserrat-SemiBold.ttf');
@@ -63,7 +58,9 @@
     src: url("../../assets/fonts/Work_Sans/static/WorkSans-Regular.ttf");
 }
 
-
+html {
+    scroll-behavior: smooth;
+}
 
 h1 {
     font-family: "Montserrat-SemiBold" !important;

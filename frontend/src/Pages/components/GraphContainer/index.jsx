@@ -1,11 +1,12 @@
 import React from "react";
 import { AppContext } from "../../../Context";
-import { WrapperContainer1 } from "../WrapperContainers";
+import { WrapperContainer1, WrapperContainer2 } from "../WrapperContainers";
 import { Graph } from "./Graph";
 import { SubTitle } from "../SubTitle";
 
 import { graphLabels } from "../../../utils/chartTypes";
 import { months } from "../../../utils/dateFunctions";
+import { ExportFiltersCard } from "../ExportFiltersCard";
 
 
 const GraphContainer = () => {
@@ -25,10 +26,7 @@ const GraphContainer = () => {
     }
 
     return(
-        <div style={{
-            width: "100%",
-            height: "100%"
-        }}>
+        <WrapperContainer2 padding={0} flexDirection="column">
             <WrapperContainer1 flexDirection="column" gap={15}>
                 <SubTitle textAlign="center">
                     {context.graphValues.title == "" ? "Gráfica" : context.graphValues.title} - {months[context.graphValues.month]} del {context.graphValues.year}
@@ -36,7 +34,9 @@ const GraphContainer = () => {
                 
                 <Graph values={values}/>
             </WrapperContainer1>
-        </div>
+            
+            <ExportFiltersCard/>
+        </WrapperContainer2>
         
     );
 }
