@@ -1,14 +1,16 @@
 import React from "react";
+import axios from "axios";
+
 import { AppContext } from "../../../Context";
 
 import { Title } from "../../components/Title";
-import { DateCard } from "../../components/DateCard";
+
+
+import { useNavigate } from "react-router-dom";
+import { HomeInfoContainer } from "../../components/HomeInfoContainer";
 
 import "./styles.css"
 
-import { useNavigate } from "react-router-dom";
-import axios from "axios";
-import { HomeInfoContainer } from "../../components/HomeInfoContainer";
 
 const Home = () => {
     const context = React.useContext(AppContext);
@@ -31,12 +33,10 @@ const Home = () => {
                 }
             })
             .catch(err => {console.log(err)})
-    }, []) 
+    }, [])
 
     return (
         <>
-            <DateCard/>
-
             <Title>
                 DATAEMPLEO
             </Title>

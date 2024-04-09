@@ -67,7 +67,7 @@ const GraphsCard = ({item, onEdit, onDelete}) => {
             <div className="flex-column center gap-20">
                 <ButtonCard 
                     title="Editar Gráfico"
-                    onClick={() => onEdit(item.id)}
+                    onClick={() => onEdit(item)}
                     padding={15}
                 >
                     <MdEdit />
@@ -85,7 +85,6 @@ const GraphsCard = ({item, onEdit, onDelete}) => {
                     <RiDeleteBin6Line  />
                 </ButtonCard>
             </div>
-
         </div>
     );
 }

@@ -1,4 +1,6 @@
 import React from "react";
+import axios from "axios";
+
 import { AppContext } from "../../../Context";
 
 import { InputCard, OptionInputCard, TextAreaCard } from "../InputsCards";
@@ -10,8 +12,6 @@ import { ButtonCard } from "../ButtonCard";
 import { AllInfoGridContainer } from "../AllInfoContainer";
 
 import { actualMonth, actualYear, getMonthsUntilCurrent, yearArray } from "../../../utils/dateFunctions";
-import axios from "axios";
-import { ConfirmationModal } from "../ConfirmationModal";
 
 
 const InputsContainer = () => {
@@ -19,26 +19,42 @@ const InputsContainer = () => {
 
 
     const grapLabels = Object.keys(graphLabels);
-    const monthsArray = Object.keys(getMonthsUntilCurrent(context.graphValues.year));
+    const monthsArray = Object.keys(getMonthsUntilCurrent(context.graphValues?.year));
 
     const values = {...context.graphValues}
 
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        axios.post(`${context.apiUri}/graph/new`, values)
-            .then(response => {
-                const {data} = response;
+        if(!context.editingGraph) {
+            axios.post(`${context.apiUri}/graph/new`, values)
+                .then(response => {
+                    const {data} = response;
 
-                if(data.Status === "Success") {
-                    console.log("Guardado Correctamente")
-                    context.setOpenConfirmationModal(false)
-                    location.reload(true);
-                } else {
-                    console.log(data.Error);
-                }
-            })
-            .catch(err => {alert(err)})
+                    if(data.Status === "Success") {
+                        location.reload(true);
+                        console.log("Guardado Correctamente")
+                    } else {
+                        console.log(data.Error);
+                    }
+                })
+                .catch(err => {alert(err)})
+
+        } else if(context.editingGraph) {
+            axios.patch(`${context.apiUri}/graph/`, values)
+                .then(response => {
+                    const {data} = response;
+
+                    if(data.Status === "Success") {
+                        location.reload(true);
+                        console.log("Editado Correctamente")
+
+                    } else {
+                        console.log(data.Error);
+                    }
+                })
+                .catch(err => {alert(err)})
+        }
     }
 
     
@@ -51,7 +67,7 @@ const InputsContainer = () => {
                     gap={20}
                 >
                     <SubTitle>
-                        Información del Gráfico
+                        {!context.editingGraph ? "Información del Gráfico" : `Editando el Gráfico con Codigo ID ${values.id}` }
                     </SubTitle>
 
                     <InputCard 
@@ -59,9 +75,9 @@ const InputsContainer = () => {
                         id={"graph-title"} 
                         label={"Titulo del Grafico"} 
                         placeholder="Título"
-                        onChange={context.handleGraphValuesChange}
+                        onChange={context.handlegraphValuesChange}
                         stateKey={"title"}
-                        defaultValue={context.graphValues.title}
+                        defaultValue={context.graphValues?.title}
                     />
 
                     <AllInfoGridContainer className="grid-1-1">
@@ -69,17 +85,17 @@ const InputsContainer = () => {
                             id={"year"} 
                             label={"Año"} 
                             array={yearArray}
-                            onChange={context.handleGraphValuesChange}
+                            onChange={context.handlegraphValuesChange}
                             stateKey={"year"}
-                            defaultValue={actualYear}
+                            defaultValue={context.graphValues?.year}
                         />
                         <OptionInputCard 
                             id={"month"} 
                             label={"Mes"} 
                             array={monthsArray}
-                            onChange={context.handleGraphValuesChange}
+                            onChange={context.handlegraphValuesChange}
                             stateKey={"month"}
-                            defaultValue={actualMonth}
+                            defaultValue={context.graphValues?.month}
                         />
                     </AllInfoGridContainer>
 
@@ -88,7 +104,7 @@ const InputsContainer = () => {
                         id={"values-type"} 
                         label={"Tipo de Datos"} 
                         array={grapLabels}
-                        onChange={context.handleGraphValuesChange}
+                        onChange={context.handlegraphValuesChange}
                         stateKey={"grapLabelsType"}
                         defaultValue={context.graphValues?.grapLabelsType}
                     />
@@ -96,7 +112,7 @@ const InputsContainer = () => {
                         id={"chart-type"} 
                         label={"Tipo de Gráfico"} 
                         array={chartTypes}
-                        onChange={context.handleGraphValuesChange}
+                        onChange={context.handlegraphValuesChange}
                         stateKey={"graphType"}
                         defaultValue={context.graphValues?.graphType}
                     />
@@ -105,8 +121,9 @@ const InputsContainer = () => {
                         id={"graph-description"} 
                         label={"Descripción"} 
                         placeholder="Descripción"
-                        onChange={context.handleGraphValuesChange}
+                        onChange={context.handlegraphValuesChange}
                         stateKey={"description"}
+                        defaultValue={context.graphValues?.description}
                     />
 
                     <ButtonCard
@@ -118,7 +135,7 @@ const InputsContainer = () => {
                             onCancel: () => context.setOpenConfirmationModal({status: false}),
                         })}
                     >
-                        Guardar
+                        Guardar Gráfico
                     </ButtonCard>
                     
                 </WrapperContainer2>

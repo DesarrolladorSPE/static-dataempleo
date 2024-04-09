@@ -1,11 +1,11 @@
 import React from "react";
-import PropTypes from "prop-types";
 import axios from "axios";
+
+import PropTypes from "prop-types";
+
 import { actualMonth, actualYear } from "../utils/dateFunctions";
 import { graphLabels } from "../utils/chartTypes";
-
 import { handleColorsByFilters } from "../utils/handleColors";
-
 
 
 export const AppContext = React.createContext();
@@ -92,6 +92,7 @@ const AppProvider = ({children}) => {
     }, []);
 
     // Valores de la Grafica
+    const [editingGraph, setEditingGraph] = React.useState(false);
     const [graphValues, setGraphValues] = React.useState({
         title: "",
         year: actualYear,
@@ -188,6 +189,8 @@ const AppProvider = ({children}) => {
                 graphValues,
                 setGraphValues,
                 handleGraphValuesChange,
+                editingGraph,
+                setEditingGraph,
 
                 //Modal de confirmación
                 openConfirmationModal,

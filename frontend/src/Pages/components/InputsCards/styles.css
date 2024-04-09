@@ -17,9 +17,12 @@ textarea {
 }
 
 /* Inputs de Texto */
+.input-container textarea {
+    min-height: 75px;
+}
 .input-container input, .input-container textarea {
     background-color: transparent;
-    color: var(--black);
+    color: var(--black-to-white-color);
     padding: 15px;
 
     border: 1px solid var(--lines-color);

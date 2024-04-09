@@ -52,7 +52,6 @@ const AppRoutes = () => {
 }
 
 const App = () => {
-
     return (
         <AppProvider>
             <HashRouter>
@@ -66,7 +65,6 @@ const App = () => {
                         <AppRoutes/>
                     </MainContainer>
                     <Footer/>
-                    
                 </Wrapper>
             </HashRouter>
         </AppProvider>

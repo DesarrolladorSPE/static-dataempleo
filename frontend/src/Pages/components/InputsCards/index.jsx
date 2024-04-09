@@ -25,7 +25,7 @@ const OptionInputCard = ({id, label, array=[], onChange, stateKey, defaultValue=
                 name={id} 
                 id={id}
                 onChange={(event) => {onChange(stateKey, event.target.value)}}
-                defaultValue={defaultValue}
+                value={defaultValue}
             >
                 {array?.map((item, index) => (
                     <option 
@@ -40,7 +40,7 @@ const OptionInputCard = ({id, label, array=[], onChange, stateKey, defaultValue=
     );
 }
 
-const TextAreaCard = ({id, label, placeholder="placeholder", onChange, required=true, stateKey}) => {
+const TextAreaCard = ({id, label, placeholder="placeholder", onChange, required=true, stateKey, defaultValue=""}) => {
     return(
         <div className="input-container">
             <label htmlFor={id}>{label} {required && "*"}</label>
@@ -50,6 +50,7 @@ const TextAreaCard = ({id, label, placeholder="placeholder", onChange, required=
                 id={id}
                 onChange={(event) => {onChange(stateKey, event.target.value)}}
                 required
+                defaultValue={defaultValue}
             />
         </div>
     );

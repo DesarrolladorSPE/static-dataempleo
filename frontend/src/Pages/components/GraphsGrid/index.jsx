@@ -8,14 +8,10 @@ import { GraphsCard } from "./GraphsCard";
 
 const GraphsGrid = () => {
     const context = React.useContext(AppContext)
-
-    const handleGraphEdit = (id) => {
-        console.log()
-    }
     
     const handleGraphDelete = (id) => {
         axios.delete(`${context.apiUri}/graph`, {
-            data: { id:id }
+            data: { id: id }
         })
         .then(response => {
             const {data} = response;
@@ -28,6 +24,21 @@ const GraphsGrid = () => {
             }
         })
         .catch(err => {alert(err)})
+    }
+
+    const handleGraphEdit = (item) => {
+        context.setEditingGraph(true);
+
+        context.setGraphValues({
+            id: item.id,
+            title: item.TITULO_GRAFICA,
+            year: item.AÑO,
+            month: item.MES,
+            grapLabelsType: item.TIPO_DATOS,
+            graphType: item.TIPO_GRAFICA,
+            description: item.DESCRIPCION,
+            values: item.DATOS,
+        })
     }
 
     return(
