@@ -2,6 +2,7 @@ import { AllInfoContainer, AllInfoGridContainer } from "../AllInfoContainer";
 import { GraphContainer } from "../GraphContainer";
 import { InputsContainer } from "../InputsContainer";
 import { GraphsGrid } from "../GraphsGrid";
+import { ExportFiltersCard } from "../ExportFiltersCard";
 
 const DashboardInfoContainer = () => {
     return(
@@ -11,6 +12,7 @@ const DashboardInfoContainer = () => {
                 
                 <GraphContainer/>
             </AllInfoGridContainer>
+            <ExportFiltersCard/>
 
             <GraphsGrid/>
             

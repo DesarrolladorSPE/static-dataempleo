@@ -59,7 +59,7 @@ const GraphsCard = ({item, onEdit, onDelete}) => {
                     </div>
                     <div className="flex-column center">
                         <p>{item.FECHA_CREACION}</p>
-                        <p><span className="font-14">Fecha de Publicación</span></p>
+                        <p><span className="font-14">Fecha de Creación</span></p>
                     </div>
                 </div>
             </div>

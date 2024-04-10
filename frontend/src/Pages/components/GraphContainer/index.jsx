@@ -33,9 +33,7 @@ const GraphContainer = () => {
                 </SubTitle>
                 
                 <Graph values={values}/>
-            </WrapperContainer1>
-            
-            <ExportFiltersCard/>
+            </WrapperContainer1>            
         </WrapperContainer2>
         
     );
