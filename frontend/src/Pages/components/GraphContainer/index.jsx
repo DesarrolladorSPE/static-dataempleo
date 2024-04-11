@@ -6,7 +6,6 @@ import { SubTitle } from "../SubTitle";
 
 import { graphLabels } from "../../../utils/chartTypes";
 import { months } from "../../../utils/dateFunctions";
-import { ExportFiltersCard } from "../ExportFiltersCard";
 
 
 const GraphContainer = () => {

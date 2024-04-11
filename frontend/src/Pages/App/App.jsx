@@ -23,6 +23,7 @@ import { LoginScreen } from "../Screens/LoginScreen";
 import { RegisterScreen } from "../Screens/RegisterScreen";
 import { DashboardScreen } from "../Screens/DashboardScreen";
 import { ConfirmationModal } from "../components/ConfirmationModal";
+import { DocumentScreen } from "../Screens/DocumentScreen";
 
 
 const Wrapper = ({children}) => {
@@ -42,6 +43,7 @@ const AppRoutes = () => {
         {path: "/home", element: <Home/>},
         {path: "/*", element: <Navigate replace to={"/home"}/>},
         {path: "/dashboard", element: <DashboardScreen/>},
+        {path: "/document", element: <DocumentScreen/>},
 
         
         {path: "/register", element: auth ? <RegisterScreen/> : <Navigate replace to={"/login"} />},

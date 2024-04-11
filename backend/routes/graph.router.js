@@ -11,7 +11,7 @@ router.get("/", async (request, response) => {
 
 	const graphs = await getQuery(query)
 
-	return response.status(200).json({graphs: graphs})
+	return response.status(200).json({graphs: graphs.reverse()})
 });
 
 router.delete("/", async (request, response) => {
