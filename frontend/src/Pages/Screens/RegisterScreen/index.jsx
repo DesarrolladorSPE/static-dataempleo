@@ -27,7 +27,10 @@ const RegisterScreen = () => {
                     navigate("/home");
                 }
             })
-            .catch(err => {console.log(err)})
+            .catch(err => {
+                navigate("/home");
+                console.log(err)
+            })
     }, []) 
 
 

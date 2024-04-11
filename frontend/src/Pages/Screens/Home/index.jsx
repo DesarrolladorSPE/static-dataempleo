@@ -32,7 +32,11 @@ const Home = () => {
                     navigate("/home");
                 }
             })
-            .catch(err => {console.log(err)})
+            .catch(err => {
+                context.setAuth(false);
+                context.setMessage(data.Error);
+                console.log(err)
+            })
     }, [])
 
     return (
