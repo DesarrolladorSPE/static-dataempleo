@@ -23,6 +23,13 @@
 .grid-075-125 {
     grid-template-columns: 0.75fr 1.25fr;
 }
+.grid-125-075 {
+    grid-template-columns: 1.25fr 0.75fr;
+}
+
+.grid-1-1-1 {
+    grid-template-columns: 1fr 1fr 1fr;
+}
 .grid-1-1 {
     grid-template-columns: 1fr 1fr;
 }

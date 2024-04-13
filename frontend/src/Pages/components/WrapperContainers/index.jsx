@@ -12,12 +12,15 @@ const WrapperContainer1 = ({children, flexDirection = "row", padding = 20, gap =
     );
 }
 
-const WrapperContainer2 = ({children, flexDirection = "row", padding = 20, gap = 15}) => {
+const WrapperContainer2 = ({children, flexDirection = "row", padding = 20, paddingVertical=null, gap = 15, justifyContent="start"}) => {
     return(
         <div className="filters-wrapper2" style={{
             flexDirection: flexDirection,
             padding: padding,
+            paddingTop: paddingVertical || padding,
+            paddingBottom: paddingVertical || padding,
             gap: gap,
+            justifyContent: justifyContent,
         }}>
             {children}
         </div>

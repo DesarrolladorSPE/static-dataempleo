@@ -1,95 +1,94 @@
-import { Page, Text, Document, StyleSheet, View, Image } from '@react-pdf/renderer';
-import { iconComplete } from '../../../assets';
+import { Page, Text, Document, StyleSheet, Image, View, Link, Font } from '@react-pdf/renderer';
+import { Montserrat, MontserratBold } from '../../../assets';
+import { PDFHeader } from '../PDFComponents/PDFHeader';
+import { PDFFooter } from '../PDFComponents/PDFFooter';
+import { pdfColors } from '../../../utils/PDFColors';
+import { PDFSubtitle, PDFText, PDFThirdtitle, PDFTitle } from '../PDFComponents/PDFTextsComponents';
+import { PDFGraph } from '../PDFComponents/PDFGraph';
+import { PDFWrapper } from '../PDFComponents/PDFWrapper';
+import { months } from '../../../utils/dateFunctions';
+import { graphLabels } from '../../../utils/chartTypes';
 
-const MyExportPDFDocument = ({graphs}) => {
+const MyExportPDFDocument = ({graphs=[], array=[]}) => {
     return(
         <Document>
             <Page size="A4" style={styles.body}>
-                <View>
-                    <Image 
-                        src={iconComplete}
-                        style={styles.image}
-                    />
-                </View>
+                <PDFHeader/>
 
+                <PDFWrapper>
+                    <PDFTitle>Demanda laboral - Boletín septiembre 2023</PDFTitle>
 
-                <Text style={styles.title}>Demanda laboral - Boletín septiembre 2023</Text>
-                <Text style={styles.text}>
-                    En este informe se describe el comportamiento de la demanda laboral nacional para el mes de septiembre del año 2023. Las descripciones se realizan sobre distintas dimensiones: sector, ocupación, educación, experiencia y salarios. La fuente de las estadísticas reportadas en este informe procede de la base de datos de las ofertas de empleo1 registradas por los empleadores a través de todos los prestadores autorizados de la red del Servicio Público de Empleo (SPE), información que es administrada por la Unidad del SPE.
-                </Text>
-                
-                <Text style={styles.title}>Septiembre 2023</Text>
-                <Text style={styles.text}>
-                    Específicamente para el mes de septiembre del año 2023, se registraron 219.013 ofertas de empleo a nivel nacional, lo que representó una disminución de 12,9 puntos porcentuales (pp) frente al mismo mes del año 2022 (251.323) y un aumento del 17,1 pp frente a los niveles prepandemia, si se compara con septiembre del año 20192. 
-                </Text>
-                <Text style={styles.subtitle}>Gráfico 1. Ofertas de empleo registradas en el mes de septiembre (2015-2023)</Text>
-                <Image src={graphs[0]} />
+                    <PDFText>En este informe se describe el comportamiento de la demanda laboral nacional para el mes de septiembre del año 2023. Las descripciones se realizan sobre distintas dimensiones: sector, ocupación, educación, experiencia y salarios. La fuente de las estadísticas reportadas en este informe procede de la base de datos de las ofertas de empleo1 registradas por los empleadores a través de todos los prestadores autorizados de la red del Servicio Público de Empleo (SPE), información que es administrada por la Unidad del SPE.</PDFText>
+                    
+                    <PDFTitle>Septiembre 2023</PDFTitle>
 
-                <Text
-                    style={styles.text}
-                    render={({pageNumber, totalPages}) => `${pageNumber} / ${totalPages}`}
-                />
+                    <PDFText>
+                        Específicamente para el mes de septiembre del año 2023, se registraron 219.013 ofertas de empleo a nivel nacional, lo que representó una disminución de 12,9 puntos porcentuales (pp) frente al mismo mes del año 2022 (251.323) y un aumento del 17,1 pp frente a los niveles prepandemia, si se compara con septiembre del año 20192. 
+                    </PDFText>
+                </PDFWrapper>
+
+                {array?.map((item, index) => (
+                    <PDFWrapper key={index}>
+                        <PDFThirdtitle>{graphLabels[item.TIPO_DATOS].name}</PDFThirdtitle>
+    
+                        <PDFText>
+                            {item.DESCRIPCION}
+                        </PDFText>
+    
+                        
+                        <PDFGraph
+                            title={`${item.TITULO_GRAFICA} - ${months[item.MES]} del ${item.AÑO}`}
+                            graph={graphs[index]}
+                        />
+                    </PDFWrapper>
+                ))}
+                <PDFTitle>Grupo de Estudio del Mercado Laboral</PDFTitle>
+                <PDFTitle>Subdirección de Administración y Seguimiento</PDFTitle>
+                <PDFFooter/>
             </Page>
         </Document> 
     );
 }
 
+Font.register({ family: 'Montserrat', fonts: [
+    { src: Montserrat },
+    { src: MontserratBold, fontWeight: 700 }
+]});
+
 
 const styles = StyleSheet.create({
-    image: {
-        // width: 200,
-        height: 100,
-        objectFit: "contain",
-
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center"
-    },
     body: {
-        padding: 35,
-        paddingHorizontal: 100,
-        paddingBottom: 65,
         display: "flex",
         flexDirection: "column",
+        alignItems: "center",
+
+        position: "relative",
+
+        paddingTop: 90,
+        paddingHorizontal: 75, 
+        paddingBottom: 110,
+
+        fontFamily: "Montserrat"
     },
-    title: {
-        fontSize: 24,
-        textAlign: 'center',
-    },
-    author: {
-        fontSize: 12,
-        textAlign: 'center',
-        marginBottom: 40,
-    },
-    subtitle: {
-        fontSize: 18,
-        margin: 12,
-    },
-    text: {
-        margin: 12,
-        fontSize: 14,
-        textAlign: 'justify',
-    },
-    header: {
-        fontSize: 12,
-        marginBottom: 20,
-        textAlign: 'center',
-        color: 'grey',
-    },
-    pageNumber: {
-        position: 'absolute',
-        fontSize: 12,
-        bottom: 30,
-        left: 0,
-        right: 0,
-        textAlign: 'center',
-        color: 'grey',
-    },
-    canvas: {
+
+    flexRow: {
         display: "flex",
-        justifyContent: "center",
-        alignItems: "center"
+        flexDirection: "row",
+        justifyContent: "flex-end",
+        alignItems: "center",
+        gap: 10,
+    },
+    borderLeft: {
+        borderLeft: 1,
+        borderLeftColor: pdfColors.yellow,
+        borderLeftWidth: 1,
+        paddingLeft: 10
+    },
+    textEnd: {
+        width: 150,
+        textAlign: "right",
     }
+
 });
 
 export { MyExportPDFDocument };

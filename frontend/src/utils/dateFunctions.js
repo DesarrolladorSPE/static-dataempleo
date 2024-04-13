@@ -9,7 +9,8 @@ const generateYearRange = (startYear, endYear) => {
 
 const actualYear = new Date().getFullYear();
 const actualMonth = new Date().getMonth() + 1;
-const yearArray = generateYearRange(2015, actualYear);
+
+
 
 const getMonthsUntilCurrent = (year) => {
     const monthsArray = {};
@@ -59,11 +60,15 @@ const obtenerFechaActual = () => {
     return fechaCapitalizada;
 }
 
+const yearArray = generateYearRange(2015, actualYear);
+const monthsArray = Object.keys(getMonthsUntilCurrent(actualYear));
+
 export { 
     yearArray, 
     months,
     actualYear,
     actualMonth,
+    monthsArray,
     obtenerFechaActual,
     getMonthsUntilCurrent,
 };
