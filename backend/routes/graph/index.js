@@ -1,17 +1,18 @@
 const express = require("express");
-const { connection } = require("../database");
+const { connection } = require("../../database");
 
-const { obtenerFechaHoraHoy } = require("../DateFunctions/index");
-const { getQuery } = require("../database/query");
+const { obtenerFechaHoraHoy } = require("../../DateFunctions/index");
+const { getQuery } = require("../../database/query");
 
 const router = express.Router();
 
 router.get("/", async (request, response) => {
 	const query = "SELECT * FROM graficas ORDER BY FECHA_CREACION DESC LIMIT 6";
+	// const query = "SELECT * FROM graficas ORDER BY FECHA_CREACION DESC";
 
 	const graphs = await getQuery(query)
 
-	return response.status(200).json({graphs: graphs.reverse()})
+	return response.status(200).json({graphs: graphs})
 });
 
 router.delete("/", async (request, response) => {

@@ -1,11 +1,14 @@
 import React from "react";
-import axios from "axios";
 
 import PropTypes from "prop-types";
 
 import { actualMonth, actualYear } from "../utils/dateFunctions";
 import { graphLabels } from "../utils/chartTypes";
 import { handleColorsByFilters } from "../utils/handleColors";
+import { handleLogout } from "../utils/handleLogout";
+
+import { api } from "../utils/api";
+import { fetchAllData } from "../utils/handleFetchData";
 
 
 export const AppContext = React.createContext();
@@ -14,12 +17,6 @@ const AppProvider = ({children}) => {
     AppProvider.propTypes = {
         children: PropTypes.node.isRequired,
     }
-
-    //API -- Cambiar el valor de la variable api segun la infraestructura de produccion
-    const domain = import.meta.env.VITE_API_DOMAIN;
-    const apiStructure = import.meta.env.VITE_API_STRUCTURE;
-
-    const api = `${domain}/${apiStructure}/v1`;
 
 	//-------------------------------------
     const [apiUri, setApiUri] = React.useState(api);
@@ -31,65 +28,6 @@ const AppProvider = ({children}) => {
     const [auth, setAuth] = React.useState(false);
     const [message, setMessage] = React.useState("");
     const [name, setName] = React.useState("");
-
-    //Logout
-    const handleLogout = () => {
-        axios.get(`${apiUri}/user/logout`)
-            .then(res => {
-                location.reload(true);
-            })
-            .catch(err => {console.log(err)})
-    }
-
-
-    // RESPONSE:
-    const [responseData, setResponseData] = React.useState({});
-
-    const fetchData = async (endpoint) => {
-        try {
-            const response = await fetch(`${apiUri}/${endpoint}`);
-
-            if (!response.status === 200) {
-                throw new Error(`Error fetching ${endpoint}: ${response.statusText}`);
-            }
-    
-            return await response.json();
-
-        }
-        catch (err) {
-            throw new Error(`Error fetching ${endpoint}: ${err.message}`);
-        }
-    };
-
-    const fetchAllData = async () => {
-        try {
-            setLoading(true);
-            const filterParams = new URLSearchParams();
-
-            const endpoints = [
-                "/graph"
-                /* otros endpoints */
-            ];
-
-            // Realizar todas las solicitudes en paralelo
-            const resultsArray = await Promise.all(endpoints.map(fetchData));
-
-            const combinedResults = resultsArray.reduce((acc, result) => {
-                return { ...acc, ...result };
-            }, {});
-            setResponseData(combinedResults);
-        } 
-        catch (err) {
-            alert(err.message);
-        }
-        finally {
-            setLoading(false);
-        }
-    };
-
-    React.useEffect(() => {
-        fetchAllData();
-    }, []);
 
     // Valores de la Grafica
     const [editingGraph, setEditingGraph] = React.useState(false);
@@ -103,10 +41,53 @@ const AppProvider = ({children}) => {
         values: [20000, 10000, 4, 7, 8, 1],
     })
     
+    const [filters, setFilters] = React.useState({
+        "AÑO": actualYear,
+        "MES": actualMonth,
+    })
+
+    // RESPONSE:
+    const [responseData, setResponseData] = React.useState({});
+
+    React.useEffect(() => {
+        const filterParams = new URLSearchParams(filters);
+        console.log(filterParams.toString());
+        const endpoints = [
+            `/graph`,
+            `/graph/export?${filterParams.toString()}`,
+        ]
+
+        const fetchData = async () => {
+            try {
+                setLoading(true);
+                const data = await fetchAllData(endpoints);
+                setResponseData(data);
+                console.log(data)
+            } 
+            catch (err) {
+                alert(err)
+            } 
+            finally {
+                setLoading(false);
+            }
+        }
+        fetchData()
+    }, [filters]);
+
+
     const handleGraphValuesChange = (key, value) => {
         const numericValue = parseInt(value) || value;
 
         setGraphValues((prevValues) => ({ 
+            ...prevValues, 
+            [key]: numericValue
+         }));
+    };
+
+    const handleFiltersChange = (key, value) => {
+        const numericValue = parseInt(value) || value;
+
+        setFilters((prevValues) => ({ 
             ...prevValues, 
             [key]: numericValue
          }));
@@ -156,6 +137,9 @@ const AppProvider = ({children}) => {
                 apiUri,
                 loading,
                 setLoading,
+
+                filters,
+                setFilters,
                 
                 auth,
                 setAuth,
@@ -189,6 +173,7 @@ const AppProvider = ({children}) => {
                 graphValues,
                 setGraphValues,
                 handleGraphValuesChange,
+                handleFiltersChange,
                 editingGraph,
                 setEditingGraph,
 
@@ -203,4 +188,4 @@ const AppProvider = ({children}) => {
     )
 }
 
-export {AppProvider}
+export { AppProvider }

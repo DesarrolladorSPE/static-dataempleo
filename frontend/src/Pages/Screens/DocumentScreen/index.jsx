@@ -1,18 +1,10 @@
 import React from 'react';
 import axios from 'axios';
-// import html2canvas from 'html2canvas';
-import { jsPDF } from 'jspdf';
 
 import { useNavigate } from "react-router-dom";
 
-import { MyExportPDFDocument } from '../../components/MyExportPDFDocument';
 import { AppContext } from '../../../Context';
-import { graphLabels } from '../../../utils/chartTypes';
-import { PDFDownloadLink } from '@react-pdf/renderer';
-import { ButtonCard } from '../../components/ButtonCard';
-import { Graph } from '../../components/GraphContainer/Graph';
-import { saveImages } from '../../../utils/saveImages';
-import { PDFContainer } from '../../components/PDFContainer';
+import { DocumentInfoContainer } from '../../components/DocumentInfoContainer';
 
 
 const DocumentScreen = () => {
@@ -43,7 +35,7 @@ const DocumentScreen = () => {
 
     return(
         <>  
-            <PDFContainer/>
+            <DocumentInfoContainer/>
         </>
     );
 }
