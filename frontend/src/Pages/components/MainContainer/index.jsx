@@ -7,6 +7,7 @@ import { IoIosArrowForward } from "react-icons/io";
 
 import "./styles.css"
 
+
 const MainContainer = ({children}) => {
     const location = useLocation();
     const text = removeFirstLetter(location.pathname)

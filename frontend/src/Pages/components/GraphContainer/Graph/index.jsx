@@ -4,7 +4,7 @@ import { AppContext } from '../../../../Context';
 
 import "./styles.css"
 
-const Graph = ({values, index=""}) => {
+const Graph = ({values={}, index=""}) => {
     const context = React.useContext(AppContext);
 
     const colors = ["rgba(255, 63, 100, .5)", "rgba(234,28,251,.5)", "rgba(28,123,251,.5)"];
@@ -14,11 +14,11 @@ const Graph = ({values, index=""}) => {
     React.useEffect(() => {
         // Configuración de los datos
         const data = {
-            labels: values.labels,
+            labels: values?.labels,
             datasets: [
                 {
-                    label: values.datasetLabel[0],
-                    data: values.data[0],
+                    label: values?.datasetLabel[0],
+                    data: values?.data[0],
 
                     backgroundColor: colors[0], // Color de fondo
                     borderColor: colors[0], // Color del borde
@@ -26,8 +26,8 @@ const Graph = ({values, index=""}) => {
                     color: highContrastStyle
                 },
                 {
-                    label: values.datasetLabel[1],
-                    data: values.data[1],
+                    label: values?.datasetLabel[1],
+                    data: values?.data[1],
 
                     backgroundColor: colors[1], // Color de fondo
                     borderColor: colors[1], // Color del borde
@@ -39,7 +39,7 @@ const Graph = ({values, index=""}) => {
 
         // Configuración del gráfico
         const options = {
-            indexAxis: values.options.indexAxis,
+            indexAxis: values?.options?.indexAxis,
             scales: {
                 y: {
                     beginAtZero: true,
@@ -61,7 +61,7 @@ const Graph = ({values, index=""}) => {
         // Crear la instancia del gráfico
         const ctx = document.getElementById(`myChart${index}`).getContext('2d');
         const myChart = new Chart(ctx, {
-            type: values.options.type,
+            type: values?.options.type,
             data: data,
             options: options,
         });
@@ -69,10 +69,10 @@ const Graph = ({values, index=""}) => {
         return () => {
             myChart.destroy();
         };
-    }, [values, colors, highContrastStyle, index]);
+    }, [values, highContrastStyle, index]);
 
     return (
-        <canvas id={`myChart${index}`} height={150}></canvas>
+        <canvas id={`myChart${index}`}></canvas>
     )
 };
 

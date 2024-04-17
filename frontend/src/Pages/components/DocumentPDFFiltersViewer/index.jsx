@@ -9,6 +9,7 @@ import { MyExportPDFDocument } from "../MyExportPDFDocument";
 import { SubTitle } from "../SubTitle";
 import { ButtonCard } from "../ButtonCard";
 import { AppContext } from "../../../Context";
+import { handleNotifications } from "../../../utils/handleNotifications";
 
 const DocumentPDFFiltersViewer = ({array, graphImages}) => {
     const context = React.useContext(AppContext)
@@ -44,9 +45,13 @@ const DocumentPDFFiltersViewer = ({array, graphImages}) => {
 
                 <PDFDownloadLink document={<MyExportPDFDocument array={array} graphs={graphImages || []} year={year} month={month}/>} fileName={`Boletin-Demanda-${months[month]}-${year}`}>
                     {({loading}) => ((loading) ? 
-                        <ButtonCard>Cargando Documento</ButtonCard>
+                        <ButtonCard onClick={() => {
+                            handleNotifications("info", "El documento esta siendo Procesado")
+                        }}>Cargando Documento</ButtonCard>
                         : 
-                        <ButtonCard>Descargar Documento</ButtonCard>
+                        <ButtonCard onClick={() => {
+                            handleNotifications("success", "Documento descargado correctamente")
+                        }}>Descargar Documento</ButtonCard>
                     )}
                 </PDFDownloadLink>
             </WrapperContainer2>

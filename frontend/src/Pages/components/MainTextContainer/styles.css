@@ -1,7 +1,7 @@
 .main-text {
     color: var(--text-color);
     text-align: start;
-    font-size: 17px;
+    font-size: 14px;
 }
 .main-text span {
     font-weight: bold;

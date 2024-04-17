@@ -6,33 +6,12 @@ import { AppContext } from "../../../Context";
 import { SubTitle } from "../../components/SubTitle";
 import { useNavigate } from "react-router-dom";
 import { Title } from "../../components/Title";
+import { AuthWrapper } from "../../components/AuthWrapper";
+import { handleNotifications } from "../../../utils/handleNotifications";
 
 const RegisterScreen = () => {
     const context = React.useContext(AppContext);
-
     const navigate = useNavigate();
-    axios.defaults.withCredentials = true;
-
-    React.useEffect(() => {
-        axios.get(`${context.apiUri}/user/`)
-            .then(response => {
-                const {data} = response;
-
-                if(data.Status === "Success") {
-                    context.setAuth(true);
-                    context.setName(data.name);
-                } else {
-                    context.setAuth(false);
-                    context.setMessage(data.Error);
-                    navigate("/home");
-                }
-            })
-            .catch(err => {
-                navigate("/home");
-                console.log(err)
-            })
-    }, []) 
-
 
     const [values, setValues] = React.useState({
         name: "",
@@ -49,17 +28,18 @@ const RegisterScreen = () => {
 
                     if(data.Status === "Success") {
                         navigate("/login");
+                        handleNotifications("success", "Usuario Creado Correctamente")
                     }
                 })
                 .catch(err => {throw new Error(err)})
         } 
         catch (err) {
-            alert(err);
+            handleNotifications("error", err);
         }
     }
 
     return(
-		<>
+		<AuthWrapper>
 			<Title>
 				Registrar Nuevo Usuario Administrador
 			</Title>
@@ -78,6 +58,7 @@ const RegisterScreen = () => {
                             placeholder="Ingrese su nombre"
                             name="name"
                             onChange={(event) => {setValues({...values, name: event.target.value})}}
+                            required
                         />
 					</div>
 					<div className="form-input-container">
@@ -87,6 +68,7 @@ const RegisterScreen = () => {
                             placeholder="Ingrese su correo"
                             name="email"
                             onChange={(event) => {setValues({...values, email: event.target.value})}}
+                            required
                         />
 					</div>
 					<div className="form-input-container">
@@ -96,12 +78,13 @@ const RegisterScreen = () => {
                             placeholder="Ingrese su contraseña"
                             name="password"
                             onChange={(event) => {setValues({...values, password: event.target.value})}}
+                            required
                         />
 					</div>
 					<button type="submit">Registrarse</button>
 				</form>
 			</div>
-		</>
+		</AuthWrapper>
     );
 }
 

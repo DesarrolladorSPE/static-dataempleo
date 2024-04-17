@@ -5,10 +5,12 @@ import { AppContext } from "../../../Context";
 import { SubTitle } from "../SubTitle";
 import { WrapperContainer1, WrapperContainer2 } from "../WrapperContainers";
 import { GraphsCard } from "./GraphsCard";
+import { handleNotifications } from "../../../utils/handleNotifications";
+import { reloadLocation } from "../../../utils/realoadLocation";
 
 const GraphsGrid = () => {
     const context = React.useContext(AppContext)
-    
+
     const handleGraphDelete = (id) => {
         axios.delete(`${context.apiUri}/graph`, {
             data: { id: id }
@@ -17,17 +19,18 @@ const GraphsGrid = () => {
             const {data} = response;
 
             if(data.Status === "Success") {
-                alert("Eliminado Correctamente")
-                location.reload(true)
+                handleNotifications("success", "Eliminado Correctamente")
+                reloadLocation()
             } else {
-                console.log(data.Error);
+                handleNotifications("error", data.Error);
             }
         })
-        .catch(err => {alert(err)})
+        .catch(err => {handleNotifications("error", err)})
     }
 
     const handleGraphEdit = (item) => {
         context.setEditingGraph(true);
+        handleNotifications("info", `Editando grafica con ID ${item.id}`)
 
         context.setGraphValues({
             id: item.id,

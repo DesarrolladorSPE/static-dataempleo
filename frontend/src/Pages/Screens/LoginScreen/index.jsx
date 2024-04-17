@@ -5,13 +5,15 @@ import { AppContext } from "../../../Context";
 
 import { SubTitle } from "../../components/SubTitle";
 import { useNavigate } from "react-router-dom";
-import { Title } from "../../components/Title";
 
 import "./styles.css";
+import { handleNotifications } from "../../../utils/handleNotifications";
+import { scrollToValue } from "../../../utils/scrollToValue";
 
 
 const LoginScreen = () => {
     const context = React.useContext(AppContext);
+    scrollToValue();
 
     const [values, setValues] = React.useState({
         email: "",
@@ -30,11 +32,12 @@ const LoginScreen = () => {
 
                 if(data.Status === "Success") {
                     navigate("/dashboard");
+                    handleNotifications("success", "Sesión Iniciada Correctamente")
                 } else {
-                    console.log(data.Error);
+                    handleNotifications("error", data.Error)
                 }
             })
-            .catch(err => {alert(err)})
+            .catch(err => {handleNotifications("error", err)})
     }
 
     return(
