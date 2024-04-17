@@ -11,7 +11,6 @@ const HomeInfoContainer = () => {
     const context = React.useContext(AppContext)
 
     const array = context.graphValues;
-    console.log(array)
 
     return(
         <AllInfoContainer>

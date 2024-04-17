@@ -64,7 +64,7 @@ const AppProvider = ({children}) => {
                 setResponseData(data);
             } 
             catch (err) {
-                handleNotifications("error", err)
+                handleNotifications("error", err.message)
             } 
             finally {
                 setLoading(false);
