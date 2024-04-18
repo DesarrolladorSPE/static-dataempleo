@@ -9,6 +9,7 @@ import { handleLogout } from "../utils/handleLogout";
 
 import { api } from "../utils/api";
 import { fetchAllData } from "../utils/handleFetchData";
+import { handleNotifications } from "../utils/handleNotifications";
 
 
 export const AppContext = React.createContext();
@@ -51,7 +52,6 @@ const AppProvider = ({children}) => {
 
     React.useEffect(() => {
         const filterParams = new URLSearchParams(filters);
-        console.log(filterParams.toString());
         const endpoints = [
             `/graph`,
             `/graph/export?${filterParams.toString()}`,
@@ -62,10 +62,9 @@ const AppProvider = ({children}) => {
                 setLoading(true);
                 const data = await fetchAllData(endpoints);
                 setResponseData(data);
-                console.log(data)
             } 
             catch (err) {
-                alert(err)
+                handleNotifications("error", err.message)
             } 
             finally {
                 setLoading(false);
@@ -129,8 +128,6 @@ const AppProvider = ({children}) => {
 
     
 
-
-
     return (
         <AppContext.Provider
             value={{
@@ -180,7 +177,6 @@ const AppProvider = ({children}) => {
                 //Modal de confirmación
                 openConfirmationModal,
                 setOpenConfirmationModal,
-
             }}
         >
             {children}

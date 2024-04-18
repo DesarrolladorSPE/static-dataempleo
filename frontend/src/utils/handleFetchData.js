@@ -4,15 +4,16 @@ const fetchData = async (endpoint) => {
     try {
         const response = await fetch(`${api}/${endpoint}`);
 
-        if (!response.status === 200) {
+        if (!(response.status == 200)) {
+            console.log("error");
             throw new Error(`Error fetching ${endpoint}: ${response.statusText}`);
         }
-
+    
         return await response.json();
+    } catch (err) {
+        throw new Error(err)
     }
-    catch (err) {
-        throw new Error(`Error fetching ${endpoint}: ${err.message}`);
-    }
+
 };
 
 const fetchAllData = async (endpoints) => {
@@ -20,16 +21,16 @@ const fetchAllData = async (endpoints) => {
         const resultsArray = await Promise.all(
             endpoints.map(fetchData)
         );
-
+    
         const combinedResults = resultsArray.reduce((acc, result) => {
             return { ...acc, ...result };
         }, {});
-
+    
         return combinedResults;
-    } 
-    catch (err) {
-        alert(err.message);
+    } catch (err) {
+        throw new Error(err)
     }
+
 };
 
 export { fetchAllData };

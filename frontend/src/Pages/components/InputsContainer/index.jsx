@@ -12,11 +12,12 @@ import { ButtonCard } from "../ButtonCard";
 import { AllInfoGridContainer } from "../AllInfoContainer";
 
 import { getMonthsUntilCurrent, yearArray } from "../../../utils/dateFunctions";
+import { handleNotifications } from "../../../utils/handleNotifications";
+import { reloadLocation } from "../../../utils/realoadLocation";
 
 
 const InputsContainer = () => {
     const context = React.useContext(AppContext);
-
 
     const grapLabels = Object.keys(graphLabels);
     const monthsArray = Object.keys(getMonthsUntilCurrent(context.graphValues?.year));
@@ -32,10 +33,10 @@ const InputsContainer = () => {
                     const {data} = response;
 
                     if(data.Status === "Success") {
-                        location.reload(true);
-                        console.log("Guardado Correctamente")
+                        handleNotifications("success", "Guardado correctamente")
+                        reloadLocation()
                     } else {
-                        console.log(data.Error);
+                        handleNotifications("error", data.Error)
                     }
                 })
                 .catch(err => {alert(err)})
@@ -46,14 +47,13 @@ const InputsContainer = () => {
                     const {data} = response;
 
                     if(data.Status === "Success") {
-                        location.reload(true);
-                        console.log("Editado Correctamente")
-
+                        handleNotifications("success", `Gráfica editada correctamente`)
+                        reloadLocation();
                     } else {
-                        console.log(data.Error);
+                        handleNotifications("error", data.Error)
                     }
                 })
-                .catch(err => {alert(err)})
+                .catch(err => {handleNotifications("error", err)})
         }
     }
 

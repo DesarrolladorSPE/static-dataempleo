@@ -1,6 +1,7 @@
 //Dependencies
 import React from "react";
 import { HashRouter, Navigate, useLocation, useRoutes } from "react-router-dom";
+import 'react-toastify/dist/ReactToastify.css';
 
 //App
 import './App.css'
@@ -24,7 +25,7 @@ import { RegisterScreen } from "../Screens/RegisterScreen";
 import { DashboardScreen } from "../Screens/DashboardScreen";
 import { ConfirmationModal } from "../components/ConfirmationModal";
 import { DocumentScreen } from "../Screens/DocumentScreen";
-
+import { ToastContainer } from "react-toastify";
 
 const Wrapper = ({children}) => {
     const location = useLocation();
@@ -36,6 +37,7 @@ const Wrapper = ({children}) => {
 }
 
 const AppRoutes = () => {
+
     const context = React.useContext(AppContext);
     const { auth } = context;
 
@@ -66,6 +68,7 @@ const App = () => {
                     <MainContainer>
                         <AppRoutes/>
                     </MainContainer>
+                    <ToastContainer/>
                     <Footer/>
                 </Wrapper>
             </HashRouter>
