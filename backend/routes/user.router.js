@@ -42,7 +42,7 @@ router.post("/register", (request, response) => {
 		});
 	}
 	catch (err) {
-		response.status(500).json({Error: err})
+		response.status(500).json({Error: err.message})
 	}
 });
 

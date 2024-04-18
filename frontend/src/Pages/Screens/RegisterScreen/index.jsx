@@ -21,21 +21,19 @@ const RegisterScreen = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        try {
-            axios.post(`${context.apiUri}/user/register`, values)
-                .then(response => {
-                    const {data} = response;
+        axios.post(`${context.apiUri}/user/register`, values)
+            .then(response => {
+                const {data} = response;
 
-                    if(data.Status === "Success") {
-                        navigate("/login");
-                        handleNotifications("success", "Usuario Creado Correctamente")
-                    }
-                })
-                .catch(err => {throw new Error(err)})
-        } 
-        catch (err) {
-            handleNotifications("error", err);
-        }
+                if(data.Status === "Success") {
+                    navigate("/login");
+                    handleNotifications("success", "Usuario Creado Correctamente")
+                } else {
+                    handleNotifications("error", data.Error)
+                }
+            })
+            .catch(err => {
+                handleNotifications("error", err.message)})
     }
 
     return(

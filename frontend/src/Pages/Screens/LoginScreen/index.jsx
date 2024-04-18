@@ -37,7 +37,8 @@ const LoginScreen = () => {
                     handleNotifications("error", data.Error)
                 }
             })
-            .catch(err => {handleNotifications("error", err)})
+            .catch(err => {
+                handleNotifications("error", err.message)})
     }
 
     return(
