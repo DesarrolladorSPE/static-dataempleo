@@ -5,7 +5,6 @@ import 'react-toastify/dist/ReactToastify.css';
 
 //App
 import './App.css'
-import "./App.css"
 
 //Context
 import { AppContext, AppProvider } from "../../Context";
