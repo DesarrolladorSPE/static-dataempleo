@@ -44,12 +44,12 @@ const AppRoutes = () => {
     let routes = useRoutes([
         {path: "/home", element: <Home/>},
         {path: "/*", element: <Navigate replace to={"/home"}/>},
-        {path: "/dashboard", element: <DashboardScreen/>},
-        {path: "/document", element: <DocumentScreen/>},
+        // {path: "/dashboard", element: <DashboardScreen/>},
+        // {path: "/document", element: <DocumentScreen/>},
 
         
-        {path: "/register", element: auth ? <RegisterScreen/> : <Navigate replace to={"/login"} />},
-        {path: "/login", element: !auth ? <LoginScreen/> : <Navigate replace to={"/home"}/>},
+        // {path: "/register", element: auth ? <RegisterScreen/> : <Navigate replace to={"/login"} />},
+        // {path: "/login", element: !auth ? <LoginScreen/> : <Navigate replace to={"/home"}/>},
     ]);
     
     return routes;

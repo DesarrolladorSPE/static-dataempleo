@@ -9,7 +9,7 @@ const Home = () => {
     return (
         <AuthWrapper>
             <Title>
-                DATAEMPLEO
+                DATAEMPLEO Estatico
             </Title>
             <HomeInfoContainer/>
         </AuthWrapper>
