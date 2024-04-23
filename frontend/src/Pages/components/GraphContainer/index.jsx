@@ -1,10 +1,6 @@
-import React from "react";
-import { AppContext } from "../../../Context";
 import { WrapperContainer1, WrapperContainer2 } from "../WrapperContainers";
 import { Graph } from "./Graph";
 import { SubTitle } from "../SubTitle";
-
-import { months } from "../../../utils/dateFunctions";
 
 import { graphValuesConfig } from "../../../utils/graphConfig";
 
@@ -15,7 +11,7 @@ const GraphContainer = ({array, onConfig=graphValuesConfig}) => {
         <WrapperContainer2 padding={0} flexDirection="column">
             <WrapperContainer1 flexDirection="column" gap={15}>
                 <SubTitle textAlign="center">
-                    {array?.title == "" ? "Gráfica" : array?.title} - {months[array?.month]} del {array?.year}
+                    {array?.title}
                 </SubTitle>
                 
                 <Graph values={values}/>

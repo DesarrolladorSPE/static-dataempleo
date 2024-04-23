@@ -1,4 +1,4 @@
-import { yearArray } from "./dateFunctions";
+import { generateYearRange, yearArray } from "./dateFunctions";
 
 const chartTypes = [
     "bar", 
@@ -13,7 +13,7 @@ const graphLabels = {
     ofertasRegistradas: {
         indexAxis: "x",
         type: "line",
-        array: yearArray.reverse(),
+        array: generateYearRange(2015, 2023).reverse(),
         name: "Ofertas de Empleo Registradas",
     },
     ramaDeActividad: {

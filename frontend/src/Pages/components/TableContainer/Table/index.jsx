@@ -1,17 +1,31 @@
+import { anexoDemandaLaboral, colocacionesFebrero, ofertaLaboral } from "../../../../assets";
 import "./styles.css";
 
 import { IoIosArrowForward } from "react-icons/io";
 
 const Table = () => {
+    const handleDounwload = (url, name) => {
+        const pdfUrl = url;
+        const link = document.createElement("a");
+
+        link.href = pdfUrl;
+        link.download = name;
+        link.click();
+    }
 
     const tableData = [
-        ['Boletín Técnico Demanda Laboral (ofertas de empleo)', '30 de Noviembre', 'PDF', 'Descargar'],
-        ['Anexo de Demanda Laboral (ofertas de empleo)', '30 de Noviembre', 'Excel', 'Descargar'],
-        ['Boletín técnico de oferta laboral (buscadores de empleo)', '30 de Noviembre', 'PDF', 'Descargar'],
-        ['Anexo oferta laboral (buscadores de empleo)', '30 de Noviembre', 'Excel', 'Descargar'],
-        ['Boletín Técnico colocaciones', '30 de Noviembre', 'PDF', 'Descargar'],
-        ['Anexo colocaciones', '30 de Noviembre', 'Excel', 'Descargar'],
-        ['Presentación (rueda de prensa)', '30 de Noviembre', 'PDF', 'Descargar'],
+        {
+            array: ['Anexo Demanda Laboral Año 2024 Marzo', 'Marzo', 'Descargar'],
+            file: anexoDemandaLaboral,
+        },
+        {
+            array: ['Oferta laboral Marzo', 'Marzo', 'Descargar'],
+            file: ofertaLaboral,
+        },
+        {
+            array: ['Colocaciones febrero 2024', 'Febrero', 'Descargar'],
+            file: colocacionesFebrero,
+        },
     ];
 
     return (
@@ -20,17 +34,16 @@ const Table = () => {
                 <tr>
                     <th>Documento</th>
                     <th>Fecha de Publicación</th>
-                    <th>Formato</th>
                     <th>Acción</th>
                 </tr>
             </thead>
             <tbody>
                 {tableData.map((row, index) => (
                     <tr key={index}>
-                        {row.map((cell, cellIndex) => (
-                            <td key={cellIndex}>
+                        {row?.array?.map((cell, cellIndex) => (
+                            <td key={cellIndex} onClick={() => handleDounwload(row.file, row.array[0])}>
                                 {cellIndex === 0 ? (
-                                    <a href={`#link-${index + 1}`} id={`link-${index + 1}`}>
+                                    <a>
                                         <IoIosArrowForward/>
                                         {cell}
                                     </a>

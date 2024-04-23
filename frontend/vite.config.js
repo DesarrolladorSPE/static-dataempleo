@@ -9,5 +9,6 @@ dotenv.config({ path: './app.properties.env' });
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: './'
+  base: './',
+  assetsInclude: "**/*.xlsx"
 })

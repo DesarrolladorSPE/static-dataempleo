@@ -2,11 +2,8 @@ import { WrapperContainer2 } from "../WrapperContainers";
 import { SubTitle } from "../SubTitle";
 
 import "./styles.css";
-import { AppContext } from "../../../Context";
-import React from "react";
 
-const MainTextContainer = ({item}) => {
-    const context = React.useContext(AppContext)
+const MainTextContainer = () => {
 
     return(
         <>
@@ -15,9 +12,14 @@ const MainTextContainer = ({item}) => {
                 padding={0}
                 gap={20}
             >
-                <SubTitle>{item?.title || context.responseData?.graphs?.[0]?.TITULO_GRAFICA}</SubTitle>
+                <SubTitle>Septiembre 2023</SubTitle>
 
-                <p className="main-text">{item?.description || context.responseData?.graphs?.[0]?.DESCRIPCION}</p>
+                <p className="main-text">
+                Específicamente para el mes de septiembre del año 2023, se registraron 219.013 ofertas de empleo 
+                a nivel nacional, lo que representó una disminución de 12,9 puntos porcentuales (pp) frente al 
+                mismo mes del año 2022 (251.323) y un aumento del 17,1 pp frente a los niveles prepandemia, si 
+                se compara con septiembre del año 2019.
+                </p>
             </WrapperContainer2>
         </>
         

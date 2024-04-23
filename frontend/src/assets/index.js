@@ -8,6 +8,11 @@ import logoCoPotencia from "./log_co_potencia.png"
 import Montserrat from "./fonts/Montserrat/Montserrat-Regular.ttf";
 import MontserratBold from "./fonts/Montserrat/Montserrat-Bold.ttf";
 
+import anexoDemandaLaboral from "./Files/demandaLaboral.xlsx";
+import colocacionesFebrero from "./Files/colocacionesFebrero.xlsx";
+import ofertaLaboral from "./Files/Oferta_laboral.xlsx";
+
+
 export {
     banner,
     datosLista,
@@ -16,5 +21,9 @@ export {
     iconComplete,
     logoCoPotencia,
     Montserrat,
-    MontserratBold
+    MontserratBold,
+
+    anexoDemandaLaboral,
+    colocacionesFebrero,
+    ofertaLaboral,
 }

@@ -1,26 +1,28 @@
-import React from "react";
-import { AppContext } from "../../../Context";
 import { AllInfoContainer, AllInfoGridContainer } from "../AllInfoContainer";
 import { GraphContainer } from "../GraphContainer";
 import { MainTextContainer } from "../MainTextContainer";
-import { PaginationButtons } from "../PaginationButtons";
 import { TableContainer } from "../TableContainer";
-import { graphExportConfig } from "../../../utils/graphConfig";
 
 const HomeInfoContainer = () => {
-    const context = React.useContext(AppContext)
 
-    const array = context.graphValues;
+    const array = {
+        title: "Grafico 1. Ofertas de empleo registradas en el mes de septiembre (2015-2023)",
+        year: 2023,
+        month: 9,
+        grapLabelsType: "ofertasRegistradas",
+        graphType: "line",
+        description: "",
+        values: [67190, 123919, 151195, 172836, 187067, 103401, 191526, 251323, 219013],
+    };
 
     return(
         <AllInfoContainer>
             <AllInfoGridContainer>
-                <MainTextContainer item={array}/>
+                <MainTextContainer/>
                 
                 <GraphContainer array={array}/>
             </AllInfoGridContainer>
 
-            <PaginationButtons/>
             <TableContainer/>
         </AllInfoContainer>
     );

@@ -26,75 +26,75 @@ const AppProvider = ({children}) => {
     const [loading, setLoading] = React.useState(null);
 
     //Login Auth
-    const [auth, setAuth] = React.useState(false);
-    const [message, setMessage] = React.useState("");
-    const [name, setName] = React.useState("");
+    // const [auth, setAuth] = React.useState(false);
+    // const [message, setMessage] = React.useState("");
+    // const [name, setName] = React.useState("");
 
-    // Valores de la Grafica
-    const [editingGraph, setEditingGraph] = React.useState(false);
-    const [graphValues, setGraphValues] = React.useState({
-        title: "",
-        year: actualYear,
-        month: actualMonth,
-        grapLabelsType: "ofertasRegistradas",
-        graphType: "bar",
-        description: "",
-        values: [20000, 10000, 4, 7, 8, 1],
-    })
+    // // Valores de la Grafica
+    // const [editingGraph, setEditingGraph] = React.useState(false);
+    // const [graphValues, setGraphValues] = React.useState({
+    //     title: "",
+    //     year: actualYear,
+    //     month: actualMonth,
+    //     grapLabelsType: "ofertasRegistradas",
+    //     graphType: "bar",
+    //     description: "",
+    //     values: [20000, 10000, 4, 7, 8, 1],
+    // })
     
-    const [filters, setFilters] = React.useState({
-        "AÑO": actualYear,
-        "MES": actualMonth,
-    })
+    // const [filters, setFilters] = React.useState({
+    //     "AÑO": actualYear,
+    //     "MES": actualMonth,
+    // })
 
-    // RESPONSE:
-    const [responseData, setResponseData] = React.useState({});
+    // // RESPONSE:
+    // const [responseData, setResponseData] = React.useState({});
 
-    React.useEffect(() => {
-        const filterParams = new URLSearchParams(filters);
-        const endpoints = [
-            `/graph`,
-            `/graph/export?${filterParams.toString()}`,
-        ]
+    // React.useEffect(() => {
+    //     const filterParams = new URLSearchParams(filters);
+    //     const endpoints = [
+    //         `/graph`,
+    //         `/graph/export?${filterParams.toString()}`,
+    //     ]
 
-        const fetchData = async () => {
-            try {
-                setLoading(true);
-                const data = await fetchAllData(endpoints);
-                setResponseData(data);
-            } 
-            catch (err) {
-                handleNotifications("error", err.message)
-            } 
-            finally {
-                setLoading(false);
-            }
-        }
-        fetchData()
-    }, [filters]);
+    //     const fetchData = async () => {
+    //         try {
+    //             setLoading(true);
+    //             const data = await fetchAllData(endpoints);
+    //             setResponseData(data);
+    //         } 
+    //         catch (err) {
+    //             handleNotifications("error", err.message)
+    //         } 
+    //         finally {
+    //             setLoading(false);
+    //         }
+    //     }
+    //     fetchData()
+    // }, [filters]);
 
 
-    const handleGraphValuesChange = (key, value) => {
-        const numericValue = parseInt(value) || value;
+    // const handleGraphValuesChange = (key, value) => {
+    //     const numericValue = parseInt(value) || value;
 
-        setGraphValues((prevValues) => ({ 
-            ...prevValues, 
-            [key]: numericValue
-         }));
-    };
+    //     setGraphValues((prevValues) => ({ 
+    //         ...prevValues, 
+    //         [key]: numericValue
+    //      }));
+    // };
 
-    const handleFiltersChange = (key, value) => {
-        const numericValue = parseInt(value) || value;
+    // const handleFiltersChange = (key, value) => {
+    //     const numericValue = parseInt(value) || value;
 
-        setFilters((prevValues) => ({ 
-            ...prevValues, 
-            [key]: numericValue
-         }));
-    };
+    //     setFilters((prevValues) => ({ 
+    //         ...prevValues, 
+    //         [key]: numericValue
+    //      }));
+    // };
 
-    React.useEffect(() => {
-        handleGraphValuesChange("graphType", graphLabels[graphValues.grapLabelsType].type)
-    }, [graphValues.grapLabelsType]);
+    // React.useEffect(() => {
+    //     handleGraphValuesChange("graphType", graphLabels[graphValues.grapLabelsType].type)
+    // }, [graphValues.grapLabelsType]);
     
 
     //CAMBIO DE COLORES
@@ -135,18 +135,18 @@ const AppProvider = ({children}) => {
                 loading,
                 setLoading,
 
-                filters,
-                setFilters,
+                // filters,
+                // setFilters,
                 
-                auth,
-                setAuth,
-                handleLogout,
+                // auth,
+                // setAuth,
+                // handleLogout,
                 
-                name,
-                setName,
+                // name,
+                // setName,
 
-                message,
-                setMessage,
+                // message,
+                // setMessage,
 
                 //NavBar Responsive
                 toggleNavBarResponsive,
@@ -158,8 +158,8 @@ const AppProvider = ({children}) => {
 
 
                 //Informacion desde el serveidor
-                responseData,
-                setResponseData,
+                // responseData,
+                // setResponseData,
 
                 //COLORES POR FILTRO
                 handleColorsByFilters,
@@ -167,12 +167,12 @@ const AppProvider = ({children}) => {
                 setActiveHighContrast,
 
                 // Valores de la Grafica
-                graphValues,
-                setGraphValues,
-                handleGraphValuesChange,
-                handleFiltersChange,
-                editingGraph,
-                setEditingGraph,
+                // graphValues,
+                // setGraphValues,
+                // handleGraphValuesChange,
+                // handleFiltersChange,
+                // editingGraph,
+                // setEditingGraph,
 
                 //Modal de confirmación
                 openConfirmationModal,

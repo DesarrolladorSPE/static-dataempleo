@@ -10,24 +10,14 @@ const Graph = ({values={}, index=""}) => {
     const colors = ["rgba(255, 63, 100, .5)", "rgba(234,28,251,.5)", "rgba(28,123,251,.5)"];
     let highContrastStyle = context.activeHighContrast ? "#FFF" : "#000";
 
-
     React.useEffect(() => {
         // Configuración de los datos
         const data = {
             labels: values?.labels,
             datasets: [
                 {
-                    label: values?.datasetLabel[0],
-                    data: values?.data[0],
-
-                    backgroundColor: colors[0], // Color de fondo
-                    borderColor: colors[0], // Color del borde
-                    borderWidth: 1,
-                    color: highContrastStyle
-                },
-                {
-                    label: values?.datasetLabel[1],
-                    data: values?.data[1],
+                    label: values?.datasetLabel,
+                    data: values?.data,
 
                     backgroundColor: colors[1], // Color de fondo
                     borderColor: colors[1], // Color del borde

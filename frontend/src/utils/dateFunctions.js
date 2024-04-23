@@ -71,4 +71,5 @@ export {
     monthsArray,
     obtenerFechaActual,
     getMonthsUntilCurrent,
+    generateYearRange,
 };

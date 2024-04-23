@@ -7,7 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import './App.css'
 
 //Context
-import { AppContext, AppProvider } from "../../Context";
+import { AppProvider } from "../../Context";
 
 
 //Screens
@@ -19,11 +19,6 @@ import { NavBarResponsive } from "../components/NavBarResponsive";
 import { Footer } from "../components/Footer";
 import { AccesibilityCard } from "../components/AccesibilityCard";
 import { GovNavbar } from "../components/GovNavbars";
-import { LoginScreen } from "../Screens/LoginScreen";
-import { RegisterScreen } from "../Screens/RegisterScreen";
-import { DashboardScreen } from "../Screens/DashboardScreen";
-import { ConfirmationModal } from "../components/ConfirmationModal";
-import { DocumentScreen } from "../Screens/DocumentScreen";
 import { ToastContainer } from "react-toastify";
 
 const Wrapper = ({children}) => {
@@ -36,19 +31,9 @@ const Wrapper = ({children}) => {
 }
 
 const AppRoutes = () => {
-
-    const context = React.useContext(AppContext);
-    const { auth } = context;
-
     let routes = useRoutes([
         {path: "/home", element: <Home/>},
         {path: "/*", element: <Navigate replace to={"/home"}/>},
-        // {path: "/dashboard", element: <DashboardScreen/>},
-        // {path: "/document", element: <DocumentScreen/>},
-
-        
-        // {path: "/register", element: auth ? <RegisterScreen/> : <Navigate replace to={"/login"} />},
-        // {path: "/login", element: !auth ? <LoginScreen/> : <Navigate replace to={"/home"}/>},
     ]);
     
     return routes;
@@ -62,7 +47,6 @@ const App = () => {
                     <GovNavbar/>
                     <Navbar/>
                     <NavBarResponsive/>
-                    <ConfirmationModal/>
                     <AccesibilityCard/>
                     <MainContainer>
                         <AppRoutes/>
