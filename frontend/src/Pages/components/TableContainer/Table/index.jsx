@@ -1,17 +1,10 @@
 import { anexoDemandaLaboral, colocacionesFebrero, ofertaLaboral } from "../../../../assets";
+import { handleDounwload } from "../../../../utils/downloadFile";
 import "./styles.css";
 
 import { IoIosArrowForward } from "react-icons/io";
 
 const Table = () => {
-    const handleDounwload = (url, name) => {
-        const pdfUrl = url;
-        const link = document.createElement("a");
-
-        link.href = pdfUrl;
-        link.download = name;
-        link.click();
-    }
 
     const tableData = [
         {
@@ -41,7 +34,9 @@ const Table = () => {
                 {tableData.map((row, index) => (
                     <tr key={index}>
                         {row?.array?.map((cell, cellIndex) => (
-                            <td key={cellIndex} onClick={() => handleDounwload(row.file, row.array[0])}>
+                            <td key={cellIndex} onClick={() => {
+                                handleDounwload(row.file, row.array[0])
+                            }}>
                                 {cellIndex === 0 ? (
                                     <a>
                                         <IoIosArrowForward/>
