@@ -81,15 +81,15 @@
 	height: 3rem;
 	padding: 5px 15px;
 }
-.container-logo-header-govco .logo-header-govco img {
+.container-logo-header-govco .logo-header-govco a img {
 	height: 100%;
 	object-fit: contain;
 }
-.container-logo-header-govco .logo-header-govco img:nth-child(1) {
+.container-logo-header-govco .logo-header-govco a:nth-child(1) img {
 	padding-right: 24px;
 	border-right: 2px solid black;
 }
-.container-logo-header-govco .logo-header-govco img:nth-child(2) {
+.container-logo-header-govco .logo-header-govco a:nth-child(2) img {
 	padding-left: 24px;
 }
 

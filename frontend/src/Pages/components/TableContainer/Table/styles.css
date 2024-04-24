@@ -48,3 +48,8 @@
     text-decoration: underline;
     color: var(--lines-color2);
 }
+
+.my-table a svg {
+    width: 20px;
+    height: 20px;
+}

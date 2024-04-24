@@ -1,22 +1,26 @@
+import React from "react";
+import { AppContext } from "../../../../Context";
 import { anexoDemandaLaboral, colocacionesFebrero, ofertaLaboral } from "../../../../assets";
 import { handleDounwload } from "../../../../utils/downloadFile";
 import "./styles.css";
 
-import { IoIosArrowForward } from "react-icons/io";
+import { PiMicrosoftExcelLogoFill } from "react-icons/pi";
 
 const Table = () => {
+    const context = React.useContext(AppContext)
+    const colors = ["#e0161e", "#69CE27", "#3366cc"];
 
     const tableData = [
         {
-            array: ['Anexo Demanda Laboral Año 2024 Marzo', 'Marzo', 'Descargar'],
+            array: ['Anexo Estadistico de Demanda Laboral', 'Marzo 2024', 'Descargar'],
             file: anexoDemandaLaboral,
         },
         {
-            array: ['Oferta laboral Marzo', 'Marzo', 'Descargar'],
+            array: ['Oferta laboral', 'Marzo 2024', 'Descargar'],
             file: ofertaLaboral,
         },
         {
-            array: ['Colocaciones febrero 2024', 'Febrero', 'Descargar'],
+            array: ['Colocaciones', 'Febrero 2024', 'Descargar'],
             file: colocacionesFebrero,
         },
     ];
@@ -39,7 +43,7 @@ const Table = () => {
                             }}>
                                 {cellIndex === 0 ? (
                                     <a>
-                                        <IoIosArrowForward/>
+                                        <PiMicrosoftExcelLogoFill fill={context.activeHighContrast ? "#FFFFFF" : colors[index]}/>
                                         {cell}
                                     </a>
 

@@ -18,12 +18,16 @@ const GovNavbar = () => {
                 <NavButtons/>
             </nav>
             <div className="container-logo-header-govco">
-                <a className="logo-header-govco" rel="noopener noreferrer" target="_blank" href="https://www.serviciodeempleo.gov.co/portada">
+                <div className="logo-header-govco" rel="noopener noreferrer" target="_blank" href="https://www.serviciodeempleo.gov.co/portada">
                     <span>
-                        <img src={iconComplete} alt="" />
-                        <img src={banner} alt="" />
+                        <a rel="noopener noreferrer" target="_blank" href="https://www.serviciodeempleo.gov.co/portada">
+                            <img src={iconComplete} alt="" />
+                        </a>
+                        <a rel="noopener noreferrer" href="http://localhost:5173">
+                            <img src={banner} alt="" />
+                        </a>
                     </span>
-                </a>
+                </div>
                 {context.auth &&
                     <p>Bienvenido {context.name}</p>
                 }
