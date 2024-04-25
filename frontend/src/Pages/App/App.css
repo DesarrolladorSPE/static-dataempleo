@@ -11,7 +11,7 @@
     --white-to-black-color: #FFFFFF;
     --lines-color: rgba(104, 29, 53, 1);
     --lines-color2: rgba(104, 29, 53, 1);
-    --text-color: "#717171";
+    --text-color: #717171;
 
 
     --icon-colors: #DCDCDC;
@@ -69,4 +69,25 @@ h1 {
 p, span, div {
     font-family: "Montserrat-Regular" !important; 
 
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--main-body-color);
+
+    transition: all 0.2s ease;
+}
+* {
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: transparent;
+}
+button {
+    border: none;
 }

@@ -2,6 +2,7 @@
 import React from "react";
 import { HashRouter, Navigate, useLocation, useRoutes } from "react-router-dom";
 import 'react-toastify/dist/ReactToastify.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 //App
 import './App.css'

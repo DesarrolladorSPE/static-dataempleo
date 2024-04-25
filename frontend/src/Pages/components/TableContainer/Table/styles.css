@@ -37,16 +37,16 @@
 .my-table a {
     width: 100%;
 
-    text-decoration: none;
-    color: var(--text-color);
+    text-decoration: none !important;
+    color: var(--text-color) !important;
 
     display: flex;
     align-items: center;
     gap: 10px;
 } 
 .my-table a:hover {
-    text-decoration: underline;
-    color: var(--lines-color2);
+    text-decoration: underline !important;
+    color: var(--lines-color2) !important;
 }
 
 .my-table a svg {
