@@ -6,7 +6,7 @@ const TableContainer = () => {
     return(
         <WrapperContainer2 flexDirection="column" gap={5} padding={25}>
             <Title color="#000">
-                {`Tabla`}
+                DataEmpleo
             </Title>
             <Table/>
         </WrapperContainer2>
