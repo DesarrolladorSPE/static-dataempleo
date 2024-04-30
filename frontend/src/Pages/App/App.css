@@ -6,12 +6,13 @@
     --confirm-color: #069169;
     --cancel-color: #D31F3F;
     --time-color: #3366cc;
-    --gov-accesibility-card: #681d35;
+    --gov-accesibility-card: #E0161E;
     --black-to-white-color: #000000;
     --white-to-black-color: #FFFFFF;
-    --lines-color: rgba(104, 29, 53, 1);
-    --lines-color2: rgba(104, 29, 53, 1);
+    --lines-color: #681d35;
+    --lines-color2: #681d35;
     --text-color: #717171;
+    --all-info-container-color: #E6EFFD;
 
 
     --icon-colors: #DCDCDC;
@@ -68,7 +69,6 @@ h1 {
 
 p, span, div {
     font-family: "Montserrat-Regular" !important; 
-
 }
 
 body {
@@ -78,6 +78,7 @@ body {
     background: var(--main-body-color);
 
     transition: all 0.2s ease;
+    box-sizing: border-box;
 }
 * {
     padding: 0;

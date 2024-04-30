@@ -21,6 +21,7 @@ import { Footer } from "../components/Footer";
 import { AccesibilityCard } from "../components/AccesibilityCard";
 import { GovNavbar } from "../components/GovNavbars";
 import { ToastContainer } from "react-toastify";
+import { NavImagesCard } from "../components/NavImagesCard";
 
 const Wrapper = ({children}) => {
     const location = useLocation();
@@ -46,10 +47,11 @@ const App = () => {
             <HashRouter>
                 <Wrapper>
                     <GovNavbar/>
-                    <Navbar/>
-                    <NavBarResponsive/>
                     <AccesibilityCard/>
                     <MainContainer>
+                        <NavImagesCard/>
+                        <Navbar/>
+                        <NavBarResponsive/>
                         <AppRoutes/>
                     </MainContainer>
                     <ToastContainer/>

@@ -4,7 +4,6 @@ import { HomeInfoContainer } from "../../components/HomeInfoContainer";
 import "./styles.css"
 import React from "react";
 import { scrollToValue } from "../../../utils/scrollToValue";
-import { DropDownCard } from "../../components/DropDownCard";
 
 const Home = () => {
     React.useEffect(() => {
@@ -12,7 +11,6 @@ const Home = () => {
     },[])
     return (
         <>
-            <DropDownCard/>
             <Title>
                 DATAEMPLEO
             </Title>

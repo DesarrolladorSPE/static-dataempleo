@@ -1,0 +1,11 @@
+.slider-container {
+    width: 100%;
+
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    border-bottom: 3px solid var(--gov-accesibility-card);
+    margin-bottom: 20px;
+}
