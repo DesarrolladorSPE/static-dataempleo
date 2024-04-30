@@ -8,10 +8,10 @@ import { DropDownCard } from '../DropDownCard';
 const MainContainer = ({children}) => {
     return(
         <div className="main-container">
-            <div className="home-container">
-                <DropDownCard/>
+            <DropDownCard/>
+            <DateCard/>
 
-                <DateCard/>
+            <div className="home-container">
                 {children}
             </div>
         </div>

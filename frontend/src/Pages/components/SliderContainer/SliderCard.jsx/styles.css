@@ -1,0 +1,44 @@
+.slider-card {
+    width: 100%;
+
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    justify-content: center;
+    align-items: center;
+
+    border-top: 1px solid transparent;
+    border-right: 1px solid transparent;
+    border-left: 1px solid transparent;
+
+    transition: all 0.2s ease;
+
+    padding: 10px 25px;
+}
+.slider-card:hover {
+    border-top: 1px solid var(--gov-accesibility-card);
+    border-right: 1px solid var(--gov-accesibility-card);
+    border-left: 1px solid var(--gov-accesibility-card);
+}
+
+.slider-card svg {
+    width: 60px;
+    height: 60px;
+    fill: var(--black-to-white-color);
+}
+
+.slider-info-container {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2.5px;
+}
+.slider-info-container p{
+    margin: 0;
+    color: var(--text-color);
+}
+.slider-info-container p:nth-child(1){
+    font-weight: bold;
+}

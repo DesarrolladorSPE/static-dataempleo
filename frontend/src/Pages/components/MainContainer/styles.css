@@ -2,16 +2,25 @@
 	width: 100%;
 	display: flex;
 	box-sizing: border-box;
+
+    position: relative;
+
+    padding: 90px 25px 50px;
 }
 
 .home-container {
-    padding: 100px 50px 75px;
+    width: 100%;
+
+    padding: 50px 30px;
 
     box-sizing: border-box;
-    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
 
+    border-radius: 20px;
+
     position: relative;
+
+    background-color: var(--all-info-container-color);
 }
