@@ -22,19 +22,19 @@ const Table = () => {
             )
         } else if (cellIndex === 2) {
             return(
-                <td onClick={() => handleOpenFile(row.link || row.file)}>
+                <td key={cellIndex} onClick={() => handleOpenFile(row.link || row.file)}>
                     {cell}
                 </td>
             )
         } else if (cellIndex === 3) {
             return(
-                <td onClick={() => handleDounwload(row.file, row.array[0])}>
+                <td key={cellIndex} onClick={() => handleDounwload(row.file, row.array[0])}>
                     {cell}
                 </td>
             )
         } else {
             return(
-                <td >
+                <td key={cellIndex}>
                     {cell}
                 </td>
             );
