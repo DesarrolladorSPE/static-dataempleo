@@ -6,42 +6,45 @@ const tableData = [
     {
         array: ['Anexo Estadistico de Demanda Laboral', fecha, "Abrir", 'Descargar'],
         file: anexoDemandaLaboral,
-        link: "https://1drv.ms/x/s!AtboDZo1OdKclUXIqSrQUJtnx4aP?e=FNC7a6"
+        link: "https://docs.google.com/spreadsheets/d/1XAS4RAz12k_RiqDWfKGdpV46UxHXynDV/edit?usp=sharing&ouid=104411060894586684778&rtpof=true&sd=true"
     },
     {
         array: ['Oferta laboral', fecha, "Abrir", 'Descargar'],
         file: ofertaLaboral,
-        link: "https://1drv.ms/x/s!AtboDZo1OdKclUT5x8gejxYvYV69?e=8dUgZZ"
+        link: "https://docs.google.com/spreadsheets/d/1hz4W1VOTVCDbSHHMfGKn7bcEraJf57DM/edit?usp=sharing&ouid=104411060894586684778&rtpof=true&sd=true"
     },
     {
         array: ['Colocaciones', fecha, "Abrir", 'Descargar'],
         file: colocacionesFebrero,
-        link: "https://1drv.ms/x/s!AtboDZo1OdKclUNFaijTp23-BlL8?e=iFFnIN"
+        link: "https://docs.google.com/spreadsheets/d/1RcNs6SzcVyhIepDGgjTH9QImtXMOpZRL/edit?usp=sharing&ouid=104411060894586684778&rtpof=true&sd=true"
     },
+    
+
+
     {
         array: ['Anexo de oferentes registrados al mes de febrero del año 2024', fecha, "Abrir", 'Descargar'],
+        file: oferentesRegistradosSISEFebrero,
+        link: "https://docs.google.com/spreadsheets/d/1ymORjYpU7gzofmWQMB9O2cmlZaaXe-_P/edit?usp=sharing&ouid=104411060894586684778&rtpof=true&sd=true",
+    },
+    {
+        array: ['Boletín de oferentes registrados en el SISE al mes de febrero del año 2024', fecha, "Abrir", 'Descargar'],
         file: ofertaLaboralFebrero,
         link: null,
     },
     {
-        array: ['Boletín de oferentes registrados en el SISE al mes de febrero del año 2024', fecha, "Abrir", 'Descargar'],
+        array: ['Anexo de demanda laboral al mes de marzo del año 2024', fecha, "Abrir", 'Descargar'],
+        file: ofertasEmpleoRegistradasSistema,
+        link: "https://docs.google.com/spreadsheets/d/1I5XyAkuEmjxczGg47GSv2smCbWsvuD1M/edit?usp=sharing&ouid=104411060894586684778&rtpof=true&sd=true",
+    },
+    {
+        array: ['Boletín de demanda laboral al mes de marzo del año 2024', fecha, "Abrir", 'Descargar'],
         file: demandaLaboralMarzo,
         link: null,
     },
     {
-        array: ['Anexo de demanda laboral al mes de marzo del año 2024', fecha, "Abrir", 'Descargar'],
-        file: colocacionesSISEFebrero,
-        link: null,
-    },
-    {
-        array: ['Boletín de demanda laboral al mes de marzo del año 2024', fecha, "Abrir", 'Descargar'],
-        file: oferentesRegistradosSISEFebrero,
-        link: null,
-    },
-    {
         array: ['Anexo de colocaciones  al mes de febrero del año 2024', fecha, "Abrir", 'Descargar'],
-        file: ofertasEmpleoRegistradasSistema,
-        link: null,
+        file: colocacionesSISEFebrero,
+        link: "https://docs.google.com/spreadsheets/d/1dasSoZxZNyHfJqnxnfM-ZZlWhSE0I9nK/edit?usp=sharing&ouid=104411060894586684778&rtpof=true&sd=true",
     },
 ];
 

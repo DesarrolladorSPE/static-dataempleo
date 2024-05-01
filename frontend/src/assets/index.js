@@ -12,11 +12,11 @@ import anexoDemandaLaboral from "./Files/demandaLaboral.xlsx";
 import colocacionesFebrero from "./Files/colocacionesFebrero.xlsx";
 import ofertaLaboral from "./Files/Oferta_laboral.xlsx";
 
+import oferentesRegistradosSISEFebrero from "./Files/Anexo oferentes registrados SISE_febrero24.xlsx";
 import ofertaLaboralFebrero from "./Files/A. Boletin Oferta Laboral Febrero 2024.pdf";
+import ofertasEmpleoRegistradasSistema from "./Files/Anexo Ofertas de empleo registradas sistema_marzo24.xlsx";
 import demandaLaboralMarzo from "./Files/B. Boletín Demanda Laboral Marzo 2024.pdf";
 import colocacionesSISEFebrero from "./Files/Anexo colocaciones SISE_febrero24.xlsx";
-import oferentesRegistradosSISEFebrero from "./Files/Anexo oferentes registrados SISE_febrero24.xlsx";
-import ofertasEmpleoRegistradasSistema from "./Files/Anexo Ofertas de empleo registradas sistema_marzo24.xlsx";
 
 
 export {
