@@ -1,52 +1,38 @@
-import { IoMdBusiness } from "react-icons/io";
 import { formatNumbers } from "./formatNumbers";
-import { MdAccountBalance, MdEngineering } from "react-icons/md";
-import { GrMoney } from "react-icons/gr"
-import { FaCode, FaPeopleGroup } from "react-icons/fa6";
-import { PiBridge } from "react-icons/pi";
+import { MdAccountBalance, MdConstruction } from "react-icons/md";
+import {  FaPaintbrush  } from "react-icons/fa6"
+import { GiMineWagon, GiSewingMachine } from "react-icons/gi";
 
 const sliderData = [
     {
-        name: "Administración",
-        icon: <IoMdBusiness/>,
-        numericValue: formatNumbers(15226),
-        percentValue: "10.1%",
+        name: "Actividades Artisticas",
+        icon: <FaPaintbrush />,
+        numericValue: formatNumbers(18792),
+        percentValue: "1%",
     },
     {
-        name: "Ingeniería Industrial",
-        icon: <MdEngineering />,
-        numericValue: formatNumbers(5839),
-        percentValue: "3.9%",
-    },
-    {
-        name: "Contaduria",
+        name: "Actividades financieras",
         icon: <MdAccountBalance />,
-        numericValue: formatNumbers(4485),
-        percentValue: "3%",
+        numericValue: formatNumbers(9375),
+        percentValue: "19%",
     },
     {
-        name: "Ingeniería de Sistemas",
-        icon: <FaCode  />,
-        numericValue: formatNumbers(3003),
-        percentValue: "2%",
+        name: "Industrias manufactureras",
+        icon: <GiSewingMachine  />,
+        numericValue: formatNumbers(28693),
+        percentValue: "-30%",
     },
     {
-        name: "Economia",
-        icon: <GrMoney />,
-        numericValue: formatNumbers(2343),
-        percentValue: "1.5",
+        name: "Construcción",
+        icon: <MdConstruction  />,
+        numericValue: formatNumbers(9435),
+        percentValue: "-29%",
     },
     {
-        name: "Comunicacion Social",
-        icon: <FaPeopleGroup />,
-        numericValue: formatNumbers(849),
-        percentValue: "0.6%",
-    },
-    {
-        name: "Ingeniería Civil",
-        icon: <PiBridge  />,
-        numericValue: formatNumbers(780),
-        percentValue: "0.5%",
+        name: "Explotación de minas y canteras",
+        icon: <GiMineWagon />,
+        numericValue: formatNumbers(1285),
+        percentValue: "-36%",
     },
 ]
 

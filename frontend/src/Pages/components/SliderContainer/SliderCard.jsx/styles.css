@@ -1,10 +1,11 @@
 .slider-card {
     width: 100%;
+    max-height: 100%;
 
     box-sizing: border-box;
     display: flex;
     flex-direction: row;
-    gap: 25px;
+    gap: 20px;
     justify-content: center;
     align-items: center;
 
@@ -14,7 +15,7 @@
 
     transition: all 0.2s ease;
 
-    padding: 10px 25px;
+    padding: 10px 0px;
 }
 .slider-card:hover {
     border-top: 1px solid var(--gov-accesibility-card);
@@ -23,8 +24,8 @@
 }
 
 .slider-card svg {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     fill: var(--black-to-white-color);
 }
 
@@ -41,4 +42,9 @@
 }
 .slider-info-container p:nth-child(1){
     font-weight: bold;
+}
+.slider-info-container p:nth-child(3){
+    font-weight: bold;
+    font-size: 18px;
+    color: var(--gov-accesibility-card);
 }

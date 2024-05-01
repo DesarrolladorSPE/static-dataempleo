@@ -16,10 +16,25 @@ const SliderContainer = () => {
 		autoplay: true,
 		autoplaySpeed: 4000,
 		style: {
-			width: "90%",
-			heigth: 400,
+			width: "95%",
 		},
 		focusOnSelect: true,
+		responsive: [
+			{
+			breakpoint: 1150,
+				settings: {
+					slidesToShow: 2,
+					slidesToScroll: 2,
+				}
+			},
+			{
+			breakpoint: 700,
+				settings: {
+					slidesToShow: 1,
+					slidesToScroll: 1,
+				}
+			},
+		]
 	};
 
 	return(

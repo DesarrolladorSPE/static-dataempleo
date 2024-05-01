@@ -1,5 +1,16 @@
+.graph-container {
+    position: relative;
+    margin: auto;
+    width: 40vw;
+}
 canvas {
     box-sizing: border-box;
     width: 100%;
-    min-height: 210px;
+    min-height: 300px;
+}
+
+@media(max-width: 1150px) {
+    .graph-container {
+        width: 80vw;
+    }
 }

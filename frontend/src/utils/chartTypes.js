@@ -13,7 +13,7 @@ const graphLabels = {
     ofertasRegistradas: {
         indexAxis: "x",
         type: "line",
-        array: generateYearRange(2015, 2023).reverse(),
+        array: generateYearRange(2019, 2024).reverse(),
         name: "Ofertas de Empleo Registradas",
     },
     ramaDeActividad: {
@@ -45,6 +45,12 @@ const graphLabels = {
         type: "bar",
         array: ["<=800000", "$800001 o $1000000", "$1000001 o $1500000", "$1500001 o $2000000", "$2000001 0 $3000000", "$3000001 o $4000000", "$4000001 o $6000000"],
         name: "Demanda laboral por rangos salariales",
+    },
+    areaMetropolitana: {
+        indexAxis: "x",
+        type: "bar",
+        array: ["BOGOTÁ AM", "MEDELLÍN AM", "CALI AM", "BUCARAMANGA AM", "PEREIRA AM", "CARTAGENA", "VILLAVICENCIO", "MANIZALES AM", "IBAGUÉ", "CÚCUTA AM", "ARMENIA", "NEIVA", "SANTA MARTA", "TUNJA", "VALLEDUPAR", "PASTO", "POPAYÁN", "MONTERÍA", "SAND ANDRÉS", "SINCELEJO", "FLORENCIA", "RIOHACHA", "QUIBDÓ"],
+        name: "Número de ofertas de empleo registradas por 23 ciudades  - areas metropolitanas",
     },
 }
 
