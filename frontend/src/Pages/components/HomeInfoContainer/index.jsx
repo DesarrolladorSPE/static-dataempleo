@@ -16,7 +16,7 @@ const HomeInfoContainer = () => {
     };
 
     const array2 = {
-        title: "Número de ofertas de empleo registradas por 23 ciudades  - areas metropolitanas",
+        title: "Número de ofertas de empleo registradas por 23 ciudades  - áreas metropolitanas",
         year: "Departamentos",
         month: 9,
         grapLabelsType: "areaMetropolitana",

@@ -4,7 +4,7 @@ const fecha = "Abril 2024";
 
 const tableData = [
     {
-        array: ['Anexo Estadistico de Demanda Laboral', fecha, "Abrir", 'Descargar'],
+        array: ['Anexo estadístico de demanda laboral', fecha, "Abrir", 'Descargar'],
         file: anexoDemandaLaboral,
         link: "https://docs.google.com/spreadsheets/d/1XAS4RAz12k_RiqDWfKGdpV46UxHXynDV/edit?usp=sharing&ouid=104411060894586684778&rtpof=true&sd=true"
     },

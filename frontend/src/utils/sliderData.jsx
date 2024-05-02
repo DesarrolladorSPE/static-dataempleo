@@ -5,7 +5,7 @@ import { GiMineWagon, GiSewingMachine } from "react-icons/gi";
 
 const sliderData = [
     {
-        name: "Actividades Artisticas",
+        name: "Actividades artísticas",
         icon: <FaPaintbrush />,
         numericValue: formatNumbers(18792),
         percentValue: "1%",
