@@ -4,7 +4,7 @@ import { SubTitle } from "../SubTitle";
 
 import { graphValuesConfig } from "../../../utils/graphConfig";
 
-const GraphContainer = ({array, onConfig=graphValuesConfig}) => {
+const GraphContainer = ({array, onConfig=graphValuesConfig, index=""}) => {
     const values = onConfig(array);
 
     return(
@@ -14,7 +14,7 @@ const GraphContainer = ({array, onConfig=graphValuesConfig}) => {
                     {array?.title}
                 </SubTitle>
                 
-                <Graph values={values}/>
+                <Graph values={values} index={index}/>
             </WrapperContainer1>            
         </WrapperContainer2>
         

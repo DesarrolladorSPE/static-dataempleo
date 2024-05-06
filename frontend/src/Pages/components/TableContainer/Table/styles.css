@@ -1,3 +1,10 @@
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+	padding-bottom: 5px;
+
+}
+
 .my-table {
     width: 100%;
     border-collapse: collapse;
@@ -5,10 +12,15 @@
     box-sizing: border-box;
 
     transition: all 0.2s ease;
+    overflow-x: auto;
+    max-width: 100%;
 } 
 .my-table th{
     color: var(--white-to-black-color) !important; 
     background-color: var(--lines-color2);
+}
+.my-table th:nth-child(1) {
+    min-width: 700px;
 }
 .my-table th, .my-table td {
     border-bottom: 1px solid var(--lines-color2);

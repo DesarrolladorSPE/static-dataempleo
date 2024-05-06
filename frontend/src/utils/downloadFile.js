@@ -10,4 +10,8 @@ const handleDounwload = (url, name) => {
     handleNotifications("info", `Se descargó ${name}`);
 }
 
-export { handleDounwload }
+const handleOpenFile = (uri) => {
+    window.open(uri, '_blank');
+}
+
+export { handleDounwload, handleOpenFile }
