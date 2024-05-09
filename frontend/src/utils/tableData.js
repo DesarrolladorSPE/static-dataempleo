@@ -1,24 +1,23 @@
 import { anexoDemandaLaboral, colocacionesFebrero, colocacionesSISEFebrero, demandaLaboralMarzo, oferentesRegistradosSISEFebrero, ofertaLaboral, ofertaLaboralFebrero, ofertasEmpleoRegistradasSistema } from "../assets";
 
-const fecha = "Abril 2024";
+const fecha = "Mayo 2024";
 
 const tableData = [
-    {
-        array: ['Anexo estadístico de demanda laboral', fecha, "Abrir", 'Descargar'],
-        file: anexoDemandaLaboral,
-        link: "https://docs.google.com/spreadsheets/d/1XAS4RAz12k_RiqDWfKGdpV46UxHXynDV/edit?usp=sharing&ouid=104411060894586684778&rtpof=true&sd=true"
-    },
-    {
-        array: ['Oferta laboral', fecha, "Abrir", 'Descargar'],
-        file: ofertaLaboral,
-        link: "https://docs.google.com/spreadsheets/d/1hz4W1VOTVCDbSHHMfGKn7bcEraJf57DM/edit?usp=sharing&ouid=104411060894586684778&rtpof=true&sd=true"
-    },
-    {
-        array: ['Colocaciones', fecha, "Abrir", 'Descargar'],
-        file: colocacionesFebrero,
-        link: "https://docs.google.com/spreadsheets/d/1RcNs6SzcVyhIepDGgjTH9QImtXMOpZRL/edit?usp=sharing&ouid=104411060894586684778&rtpof=true&sd=true"
-    },
-    
+    // {
+    //     array: ['Anexo estadístico de demanda laboral', fecha, "Abrir", 'Descargar'],
+    //     file: anexoDemandaLaboral,
+    //     link: "https://docs.google.com/spreadsheets/d/1XAS4RAz12k_RiqDWfKGdpV46UxHXynDV/edit?usp=sharing&ouid=104411060894586684778&rtpof=true&sd=true"
+    // },
+    // {
+    //     array: ['Oferta laboral', fecha, "Abrir", 'Descargar'],
+    //     file: ofertaLaboral,
+    //     link: "https://docs.google.com/spreadsheets/d/1hz4W1VOTVCDbSHHMfGKn7bcEraJf57DM/edit?usp=sharing&ouid=104411060894586684778&rtpof=true&sd=true"
+    // },
+    // {
+    //     array: ['Colocaciones', fecha, "Abrir", 'Descargar'],
+    //     file: colocacionesFebrero,
+    //     link: "https://docs.google.com/spreadsheets/d/1RcNs6SzcVyhIepDGgjTH9QImtXMOpZRL/edit?usp=sharing&ouid=104411060894586684778&rtpof=true&sd=true"
+    // },
 
 
     {
