@@ -4,10 +4,10 @@ import { AppContext } from '../../../../Context';
 
 import "./styles.css"
 
-const Graph = ({values={}, index=""}) => {
+const Graph = ({values, index=""}) => {
     const context = React.useContext(AppContext);
 
-    const colors = context.activeHighContrast ? ["#FFF", "#FFF", "#FFF"] :  ["#E0161E", "rgba(234,28,251,.5)", "rgba(28,123,251,.5)"];
+    const colors = context.activeHighContrast ? ["#FFF", "#FFF", "#FFF"] :  ["rgba(224,22,30, .6)", "rgba(234,28,251, .6)", "rgba(28,123,251,.5)"];
     let highContrastStyle = context.activeHighContrast ? "#FFF" : "#000";
 
     React.useEffect(() => {
@@ -16,11 +16,20 @@ const Graph = ({values={}, index=""}) => {
             labels: values?.labels,
             datasets: [
                 {
-                    label: values?.datasetLabel,
-                    data: values?.data,
+                    label: values?.datasetLabel[0],
+                    data: values?.data[0],
 
-                    backgroundColor: colors[index], // Color de fondo
-                    borderColor: colors[index], // Color del borde
+                    backgroundColor: colors[0], // Color de fondo
+                    borderColor: colors[0], // Color del borde
+                    borderWidth: 1,
+                    color: highContrastStyle
+                },
+                {
+                    label: values?.datasetLabel[1],
+                    data: values?.data[1],
+
+                    backgroundColor: colors[1], // Color de fondo
+                    borderColor: colors[1], // Color del borde
                     borderWidth: 1,
                     color: highContrastStyle
                 },

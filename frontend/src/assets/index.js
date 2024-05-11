@@ -8,15 +8,14 @@ import logoCoPotencia from "./log_co_potencia.png"
 import Montserrat from "./fonts/Montserrat/Montserrat-Regular.ttf";
 import MontserratBold from "./fonts/Montserrat/Montserrat-Bold.ttf";
 
-import anexoDemandaLaboral from "./Files/Anexo Estadistico de Demanda Laboral.xlsx";
-import colocacionesFebrero from "./Files/Colocaciones.xlsx";
-import ofertaLaboral from "./Files/Oferta laboral.xlsx";
+import a_anexoBuscadoresDeEmpleoMarzo from "./Files/A. Anexo buscadores de empleo (Marzo).xlsx"
+import a_boletinOfertaLaboralMarzo2024 from "./Files/A. Boletin Oferta Laboral Marzo 2024.pdf"
 
-import oferentesRegistradosSISEFebrero from "./Files/Anexo oferentes registrados SISE_febrero24.xlsx";
-import ofertaLaboralFebrero from "./Files/A. Boletin Oferta Laboral Febrero 2024.pdf";
-import ofertasEmpleoRegistradasSistema from "./Files/Anexo Ofertas de empleo registradas sistema_marzo24.xlsx";
-import demandaLaboralMarzo from "./Files/B. Boletín Demanda Laboral Marzo 2024.pdf";
-import colocacionesSISEFebrero from "./Files/Anexo colocaciones SISE_febrero24.xlsx";
+import b_anexoOfertasDeEmpleoMarzo from "./Files/B. Anexo ofertas de empleo (Marzo).xlsx"
+import b_boletinDemandaLaboralMarzo2024 from "./Files/B. Boletin Demanda Laboral Marzo 2024.pdf"
+
+import c_anexoColocacionesMarzo from "./Files/C. Anexo colocaciones (Marzo).xlsx"
+import c_boletinColocacionesMarzo2024 from "./Files/C. Boletin Colocaciones Marzo 2024.pdf"
 
 
 export {
@@ -29,13 +28,10 @@ export {
     Montserrat,
     MontserratBold,
 
-    anexoDemandaLaboral,
-    colocacionesFebrero,
-    ofertaLaboral,
-    
-    ofertaLaboralFebrero,
-    demandaLaboralMarzo,
-    colocacionesSISEFebrero,
-    oferentesRegistradosSISEFebrero,
-    ofertasEmpleoRegistradasSistema,
+    a_anexoBuscadoresDeEmpleoMarzo,
+    a_boletinOfertaLaboralMarzo2024,
+    b_anexoOfertasDeEmpleoMarzo,
+    b_boletinDemandaLaboralMarzo2024,
+    c_anexoColocacionesMarzo,
+    c_boletinColocacionesMarzo2024,
 }

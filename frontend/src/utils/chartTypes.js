@@ -52,6 +52,12 @@ const graphLabels = {
         array: ["BOGOTÁ AM", "MEDELLÍN AM", "CALI AM", "BUCARAMANGA AM", "PEREIRA AM", "CARTAGENA", "VILLAVICENCIO", "MANIZALES AM", "IBAGUÉ", "CÚCUTA AM", "ARMENIA", "NEIVA", "SANTA MARTA", "TUNJA", "VALLEDUPAR", "PASTO", "POPAYÁN", "MONTERÍA", "SAND ANDRÉS", "SINCELEJO", "FLORENCIA", "RIOHACHA", "QUIBDÓ"],
         name: "Número de ofertas de empleo registradas por 23 ciudades  - areas metropolitanas",
     },
+    ofertasDeEmpleoRegistradas: {
+        indexAxis: "x",
+        type: "polarArea",
+        array: ["Buscadores de empleo registrados - SISE*", "Colocaciones - SISE*", "Ofertas de empleo registradas - Total Red de Prestadores"],
+        name: "Número de ofertas de empleo registradas por 23 ciudades  - areas metropolitanas",
+    },
 }
 
 export { chartTypes, graphLabels };
