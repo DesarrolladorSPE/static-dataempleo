@@ -1,7 +1,7 @@
-import { GiGraduateCap } from "react-icons/gi";
-import { TbBellSchool } from "react-icons/tb";
-import { FaUserGraduate } from "react-icons/fa";
 import { formatNumbers } from "./formatNumbers";
+
+import { GiGraduateCap } from "react-icons/gi";
+import { FaUserGraduate } from "react-icons/fa";
 import { MdBackpack } from "react-icons/md";
 
 const sliderData = [
