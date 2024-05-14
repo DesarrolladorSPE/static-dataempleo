@@ -1,38 +1,45 @@
 import { formatNumbers } from "./formatNumbers";
-import { MdAccountBalance, MdConstruction } from "react-icons/md";
-import {  FaPaintbrush  } from "react-icons/fa6"
-import { GiMineWagon, GiSewingMachine } from "react-icons/gi";
+
+import { GiGraduateCap } from "react-icons/gi";
+import { FaUserGraduate } from "react-icons/fa";
+import { MdBackpack } from "react-icons/md";
 
 const sliderData = [
     {
-        name: "Actividades artísticas",
-        icon: <FaPaintbrush />,
-        numericValue: formatNumbers(18792),
-        percentValue: "1%",
+        name: "Promedio anual de Colocaciones (Abr23 - Mar24)",
+        icon: <MdBackpack />,
+        numericValue: "Hasta bachillerato - mujeres",
+        percentValue: formatNumbers(7000),
     },
     {
-        name: "Actividades financieras",
-        icon: <MdAccountBalance />,
-        numericValue: formatNumbers(9375),
-        percentValue: "19%",
+        name: "Promedio anual de Colocaciones (Abr23 - Mar24)",
+        icon: <FaUserGraduate />,
+        numericValue: "Universitario, técnicos y técnologos - mujeres",
+        percentValue: formatNumbers(4533),
     },
     {
-        name: "Industrias manufactureras",
-        icon: <GiSewingMachine  />,
-        numericValue: formatNumbers(28693),
-        percentValue: "-30%",
+        name: "Promedio anual de Colocaciones (Abr23 - Mar24)",
+        icon: <GiGraduateCap />,
+        numericValue: "Posgrado - mujeres",
+        percentValue: formatNumbers(263),
     },
     {
-        name: "Construcción",
-        icon: <MdConstruction  />,
-        numericValue: formatNumbers(9435),
-        percentValue: "-29%",
+        name: "Promedio anual de Colocaciones (Abr23 - Mar24)",
+        icon: <MdBackpack />,
+        numericValue: "Hasta bachillerato - hombres",
+        percentValue: formatNumbers(7603),
     },
     {
-        name: "Explotación de minas y canteras",
-        icon: <GiMineWagon />,
-        numericValue: formatNumbers(1285),
-        percentValue: "-36%",
+        name: "Promedio anual de Colocaciones (Abr23 - Mar24)",
+        icon: <FaUserGraduate />,
+        numericValue: "Universitario, técnicos y técnologos - hombres",
+        percentValue: formatNumbers(3683),
+    },
+    {
+        name: "Promedio anual de Colocaciones (Abr23 - Mar24)",
+        icon: <GiGraduateCap />,
+        numericValue: "Posgrado - hombres",
+        percentValue: formatNumbers(267),
     },
 ]
 

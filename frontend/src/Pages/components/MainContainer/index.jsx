@@ -1,8 +1,7 @@
 import { DateCard } from "../DateCard";
-
+import { DropDownCard } from '../DropDownCard';
 
 import "./styles.css"
-import { DropDownCard } from '../DropDownCard';
 
 
 const MainContainer = ({children}) => {

@@ -17,6 +17,7 @@ const SliderContainer = () => {
 		autoplaySpeed: 4000,
 		style: {
 			width: "95%",
+			heigth: "100%"
 		},
 		focusOnSelect: true,
 		responsive: [
