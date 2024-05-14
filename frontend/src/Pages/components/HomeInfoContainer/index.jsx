@@ -13,12 +13,12 @@ const HomeInfoContainer = () => {
         graphType: "bar",
         description: "",
         values: [
-            [165900, 111195, 149196],
-            [165900, 111195, 149196],
+            [45000, 79909, 224638],
+            [46968, 66726, 152592],
         ],
     };
 
-    // const array2 = {
+    // const array2 = { 
     //     title: "Número de ofertas de empleo registradas por 23 ciudades  - áreas metropolitanas",
     //     year: "Departamentos",
     //     month: 9,
