@@ -1,0 +1,10 @@
+.text-card {
+    width: 100%;
+    color: var(--text-color);
+    text-align: start;
+    font-size: 14px;
+}
+.span-card {
+    font-weight: bold;
+    color: var(--gov-accesibility-card);
+}

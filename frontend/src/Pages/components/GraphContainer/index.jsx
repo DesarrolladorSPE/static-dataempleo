@@ -3,6 +3,7 @@ import { Graph } from "./Graph";
 import { SubTitle } from "../SubTitle";
 
 import { graphValuesConfig } from "../../../utils/graphConfig";
+import { TextCard } from "../TextComponents";
 
 const GraphContainer = ({array, onConfig=graphValuesConfig, index=""}) => {
     const values = onConfig(array);
@@ -15,6 +16,14 @@ const GraphContainer = ({array, onConfig=graphValuesConfig, index=""}) => {
                 </SubTitle>
                 
                 <Graph values={values} index={index}/>
+
+                <WrapperContainer2 flexDirection="column" gap={0} padding={0}>
+                    <TextCard>Total Nacional</TextCard>
+                    <TextCard>*SISE: Sistema de Información del Servicio Publico de Empleo</TextCard>
+                </WrapperContainer2>
+
+
+
             </WrapperContainer1>            
         </WrapperContainer2>
         
