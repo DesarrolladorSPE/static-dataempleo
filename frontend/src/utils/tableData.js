@@ -11,7 +11,7 @@ import {
     
 } from "../assets";
 
-const fecha = "Abril 2024";
+const fecha = "Mayo 2024";
 
 const tableData = [
     {
