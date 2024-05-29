@@ -4,6 +4,8 @@ import { handleDounwload, handleOpenFile } from "../../../../utils/downloadFile"
 import "./styles.css";
 
 import { PiMicrosoftExcelLogoFill } from "react-icons/pi";
+import { FaFilePdf } from "react-icons/fa";
+
 import { tableData } from "../../../../utils/tableData";
 
 const Table = () => {
@@ -15,7 +17,7 @@ const Table = () => {
             return(
                 <td key={cellIndex}>
                     <a>
-                        <PiMicrosoftExcelLogoFill fill={context.activeHighContrast ? "#FFFFFF" : colors[0]}/>
+                         {row.link ? <PiMicrosoftExcelLogoFill fill={context.activeHighContrast ? "#FFFFFF" : colors[0]}/> : <FaFilePdf fill={context.activeHighContrast ? "#FFFFFF" : colors[0]}/>}
                         {cell}
                     </a>
                 </td>
