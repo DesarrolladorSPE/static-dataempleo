@@ -7,7 +7,7 @@ import "./styles.css"
 const Graph = ({values, index=""}) => {
     const context = React.useContext(AppContext);
 
-    const colors = context.activeHighContrast ? ["#FFF", "#FFF", "#FFF"] :  ["rgba(224,22,30, .6)", "rgba(234,28,251, .6)", "rgba(28,123,251,.5)"];
+    const colors = context.activeHighContrast ? ["#FFF", "#FFF", "#FFF"] :  ["rgba(90,91,93, .6)", "rgba(224,22,30, .6)", "rgba(28,123,251,.5)"];
     let highContrastStyle = context.activeHighContrast ? "#FFF" : "#000";
 
     React.useEffect(() => {

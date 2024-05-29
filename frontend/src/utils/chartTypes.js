@@ -55,7 +55,7 @@ const graphLabels = {
     ofertasDeEmpleoRegistradas: {
         indexAxis: "x",
         type: "polarArea",
-        array: ["Ofertas de empleo registradas (RED)", "Ofertas de empleo registradas (SISE)", "Buscadores de empleo registrados", "Colocaciones"],
+        array: ["Ofertas de empleo registradas (RED)", "Ofertas de empleo registradas (SISE)", "Buscadores de empleo registrados (SISE)", "Colocaciones (SISE)"],
         name: "Número de ofertas de empleo registradas por 23 ciudades  - areas metropolitanas",
     },
 }

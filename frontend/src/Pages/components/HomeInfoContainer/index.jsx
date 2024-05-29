@@ -6,15 +6,15 @@ import { WrapperContainer2 } from "../WrapperContainers";
 
 const HomeInfoContainer = () => {
     const array1 = {
-        title: "Ofertas de empleo registradas - Total Red de Prestadores, buscadores de empleo registrados - SISE* y número de colocaciones - SISE*",
-        year: ["marzo-2023", "marzo-2024"],
+        title: "Ofertas de empleo registradas (total red de prestadores), ofertas de empleo registradas (SISE*), buscadores de empleo registrados (SISE*) y número de colocaciones (SISE*)",
+        year: ["abril-2023", "abril-2024"],
         month: 9,
         grapLabelsType: "ofertasDeEmpleoRegistradas",
         graphType: "bar",
         description: "",
         values: [
-            [224638, 39640, 79909, 45000],
-            [152592, 24566, 66726, 46968],
+            [181600, 14750, 65075, 42080],
+            [182025, 16381, 80082, 50449],
         ],
     };
 
