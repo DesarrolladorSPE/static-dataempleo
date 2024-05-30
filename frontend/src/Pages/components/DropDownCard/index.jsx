@@ -8,7 +8,7 @@ const DropDownCard = () => {
     const array = Object.keys(uriDropDown);
 
     return (
-        <Dropdown className="dropdown-container top-left">
+        <Dropdown className="dropdown-container">
             <Dropdown.Toggle id="dropdown-basic" className='dropdown-button'>
                 Informacion Adicional
             </Dropdown.Toggle>

@@ -5,28 +5,31 @@ import { SubTitle } from "../SubTitle";
 import { graphValuesConfig } from "../../../utils/graphConfig";
 import { TextCard } from "../TextComponents";
 
+import "./styles.css"
+
 const GraphContainer = ({array, onConfig=graphValuesConfig, index=""}) => {
     const values = onConfig(array);
 
     return(
-        <WrapperContainer2 padding={0} flexDirection="column">
-            <WrapperContainer1 flexDirection="column" gap={15}>
-                <SubTitle textAlign="center">
-                    {array?.title}
-                </SubTitle>
-                
-                <Graph values={values} index={index}/>
+        <div className="graph-overflow-container">
+            <WrapperContainer2 padding={0} flexDirection="column">
+                <WrapperContainer1 flexDirection="column" gap={15}>
+                    <SubTitle textAlign="center">
+                        {array?.title}
+                    </SubTitle>
 
-                <WrapperContainer2 flexDirection="column" gap={0} padding={0}>
-                    <TextCard>Total Nacional</TextCard>
-                    <TextCard>*SISE: Sistema de Información del Servicio P&uacute;blico de Empleo</TextCard>
-                </WrapperContainer2>
+                        <Graph values={values} index={index}/>
+
+                    <WrapperContainer2 flexDirection="column" gap={0} padding={0}>
+                        <TextCard>Total Nacional</TextCard>
+                        <TextCard>*SISE: Sistema de Información del Servicio P&uacute;blico de Empleo</TextCard>
+                    </WrapperContainer2>
 
 
 
-            </WrapperContainer1>            
-        </WrapperContainer2>
-        
+                </WrapperContainer1>            
+            </WrapperContainer2>
+        </div>        
     );
 }
 

@@ -1,0 +1,5 @@
+.graph-overflow-container {
+    max-width: 100%;
+    overflow-x: auto;
+	padding-bottom: 5px;
+}

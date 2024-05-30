@@ -1,11 +1,22 @@
 .main-container {
 	width: 100%;
 	display: flex;
+    flex-direction: column;
+    gap: 20px;
 	box-sizing: border-box;
 
     position: relative;
 
-    padding: 90px 25px 50px;
+    padding: 20px 25px 50px;
+}
+.drop-date-container {
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
 }
 
 .home-container {
@@ -23,4 +34,12 @@
     position: relative;
 
     background-color: var(--all-info-container-color);
+}
+
+@media (max-width: 500px) {
+    .drop-date-container {
+        flex-direction: column-reverse;
+        /* justify-content: center; */
+        gap: 20px;
+    }
 }

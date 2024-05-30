@@ -4,7 +4,7 @@ import "./styles.css";
 
 const fechaActual = obtenerFechaActual();
 
-const DateCard = ({children = fechaActual, className="top-right"}) => {
+const DateCard = ({children = fechaActual, className=""}) => {
     return(
         <p className={`date ${className}`}>
             {children}

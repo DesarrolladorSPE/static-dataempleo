@@ -7,8 +7,11 @@ import "./styles.css"
 const MainContainer = ({children}) => {
     return(
         <div className="main-container">
-            <DropDownCard/>
-            <DateCard/>
+            <div className="drop-date-container">
+                <DropDownCard/>
+                <DateCard/>
+            </div>
+
 
             <div className="home-container">
                 {children}
