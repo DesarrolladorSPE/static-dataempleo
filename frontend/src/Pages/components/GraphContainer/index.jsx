@@ -12,22 +12,18 @@ const GraphContainer = ({array, onConfig=graphValuesConfig, index=""}) => {
 
     return(
         <div className="graph-overflow-container">
-            <WrapperContainer2 padding={0} flexDirection="column">
-                <WrapperContainer1 flexDirection="column" gap={15}>
-                    <SubTitle textAlign="center">
-                        {array?.title}
-                    </SubTitle>
+            <WrapperContainer2 padding={15} flexDirection="column" justifyContent="center" alignItems="center">
+                <SubTitle textAlign="center">
+                    {array?.title}
+                </SubTitle>
 
-                        <Graph values={values} index={index}/>
+                <Graph values={values} index={index}/>
 
-                    <WrapperContainer2 flexDirection="column" gap={0} padding={0}>
-                        <TextCard>Total Nacional</TextCard>
-                        <TextCard>*SISE: Sistema de Información del Servicio P&uacute;blico de Empleo</TextCard>
-                    </WrapperContainer2>
-
-
-
-                </WrapperContainer1>            
+                <WrapperContainer2 flexDirection="column" gap={0} padding={0}>
+                    <TextCard>Total Nacional</TextCard>
+                    <TextCard>*SISE: Sistema de Información del Servicio P&uacute;blico de Empleo</TextCard>
+                </WrapperContainer2>
+         
             </WrapperContainer2>
         </div>        
     );

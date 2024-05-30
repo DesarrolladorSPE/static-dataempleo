@@ -68,7 +68,7 @@ h1 {
 }
 
 p, span, div {
-    margin: 0 !important;
+    margin: 0;
     font-family: "Montserrat-Regular" !important; 
 }
 

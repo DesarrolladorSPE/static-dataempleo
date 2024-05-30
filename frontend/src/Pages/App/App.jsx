@@ -15,13 +15,13 @@ import { AppProvider } from "../../Context";
 import { MainContainer } from "../components/MainContainer";
 import { Home } from "../Screens/Home";
 
-import { Navbar } from "../components/Nabvar";
 import { NavBarResponsive } from "../components/NavBarResponsive";
 import { Footer } from "../components/Footer";
 import { AccesibilityCard } from "../components/AccesibilityCard";
 import { GovNavbar } from "../components/GovNavbars";
 import { ToastContainer } from "react-toastify";
 import { NavImagesCard } from "../components/NavImagesCard";
+import { SliderContainer } from "../components/SliderContainer";
 
 const Wrapper = ({children}) => {
     const location = useLocation();
@@ -50,7 +50,7 @@ const App = () => {
                     <AccesibilityCard/>
                     <MainContainer>
                         <NavImagesCard/>
-                        <Navbar/>
+                        <SliderContainer/>
                         <NavBarResponsive/>
                         <AppRoutes/>
                     </MainContainer>
