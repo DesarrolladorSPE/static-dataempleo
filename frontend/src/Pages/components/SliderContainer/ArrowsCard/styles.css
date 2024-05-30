@@ -1,0 +1,27 @@
+.arrow-card {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+
+    background-color: transparent;
+    border-radius: 100%;
+
+    transition: all 0.1s ease;
+}
+
+.arrow-card:hover {
+    background-color: var(--gov-accesibility-card);
+}
+.arrow-card:hover svg {
+    fill: var(--white-to-black-color);
+}
+
+.arrow-card svg {
+    width: 100%;
+    height: 100%;
+    fill: var(--gov-accesibility-card);
+}
+
+.arrow-card::before {
+    content: "";
+}

@@ -19,7 +19,7 @@ const GraphContainer = ({array, onConfig=graphValuesConfig, index=""}) => {
 
                 <WrapperContainer2 flexDirection="column" gap={0} padding={0}>
                     <TextCard>Total Nacional</TextCard>
-                    <TextCard>*SISE: Sistema de Información del Servicio Publico de Empleo</TextCard>
+                    <TextCard>*SISE: Sistema de Información del Servicio P&uacute;blico de Empleo</TextCard>
                 </WrapperContainer2>
 
 

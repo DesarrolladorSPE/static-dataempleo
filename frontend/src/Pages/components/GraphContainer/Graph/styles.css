@@ -1,7 +1,7 @@
 .graph-container {
     position: relative;
     margin: auto;
-    width: 80vw;
+    width: 65vw;
 }
 canvas {
     box-sizing: border-box;

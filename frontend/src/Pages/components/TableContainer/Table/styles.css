@@ -41,7 +41,7 @@
     color: var(--lines-color2);
 }
 .my-table tr:hover td{
-    cursor: pointer;
+    /* cursor: pointer; */
     border-left: 1px solid var(--lines-color2);
     border-right: 1px solid var(--lines-color2);
 }
@@ -57,11 +57,19 @@
     gap: 10px;
 } 
 .my-table a:hover {
-    text-decoration: underline !important;
     color: var(--lines-color2) !important;
 }
 
 .my-table a svg {
     width: 20px;
     height: 20px;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+.cursor-pointer:hover {
+    text-decoration: underline;
+    background-color: var(--lines-color2);
+    color: var(--white-to-black-color);
 }

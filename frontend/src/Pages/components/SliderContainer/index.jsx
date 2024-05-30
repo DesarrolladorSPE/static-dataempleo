@@ -4,7 +4,8 @@ import 'slick-carousel/slick/slick-theme.css';
 
 import "./styles.css";
 import { sliderData } from '../../../utils/sliderData.jsx';
-import { SliderCard } from './SliderCard.jsx/index.jsx';
+import { SliderCard } from './SliderCard/index.jsx';
+import { NextArrowCard, PrevArrowCard } from './ArrowsCard/index.jsx';
 
 const SliderContainer = () => {
 
@@ -15,6 +16,10 @@ const SliderContainer = () => {
 		slidesToScroll: 1,
 		autoplay: true,
 		autoplaySpeed: 4000,
+		nextArrow: <NextArrowCard />,
+		prevArrow: <PrevArrowCard />,
+		// dots: true,
+		// arrows: false,
 		style: {
 			width: "95%",
 			heigth: "100%"

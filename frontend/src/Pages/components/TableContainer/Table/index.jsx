@@ -24,13 +24,13 @@ const Table = () => {
             )
         } else if (cellIndex === 2) {
             return(
-                <td key={cellIndex} onClick={() => handleOpenFile(row.link || row.file)}>
+                <td key={cellIndex} className="cursor-pointer" onClick={() => handleOpenFile(row.link || row.file)}>
                     {cell}
                 </td>
             )
         } else if (cellIndex === 3) {
             return(
-                <td key={cellIndex} onClick={() => handleDounwload(row.file, row.array[0])}>
+                <td key={cellIndex} className="cursor-pointer" onClick={() => handleDounwload(row.file, row.array[0])}>
                     {cell}
                 </td>
             )
