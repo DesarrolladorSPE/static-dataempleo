@@ -3,6 +3,7 @@ const uriDropDown = {
     "Históricos Estudios transversales":"https://www.serviciodeempleo.gov.co/dataempleo-spe/transversales",
     "Históricos proyecciones y estudios prestadores del SPE":"https://www.serviciodeempleo.gov.co/dataempleo-spe/red-de-prestadores",
     "Históricos documentos sectoriales y tejido empresarial":"https://www.serviciodeempleo.gov.co/dataempleo-spe/tejido-empresarial",
+    "Documentos poblacionales": "https://www.serviciodeempleo.gov.co/dataempleo-spe/oferta-laboral/2022/sectores-economicos",
     //"Visor de empleo": "https://www.buscadordeempleo.gov.co/#/home",
     //"Boletines de demanda laboral":	"https://www.serviciodeempleo.gov.co/dataempleo-spe/demanda-laboral/2023/boletines",
     //"Estudios sobre grupos poblacionales": "https://www.serviciodeempleo.gov.co/dataempleo-spe/oferta-laboral/2022/sectores-economicos",

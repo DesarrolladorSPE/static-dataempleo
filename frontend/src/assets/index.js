@@ -18,6 +18,8 @@ import b_boletinDemandaLaboralRedSISEAbril2024 from "./Files/B. Boletín Demand
 import c_anexoColocacionesAbril from "./Files/C. Anexo colocaciones (Abril).xlsx"
 import c_boletinColocacionesAbril2024 from "./Files/C. Boletin Colocaciones Abril 2024.pdf"
 
+import correlativaSISECuocUnidadSPE from "./Files/CORRELATIVA SISE-CUOC TERMINADA UNIDAD SPE.xlsx"
+
 
 export {
     banner,
@@ -38,4 +40,5 @@ export {
     
     c_anexoColocacionesAbril,
     c_boletinColocacionesAbril2024,
+    correlativaSISECuocUnidadSPE,
 }

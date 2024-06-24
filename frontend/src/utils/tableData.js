@@ -7,7 +7,8 @@ import {
     b_boletinDemandaLaboralRedSISEAbril2024, 
 
     c_anexoColocacionesAbril, 
-    c_boletinColocacionesAbril2024 
+    c_boletinColocacionesAbril2024,
+    correlativaSISECuocUnidadSPE
     
 } from "../assets";
 
@@ -48,6 +49,11 @@ const tableData = [
         array: ['Boletín técnico - colocaciones', fecha, "Abrir", 'Descargar'],
         file: c_boletinColocacionesAbril2024,
         link: null,
+    },
+    {
+        array: ['Correlativa SISE-CUOC Unidad SPE', "Junio 2024", "Abrir", 'Descargar'],
+        file: correlativaSISECuocUnidadSPE,
+        link: "https://docs.google.com/spreadsheets/d/1m1g6lSnKuuf0fadwaHhRKqB0FmsqQQyD/edit?usp=sharing&ouid=104411060894586684778&rtpof=true&sd=true",
     },
 ];
 
