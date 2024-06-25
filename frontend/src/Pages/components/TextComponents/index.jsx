@@ -1,14 +1,20 @@
 import "./styles.css";
 
-const TextCard = ({children}) => {
+const TextCard = ({children, textAlign="start", width="100%", className="", fontSize=16}) => {
     return(
-        <p className="text-card">{children}</p>
+        <p 
+            style={{
+                textAlign: textAlign, 
+                width: width,
+                fontSize: fontSize,
+            }} 
+            className={`text-card ${className}`}>{children}</p>
     );
 }
 
-const SpanCard = ({children}) => {
+const SpanCard = ({children, className}) => {
     return(
-        <span className="span-card">{children}</span>
+        <span className={`span-card ${className}`}>{children}</span>
     );
 }
 

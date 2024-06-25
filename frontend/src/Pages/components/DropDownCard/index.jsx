@@ -16,7 +16,7 @@ const DropDownCard = () => {
             <Dropdown.Menu className="dropdown-grid-container">
                 {array?.map((item, index) => (
                     <div key={index} className='dropdown-anchor-container'>
-                        <a href={uriDropDown[item]} target="_blank" rel="noopener noreferrer"><IoIosArrowForward /> {item}</a>
+                        <a href={uriDropDown[item].link} target="_blank" rel="noopener noreferrer"><IoIosArrowForward /> {item}</a>
                     </div>
                 ))}
             </Dropdown.Menu>

@@ -22,6 +22,7 @@ import { GovNavbar } from "../components/GovNavbars";
 import { ToastContainer } from "react-toastify";
 import { NavImagesCard } from "../components/NavImagesCard";
 import { SliderContainer } from "../components/SliderContainer";
+import { UriButtonsContainer } from "../components/UriButtonsContainer";
 
 const Wrapper = ({children}) => {
     const location = useLocation();

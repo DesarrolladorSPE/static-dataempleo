@@ -1,5 +1,6 @@
 import { DateCard } from "../DateCard";
 import { DropDownCard } from '../DropDownCard';
+import { UriButtonsContainer } from "../UriButtonsContainer";
 
 import "./styles.css"
 
@@ -16,6 +17,8 @@ const MainContainer = ({children}) => {
             <div className="home-container">
                 {children}
             </div>
+
+            <UriButtonsContainer/>
         </div>
     );
 }

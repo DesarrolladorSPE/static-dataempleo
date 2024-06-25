@@ -1,0 +1,17 @@
+.uri-button-container{
+    max-width: 200px;
+
+    transition: all 0.2s ease;
+}
+.uri-button-container:hover p{
+    color: var(--lines-color);
+}
+.uri-button-container img{
+    max-height: 70px;
+    object-fit: contain;
+    transition: all 0.3s ease;
+}
+.uri-button-container:hover img{
+    transform: scale(1.1);
+}
+

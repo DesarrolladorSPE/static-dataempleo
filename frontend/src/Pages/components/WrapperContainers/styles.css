@@ -24,3 +24,17 @@
 
     transition: all 0.2s ease;
 }
+
+
+.wrapper-container3 {
+    width: 100%;
+
+    box-sizing: border-box;
+    display: flex;
+
+    border-radius: 20px;
+
+    position: relative;
+
+    background-color: var(--all-info-container-color);
+}
