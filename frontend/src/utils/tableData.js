@@ -1,13 +1,13 @@
 import { 
-    a_anexoBuscadoresDeEmpleoAbril, 
-    a_boletinOfertaLaboralAbril2024,
+    a_anexoBuscadoresDeEmpleoMayo, 
+    a_boletinOfertaLaboralMayo2024,
 
-    b_anexoOfertasDeEmpleoAbril, 
-    b_anexoOfertasDeEmpleoSISEAbril,
-    b_boletinDemandaLaboralRedSISEAbril2024, 
+    b_anexoOfertasDeEmpleoMayo, 
+    b_anexoOfertasDeEmpleoSISEMayo,
+    b_boletinDemandaLaboralRedSISEMayo2024, 
 
-    c_anexoColocacionesAbril, 
-    c_boletinColocacionesAbril2024,
+    c_anexoColocacionesMayo, 
+    c_boletinColocacionesMayo2024,
     correlativaSISECuocUnidadSPE
     
 } from "../assets";
@@ -17,37 +17,37 @@ const fecha = "Mayo 2024";
 const tableData = [
     {
         array: ['Anexo estadístico de buscadores de empleo registrados', fecha, "Abrir", 'Descargar'],
-        file: a_anexoBuscadoresDeEmpleoAbril,
-        link: "https://docs.google.com/spreadsheets/d/1phAPtP-PbOa2aXLFto90kZN6tNfVqRIj/edit?usp=sharing&ouid=104411060894586684778&rtpof=true&sd=true",
+        file: a_anexoBuscadoresDeEmpleoMayo,
+        link: "https://docs.google.com/spreadsheets/d/1roHmdsbNzahnTGxqa6LvApy2MM8AUg9T/edit?usp=sharing&ouid=104411060894586684778&rtpof=true&sd=true",
     },
     {
         array: ['Boletín técnico - oferta laboral', fecha, "Abrir", 'Descargar'],
-        file: a_boletinOfertaLaboralAbril2024,
+        file: a_boletinOfertaLaboralMayo2024,
         link: null,
     },
     {
         array: ['Anexo estadístico de ofertas de empleo registradas', fecha, "Abrir", 'Descargar'],
-        file: b_anexoOfertasDeEmpleoAbril,
-        link: "https://docs.google.com/spreadsheets/d/1dqjfzK6B9ee7fdhR2fXf30E85xpgr1yB/edit?usp=sharing&ouid=104411060894586684778&rtpof=true&sd=true",
+        file: b_anexoOfertasDeEmpleoMayo,
+        link: "https://docs.google.com/spreadsheets/d/1EbiOOSyhol2NlXnyKrQRJfBrE_gEXvap/edit?usp=sharing&ouid=104411060894586684778&rtpof=true&sd=true",
     },
     {
         array: ['Anexo estadístico de ofertas de empleo registradas en SISE', fecha, "Abrir", 'Descargar'],
-        file: b_anexoOfertasDeEmpleoSISEAbril,
-        link: "https://docs.google.com/spreadsheets/d/1TdAbjnBb7IaPOcIwO4gNZhHMu69ORClA/edit?usp=sharing&ouid=104411060894586684778&rtpof=true&sd=true",
+        file: b_anexoOfertasDeEmpleoSISEMayo,
+        link: "https://docs.google.com/spreadsheets/d/1AHq868au1cvQZLYT6iqw4E3KE_GoaqJ9/edit?usp=sharing&ouid=104411060894586684778&rtpof=true&sd=true",
     },
     {
         array: ['Boletín técnico - demanda laboral', fecha, "Abrir", 'Descargar'],
-        file: b_boletinDemandaLaboralRedSISEAbril2024,
+        file: b_boletinDemandaLaboralRedSISEMayo2024,
         link: null,
     },
     {
         array: ['Anexo estadístico de colocaciones registradas', fecha, "Abrir", 'Descargar'],
-        file: c_anexoColocacionesAbril,
-        link: "https://docs.google.com/spreadsheets/d/1-js2IBVzhtXaEgeiS18HuOwT8V-UakVM/edit?usp=sharing&ouid=104411060894586684778&rtpof=true&sd=true",
+        file: c_anexoColocacionesMayo,
+        link: "https://docs.google.com/spreadsheets/d/1kX1dhUu4K5r42yM4QJcvg1t4qehHM7zY/edit?usp=sharing&ouid=104411060894586684778&rtpof=true&sd=true",
     },
     {
         array: ['Boletín técnico - colocaciones', fecha, "Abrir", 'Descargar'],
-        file: c_boletinColocacionesAbril2024,
+        file: c_boletinColocacionesMayo2024,
         link: null,
     },
     {

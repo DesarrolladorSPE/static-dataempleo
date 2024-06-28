@@ -7,14 +7,14 @@ import { WrapperContainer2 } from "../WrapperContainers";
 const HomeInfoContainer = () => {
     const array1 = {
         title: "Ofertas de empleo registradas (total red de prestadores), ofertas de empleo registradas (SISE*), buscadores de empleo registrados (SISE*) y número de colocaciones (SISE*)",
-        year: ["abril-2023", "abril-2024"],
+        year: ["mayo-2023", "mayo-2024"],
         month: 9,
         grapLabelsType: "ofertasDeEmpleoRegistradas",
         graphType: "bar",
         description: "",
         values: [
-            [181600, 14750, 65075, 42080],
-            [182025, 16381, 80082, 50449],
+            [209244, 38721, 73370, 47014],
+            [173690, 28173, 79032, 40402],
         ],
     };
 

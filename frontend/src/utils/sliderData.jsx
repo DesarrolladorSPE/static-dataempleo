@@ -6,40 +6,40 @@ import { MdBackpack } from "react-icons/md";
 
 const sliderData = [
     {
-        name: "Promedio anual de colocaciones (may2023 - abr2024)",
+        name: "Promedio anual de colocaciones (jun2023 - may2024)",
         icon: <MdBackpack />,
         numericValue: "Hasta bachillerato - mujeres",
-        percentValue: formatNumbers(9942),
+        percentValue: formatNumbers(7012),
     },
     {
-        name: "Promedio anual de colocaciones (may2023 - abr2024)",
+        name: "Promedio anual de colocaciones (jun2023 - may2024)",
         icon: <FaUserGraduate />,
         numericValue: "Universitario, técnicos y técnologos - mujeres",
-        percentValue: formatNumbers(8136),
+        percentValue: formatNumbers(4520),
     },
     {
-        name: "Promedio anual de colocaciones (may2023 - abr2024)",
+        name: "Promedio anual de colocaciones (jun2023 - may2024)",
         icon: <GiGraduateCap />,
         numericValue: "Posgrado - mujeres",
-        percentValue: formatNumbers(802),
+        percentValue: formatNumbers(266),
     },
     {
-        name: "Promedio anual de colocaciones (may2023 - abr2024)",
+        name: "Promedio anual de colocaciones (jun2023 - may2024)",
         icon: <MdBackpack />,
         numericValue: "Hasta bachillerato - hombres",
-        percentValue: formatNumbers(10409),
+        percentValue: formatNumbers(7635),
     },
     {
-        name: "Promedio anual de colocaciones (may2023 - abr2024)",
+        name: "Promedio anual de colocaciones (jun2023 - may2024)",
         icon: <FaUserGraduate />,
         numericValue: "Universitario, técnicos y técnologos - hombres",
-        percentValue: formatNumbers(5759),
+        percentValue: formatNumbers(3709),
     },
     {
-        name: "Promedio anual de colocaciones (may2023 - abr2024)",
+        name: "Promedio anual de colocaciones (jun2023 - may2024)",
         icon: <GiGraduateCap />,
         numericValue: "Posgrado - hombres",
-        percentValue: formatNumbers(555),
+        percentValue: formatNumbers(268),
     },
 ]
 

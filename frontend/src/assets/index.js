@@ -13,17 +13,17 @@ import documentosPoblacionales_05 from "./05-Documentos poblacionales.png";
 import Montserrat from "./fonts/Montserrat/Montserrat-Regular.ttf";
 import MontserratBold from "./fonts/Montserrat/Montserrat-Bold.ttf";
 
-import a_anexoBuscadoresDeEmpleoAbril from "./Files/A. Anexo buscadores de empleo (Abril).xlsx"
-import a_boletinOfertaLaboralAbril2024 from "./Files/A. Boletin Oferta Laboral Abril 2024.pdf"
+import a_anexoBuscadoresDeEmpleoMayo from "./Files/A. Anexo buscadores de empleo (Mayo).xlsx"
+import a_boletinOfertaLaboralMayo2024 from "./Files/A. Boletin Oferta Laboral Mayo 2024.pdf"
 
-import b_anexoOfertasDeEmpleoAbril from "./Files/B. Anexo ofertas de empleo (Abril).xlsx"
-import b_anexoOfertasDeEmpleoSISEAbril from "./Files/B. Anexo ofertas de empleo SISE (Abril).xlsx"
-import b_boletinDemandaLaboralRedSISEAbril2024 from "./Files/B. Boletín Demanda Laboral (RED + SISE) Abril 2024.pdf"
+import b_anexoOfertasDeEmpleoMayo from "./Files/B. Anexo ofertas de empleo (Mayo).xlsx"
+import b_anexoOfertasDeEmpleoSISEMayo from "./Files/B. Anexo ofertas de empleo SISE (Mayo).xlsx"
+import b_boletinDemandaLaboralRedSISEMayo2024 from "./Files/B. Boletín Demanda Laboral (RED + SISE) Mayo 2024.pdf"
 
-import c_anexoColocacionesAbril from "./Files/C. Anexo colocaciones (Abril).xlsx"
-import c_boletinColocacionesAbril2024 from "./Files/C. Boletin Colocaciones Abril 2024.pdf"
+import c_anexoColocacionesMayo from "./Files/C. Anexo colocaciones (Mayo).xlsx"
+import c_boletinColocacionesMayo2024 from "./Files/C. Boletin Colocaciones Mayo 2024.pdf"
 
-import correlativaSISECuocUnidadSPE from "./Files/CORRELATIVA SISE-CUOC TERMINADA UNIDAD SPE.xlsx"
+import correlativaSISECuocUnidadSPE from "./Files/Correlativa SISE-CUOC Unidad SPE.xlsx"
 
 
 export {
@@ -42,14 +42,14 @@ export {
 
 
 
-    a_anexoBuscadoresDeEmpleoAbril,
-    a_boletinOfertaLaboralAbril2024,
+    a_anexoBuscadoresDeEmpleoMayo,
+    a_boletinOfertaLaboralMayo2024,
 
-    b_anexoOfertasDeEmpleoAbril,
-    b_anexoOfertasDeEmpleoSISEAbril,
-    b_boletinDemandaLaboralRedSISEAbril2024,
+    b_anexoOfertasDeEmpleoMayo,
+    b_anexoOfertasDeEmpleoSISEMayo,
+    b_boletinDemandaLaboralRedSISEMayo2024,
     
-    c_anexoColocacionesAbril,
-    c_boletinColocacionesAbril2024,
+    c_anexoColocacionesMayo,
+    c_boletinColocacionesMayo2024,
     correlativaSISECuocUnidadSPE,
 }

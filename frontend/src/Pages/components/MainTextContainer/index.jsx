@@ -11,10 +11,10 @@ const MainTextContainer = () => {
             padding={0}
             gap={20}
         >
-            <SubTitle>Abril 2024</SubTitle>
+            <SubTitle>Mayo 2024</SubTitle>
 
             <p className="main-text">
-                Durante abril de 2024, se observó un aumento en el número de ofertas de empleo en las 23 principales ciudades, pasando de 42.381 en abril de 2023 a 51.623 en abril de 2024. Entre estas ciudades, Bogotá A.M. destacó con la mayor cantidad de ofertas (72.484), seguida por Medellín A.M. (27.388) y Cali A.M. (12.436). Por otro lado, Riohacha , Florencia y Quibdó registraron las cifras más bajas de ofertas de empleo, con 222, 203 y 66 respectivamente. Es notable que Bogotá A.M., Medellín A.M. y Cali A.M. concentraron conjuntamente el 78,0% del total de ofertas laborales durante dicho mes, evidenciando una marcada disparidad en la distribución de las oportunidades de empleo entre las principales ciudades del país.
+                Durante mayo de 2024, se observó un descenso en el número de ofertas de empleo en las 23 principales ciudades de -16,32% en comparación con el mismo período del año anterior, totalizando 136.861 ofertas. Entre estas ciudades, Bogotá A.M. destacó con la mayor cantidad de ofertas (66.770), seguida por Medellín A.M. (3.354) y Cali A.M. (11.702). Por otro lado, Florencia, Sincelejo y Quibdó registraron las cifras más bajas de ofertas de empleo, con 260, 223 y 76 respectivamente. Es notable que Bogotá A.M., Medellín A.M. y Cali A.M. concentraron conjuntamente el 77,0% del total de ofertas laborales de la red y el 62,0% de SISE durante dicho mes, evidenciando una marcada disparidad en la distribución de las oportunidades de empleo entre las principales ciudades del país.								
             </p>
         </WrapperContainer2>
     );
