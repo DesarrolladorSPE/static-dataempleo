@@ -12,7 +12,7 @@ import {
     
 } from "../assets";
 
-const fecha = "Mayo 2024";
+const fecha = "Junio 2024";
 
 const tableData = [
     {
@@ -51,7 +51,7 @@ const tableData = [
         link: null,
     },
     {
-        array: ['Correlativa SISE-CUOC Unidad SPE', "Junio 2024", "Abrir", 'Descargar'],
+        array: ['Correlativa SISE-CUOC Unidad SPE', fecha, "Abrir", 'Descargar'],
         file: correlativaSISECuocUnidadSPE,
         link: "https://docs.google.com/spreadsheets/d/1m1g6lSnKuuf0fadwaHhRKqB0FmsqQQyD/edit?usp=sharing&ouid=104411060894586684778&rtpof=true&sd=true",
     },
